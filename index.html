@@ -1,109 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>J. R. R. Tolkien's Site</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="pictures/favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="pictures/favicon.ico" />
   </head>
 
   <body>
-    <div id="sky"></div>
-    <div id="start"> 
-      <p><img src="pictures/circle-cropped Tolkien.png"></img></p>
-      <h1>J. R. R. Tolkien</h1>
-      <p><em>English writer, poet, WWI veteran, philologist and university professor</em></p>     
+    <div id="sky" class="flex-container">
+      <picture>
+        <source srcset="pictures/cloud-min.png" media="(max-width: 786px)">
+        <source srcset="pictures/cloud-mid.png" media="(max-width: 1400px)>
+        <source srcset="pictures/cloud.png">
+        <img src="pictures/cloud.png" class="top-cloud cloud" alt="cloud-img">
+      </picture>
+      <picture>
+        <source srcset="pictures/cloud-min.png" class="bottom-cloud cloud" alt="cloud-img"media="(max-width: 786px)">
+        <source srcset="pictures/cloud-mid.png" class="bottom-cloud cloud" alt="cloud-img" media="(max-width: 1400px)>
+        <source srcset="pictures/cloud.png">
+        <img src="pictures/cloud.png" class="bottom-cloud cloud" alt="cloud-img">
+      </picture>
+      <!-- <img src="pictures/cloud.png" class="top-cloud cloud" alt="cloud-img"/>
+      <img src="pictures/cloud.png" class="bottom-cloud cloud" alt="cloud-img"/> -->
+      <!-- <div class="mountain"><img  src="pictures/mountain.png" height="80%" weight="80%" alt="mountain-img" /></div> -->
     </div>
-
-    <hr size="2" noshade>
-
-    <div id="biography">
-      <pre>Tolkien was born on 3 January 1892, Bloemfontein, South Africa and died on 2 September 1973, Bournemouth, Hampshire, England.
-        <br> Best known as the author of the high fantasy classic works: <em><a href="https://en.wikipedia.org/wiki/The_Silmarillion">The Silmarillion</a></em>,
-      <em><a href="https://en.wikipedia.org/wiki/The_Hobbit">The Hobbit</a></em> and
-      <em><a href="https://en.wikipedia.org/wiki/The_Lord_of_the_RingsThe">The Lord of the Rings</a></em>.
-      <br> For most of his adult life, he taught English language and literature, specializing in Old and Middle English,
-      at the Universities of Leeds (1920–25) and Oxford (1925–59).<br>
-      <br> In private, Tolkien amused himself by writing an elaborate series of fantasy tales, often dark and sorrowful,
-      set in a world of his own creation.
-      <br> He made this “legendarium”, which eventually became <em>The Silmarillion</em>,
-      partly to provide a setting in which “Elvish” languages he had invented could exist.
-      <br> But his tales of Arda and Middle-earth also grew from a desire to tell stories, influenced by a love of myths and legends.<br>
-      <br> The longest and most important of those stories, begun about 1930, was <em>The Hobbit</em>.
-      <br> In 1937 <em>The Hobbit</em> was published, with pictures by the author, and was so popular that its publisher asked for a sequel.
-      <br> The result, 17 years later, was Tolkien’s masterpiece, <em>The Lord of the Rings</em>, a modern version of the heroic epic.
-    </pre>
-  </div>
-
-  <hr size="2" noshade>
-
-  <div id="works">
-    <h3>Works:</h3>
-    <br><em>The Hobbit</em>
-    <br><em>The Lord of the Rings</em>
-    <br><em>The Children of Húrin</em>
-    <br><em>The Silmarillion</em>
-    <br><em>Unfinished Tales</em>
-    <br>
-    <br>
-    <a href="Works.html">🐉 Works by J. R. R. Tolkien - detailed</a>
-    
-  </div>
-  
-  <hr size="2" noshade>
-
-  <div id="edu-work">
-    <h3>Education and work:</h3>
-    <p>
-      During his student days Tolkien was a close friend of C. S. Lewis, a co-member of the informal literary discussion group The Inklings.
-      <br>After finishing his degrees in English Language and Literature in Oxford, Tolkien was recruted to army during the First World War
-      and even participated in the battle at the Somme. <br>Tolkien's battalion was almost completely wiped out following his return to England.
-      <br>Later on he worked as the Rawlinson and Bosworth Professor of Anglo-Saxon and Fellow of Pembroke College, Oxford from 1925 to 1945
-      and the Merton Professor of English Language and Literature and Fellow of Merton College, Oxford from 1945 to 1959.
-    </p>
-  </div>
-
-  <hr size="2" noshade>
-  
-  <div id="occupations">
-    <table cellspacing="20">
-      <thead>
+    <div id="start">
+      <table>
+        <tbody>
         <tr>
-          <th>Dates</th>
-          <th>Occupations</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1911-1915</td>
-          <td>- studying English Language and Literature in Oxford</td>
-        </tr>
-        <tr>
-          <td>1915-1918</td>
-          <td>- military service during WW2</td>
-        </tr>
-        <tr>
-          <td>1925-1945</td>
-          <td>- the Rawlinson and Bosworth Professor of Anglo-Saxon and Fellow of Pembroke College, Oxford</td>
-        </tr>
-        <tr>
-          <td>1945-1959</td>
-          <td>- the Merton Professor of English Language and Literature and Fellow of Merton College, Oxford</td>
+          <td>
+            <p><img src="pictures/circle-cropped Tolkien.png" /></p>
+          </td>
+          <td>
+            <p><h1>J. R. R. Tolkien</h1></p>
+            <p id="under-title">
+              <em
+                >English writer, poet, WWI veteran, philologist and university
+                professor</em
+              >
+            </p>
+          </td>
         </tr>
       </tbody>
-    </table>
-  </div>
-    <hr size="2" noshade>
+      </table>
+    </div>
+
+    <hr />
+
+    <div id="biography">
+      <h2>Short biography:</h2>
+      <p>
+        Tolkien was born on 3 January 1892, Bloemfontein, South Africa and died
+        on 2 September 1973, Bournemouth, Hampshire, England. He is best known
+        as the author of the high fantasy classic works:
+        <a href="https://en.wikipedia.org/wiki/The_Silmarillion"
+          >The Silmarillion</a
+        >, <a href="https://en.wikipedia.org/wiki/The_Hobbit">The Hobbit</a> and
+        <a href="https://en.wikipedia.org/wiki/The_Lord_of_the_RingsThe"
+          >The Lord of the Rings</a
+        >.<br />
+        For most of his adult life, he taught English language and literature,
+        specializing in Old and Middle English, at the Universities of Leeds
+        (1920-25) and Oxford (1925-59). In private, Tolkien amused himself by
+        writing an elaborate series of fantasy tales, often dark and sorrowful,
+        set in a world of his own creation. He created his own “legendarium”,
+        which eventually became <em>The Silmarillion</em>, partly to provide a
+        setting in which “Elvish” languages he had invented could exist. But his
+        tales of Arda and Middle-earth also grew from a desire to tell stories,
+        influenced by a love of myths and legends. The longest and most
+        important of those stories, begun about 1930, was <em>The Hobbit</em>.
+        <br />
+        In 1937 <em>The Hobbit</em> was published, with pictures by the author,
+        and was so popular that its publisher asked for a sequel. The result, 17
+        years later, was Tolkien's masterpiece, <em>The Lord of the Rings</em>,
+        a modern version of the heroic epic.
+      </p>
+    </div>
+
+    <hr />
+
+    <div id="works">
+      <h3>Works:</h3>
+      <p><em>The Hobbit</em></p>
+      <p><em>The Lord of the Rings</em></p>
+      <p><em>The Children of Húrin</em></p>
+      <p><em>The Silmarillion</em></p>
+      <p><em>Unfinished Tales</em></p>
+      <br />
+
+      <p><a href="works.html">🐉 Works by J. R. R. Tolkien - more info</a></p>
+    </div>
+
+    <hr />
+
+    <div id="edu-work">
+      <h3>Education and work:</h3>
+      <p>
+        During his student days Tolkien was a close friend of C. S. Lewis, a
+        co-member of the informal literary discussion group The Inklings.
+        <br />After finishing his degrees in English Language and Literature in
+        Oxford, Tolkien was recruted to army during the First World War and even
+        participated in the battle at the Somme. <br />Tolkien's battalion was
+        almost completely wiped out following his return to England. <br />Later
+        on he worked as the Rawlinson and Bosworth Professor of Anglo-Saxon and
+        Fellow of Pembroke College, Oxford from 1925 to 1945 and the Merton
+        Professor of English Language and Literature and Fellow of Merton
+        College, Oxford from 1945 to 1959.
+      </p>
+    </div>
+
+    <hr />
+
+    <div id="occupations">
+      <table cellspacing="20">
+        <thead>
+          <tr>
+            <th>Dates</th>
+            <th>Occupations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1911-1915</td>
+            <td>- studying English Language and Literature in Oxford</td>
+          </tr>
+          <tr>
+            <td>1915-1918</td>
+            <td>- military service during WW2</td>
+          </tr>
+          <tr>
+            <td>1925-1945</td>
+            <td>
+              - the Rawlinson and Bosworth Professor of Anglo-Saxon and Fellow
+              of Pembroke College, Oxford
+            </td>
+          </tr>
+          <tr>
+            <td>1945-1959</td>
+            <td>
+              - the Merton Professor of English Language and Literature and
+              Fellow of Merton College, Oxford
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr />
 
     <div>
-    <a href="Links_and_sources.html">🔗Links, sources and contact</a>
-  </div>
-
-</body>
-
+      <a href="Links_and_sources.html">🔗Links, sources and contact</a>
+    </div>
+  </body>
 </html>
-
 
 <!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">

@@ -1,148 +1,261 @@
-body{
-    margin: 0;
-    text-align: center;
-    font-family: 'Merriweather', serif;
-    color: #5C3D2E;
-    line-height: 2;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-size: 1.2rem;
+  color: #35231b;
+
+  background: radial-gradient(at 60% 40%, #ebf3ec, #3ea155);
+  line-height: 150%;
+}
+
+.flex-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  align-items: center;
+  width: 100%;
+  /* height: 300px; */
+  height: 50vh;
+  background: url(pictures/mountain.png) no-repeat center center/40%;
+
+  /* ne height: 20vh, jer se vh ne skalira dobro kasnije */
+}
+
+.flex-item {
+  position: relative;
+  /* flex-basis: 15%; */
+  /* display: inline-block; */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cloud {
+  max-width: 70%;
+  height: auto;
+  /* z-index: 2; */
+}
+
+.top-cloud {
+  position: relative;
+  top: 3vh;
+  z-index: 2;
+  /* object-position: 10% 20%; */
+  /* position: relative;  */
+  /* left: 100%;
+  top: 10%;  */
+  animation: clouds-moving 10s alternate infinite;
+}
+
+.bottom-cloud {
+  /* object-position: 20% 80%; */
+  position: relative;
+  top: 12vh;
+  z-index: 3;
+  /* right: 5vw; */
+  animation: clouds-moving2 10s alternate infinite;
+  /* left: 20%;
+  top: 20%; 
+  transform: translate(120%, 0);  */
+}
+
+@keyframes clouds-moving {
+  0% {
+    right: 20%;
   }
-  
-  h1{
-    margin: 50px auto 0 auto;
-    font-size: 312%;
-    font-family: 'WindSong', cursive;
-    color: #2B580C;
+
+  100% {
+    right: 30px;
   }
-  
-  p {
-    margin: 60px auto;
+}
+
+@keyframes clouds-moving2 {
+  0% {
+    left: 10%;
   }
-  
-  .subtitle {
-    font-size: 1.3rem;
-    font-weight: 900;
+  100% {
+    left: 30px;
   }
-  
-  h2, h3 {
-    font-family: 'Merriweather', serif;
-    color: #2B580C;
-  }
-  
-  h2{
-    font-size: 1.3rem;
-  }
-  
-  hr {
-    border: dotted #2B580C 6px;
-    border-bottom: none;
-    width: 4%;
-    margin: 40px auto;
-  }
-  
-  a {
-    color: #5C3D2E;
-    font-family: 'Merriweather', serif;
-    margin: 10px;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #FEFFE2;
-  }
-  
-  .top-container {
-    background-color: #E0E7F1;
-    position: relative;
-    padding-top: 100px;
-  }
-  
-  .middle-container {
-    background-color: #D6EFC7;
-    }
-  
-  .lower-container {
-    background-color: #EAE3C8;
-  }
-  
-  .bottom-container{
-    background-color: #DAD0C2;
-  }
-  
-  .skill-row_1{
-    width: 70%;
-    margin: 70px auto auto auto;
-    text-align: left;
-  }
-  
-  .works{
-    margin: 20px auto auto auto;
-    line-height: 2.5;
-  }
-  
-  .skill-row_2{
-    width: 70%;
-    margin: 100px auto auto auto;
-    text-align: left;
-  }
-  
-  .top-cloud {
-    position: absolute;
-    right: 290px;
-    top: 70px;
-  }
-  
-  .bottom-cloud {
-    position: absolute;
-    left: 400px;
-    top: 370px;
-  }
-  
-  .ring{
-    width: 50%;
-    height: auto;
-    float: right;
-    margin-right: 50px;
-  }
-  
-  .gandalf{
-    width: 20%;
-    height: auto;
-  }
-  
-  .btn {
-     -webkit-border-radius: 20px;
-     -moz-border-radius: 20px;
-     border-radius: 20px;
-     height: 22px;
-     line-height: 13px;
-     color: #FFFFFF;
-     font-family: 'Merriweather', serif;
-     width: 110px;
-     font-size: 15px;
-     font-weight: 500;
-     padding: 9px;
-     background-color: #897853;
-     text-decoration: none;
-     display: inline-block;
-     cursor: pointer;
-     text-align: center;
-  }
-  
-  .btn:hover {
-     background: #85603F;
-     border: solid #1C650F 1px;
-     -webkit-border-radius: 20px;
-     -moz-border-radius: 20px;
-     border-radius: 20px;
-     text-decoration: none;
-  }
-  
-  .last-container {
-    background-color: #EAE3C8;
-  }
-  
-  .owner {
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  padding: 3%;
+}
+
+h1 {
+  margin: 10% auto;
+  font-size: 3rem;
+  font-family: "WindSong", cursive;
+  color: #2b580c;
+}
+
+#under-title {
+  margin: 10%;
+}
+
+p a {
+  margin: 0;
+  /* font-style: italic; */
+  color: #54a61e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p a:hover {
+  color: #5c3d2e;
+}
+
+p {
+  margin: 3% auto;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+h2,
+h3 {
+  font-family: "Merriweather", serif;
+  color: #2b580c;
+  font-family: "WindSong", cursive;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+hr {
+  border: dotted #54a61e 6px;
+  border-bottom: none;
+  width: 24%;
+  margin: 40px auto;
+}
+
+/* a {
+  color: #5c3d2e;
+  font-family: "Merriweather", serif;
+  margin: 10px;
+  text-decoration: none;
+} */
+
+a:hover {
+  color: #feffe2;
+}
+
+.top-container {
+  background-color: #e0e7f1;
+  position: relative;
+  padding-top: 100px;
+}
+
+.middle-container {
+  background-color: #d6efc7;
+}
+
+.lower-container {
+  background-color: #eae3c8;
+}
+
+.bottom-container {
+  background-color: #dad0c2;
+}
+
+.skill-row_1 {
+  width: 70%;
+  margin: 70px auto auto auto;
+  text-align: left;
+}
+
+.works {
+  margin: 20px auto auto auto;
+  line-height: 2.5;
+}
+
+.skill-row_2 {
+  width: 70%;
+  margin: 100px auto auto auto;
+  text-align: left;
+}
+
+.ring {
+  width: 50%;
+  height: auto;
+  float: right;
+  margin-right: 50px;
+}
+
+.gandalf {
+  width: 20%;
+  height: auto;
+}
+
+.btn {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  height: 22px;
+  line-height: 13px;
+  color: #ffffff;
+  font-family: "Merriweather", serif;
+  width: 110px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 9px;
+  background-color: #897853;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #85603f;
+  border: solid #1c650f 1px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* .last-container {
+  background-color: #eae3c8;
+}
+
+.owner {
   margin: 20px auto 0 auto;
-  color: #CDBBA7;
+  color: #cdbba7;
   font-size: 0.85rem;
+} */
+
+@media (max-width: 956px) {
+  body {
+    font-size: 1rem;
   }
-  
+  .cloud {
+    max-width: 70%;
+    max-height: auto;
+  }
+}
+
+@media (max-width: 786px) {
+  body {
+    font-size: 1rem;
+  }
+  .cloud {
+    max-width: 50%;
+    max-height: auto;
+  }
+}
