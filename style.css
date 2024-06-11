@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    color: #5C3D2E;
+    line-height: 2;
+  }
+  
+  h1{
+    margin: 50px auto 0 auto;
+    font-size: 312%;
+    font-family: 'WindSong', cursive;
+    color: #2B580C;
+  }
+  
+  p {
+    margin: 60px auto;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    font-weight: 900;
+  }
+  
+  h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: #2B580C;
+  }
+  
+  h2{
+    font-size: 1.3rem;
+  }
+  
+  hr {
+    border: dotted #2B580C 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 40px auto;
+  }
+  
+  a {
+    color: #5C3D2E;
+    font-family: 'Merriweather', serif;
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #FEFFE2;
+  }
+  
+  .top-container {
+    background-color: #E0E7F1;
+    position: relative;
+    padding-top: 100px;
+  }
+  
+  .middle-container {
+    background-color: #D6EFC7;
+    }
+  
+  .lower-container {
+    background-color: #EAE3C8;
+  }
+  
+  .bottom-container{
+    background-color: #DAD0C2;
+  }
+  
+  .skill-row_1{
+    width: 70%;
+    margin: 70px auto auto auto;
+    text-align: left;
+  }
+  
+  .works{
+    margin: 20px auto auto auto;
+    line-height: 2.5;
+  }
+  
+  .skill-row_2{
+    width: 70%;
+    margin: 100px auto auto auto;
+    text-align: left;
+  }
+  
+  .top-cloud {
+    position: absolute;
+    right: 290px;
+    top: 70px;
+  }
+  
+  .bottom-cloud {
+    position: absolute;
+    left: 400px;
+    top: 370px;
+  }
+  
+  .ring{
+    width: 50%;
+    height: auto;
+    float: right;
+    margin-right: 50px;
+  }
+  
+  .gandalf{
+    width: 20%;
+    height: auto;
+  }
+  
+  .btn {
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     border-radius: 20px;
+     height: 22px;
+     line-height: 13px;
+     color: #FFFFFF;
+     font-family: 'Merriweather', serif;
+     width: 110px;
+     font-size: 15px;
+     font-weight: 500;
+     padding: 9px;
+     background-color: #897853;
+     text-decoration: none;
+     display: inline-block;
+     cursor: pointer;
+     text-align: center;
+  }
+  
+  .btn:hover {
+     background: #85603F;
+     border: solid #1C650F 1px;
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     border-radius: 20px;
+     text-decoration: none;
+  }
+  
+  .last-container {
+    background-color: #EAE3C8;
+  }
+  
+  .owner {
+  margin: 20px auto 0 auto;
+  color: #CDBBA7;
+  font-size: 0.85rem;
+  }
+  
