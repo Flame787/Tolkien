@@ -2,30 +2,108 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   text-align: center;
-  font-family: "Merriweather", serif;
-  font-size: 1.2rem;
+  font-family: "Source Sans 3", sans-serif;
+  /* font-family: "Merriweather", serif; */
+  font-size: 1.3rem;
   color: #35231b;
-
-  background: radial-gradient(at 60% 40%, #ebf3ec, #3ea155);
+  background: radial-gradient(at 60% 40%, #ebf3ec, #2b7b3e);
   line-height: 150%;
 }
 
-#sky {
-  background-color: #c7d7ed;
+.red {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 120px;
 }
 
-.flex-container {
-  /* display: flex;
+.red > * {
+  padding: 0 10px 10px;
+  
+}
+
+.red:first-child {
   flex-wrap: wrap;
-  justify-content: space-around; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  opacity: 0.6;
+}
+
+/* .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 30vh;
+} */
+
+#tolkien-top-logo {
+  text-align: center;
+  /* height: 100vh; */
+  /* width: auto; */
+}
+
+#nav-title {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  color: #2b580c;
+  font-size: 1.7rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+li {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+  background-color: #e0e7f1;
+  border-radius: 5px;
+}
+
+li a {
+  color: #2b580c;
+  padding: 2px 3px;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+
+li a:hover {
+  color: #2bad61;
+}
+
+#navigation {
+  background-color: #a5caef;
+}
+
+#sky {
+  background-color: #a5caef;
+}
+
+.mountain-background {
   align-items: center;
   width: 100%;
-  /* height: 300px; */
   height: 40vh;
-  background: url(pictures/mountain.png) no-repeat center bottom/40%;
+  /* height: 300px; */
+  background: url(pictures/mountain.png) no-repeat center bottom/35%;
 
   /* ne height: 20vh, jer se vh ne skalira dobro kasnije */
 }
@@ -104,7 +182,24 @@ td {
 }
 
 .text-td {
-  width: 70%;
+  width: 30%;
+}
+
+th {
+  padding-bottom: 2%;
+}
+
+.year-td {
+  width: 20%;
+  padding: 1%;
+  font-weight: bold;
+  color: #2b580c;
+}
+
+.facts-td {
+  width: 90%;
+  padding: 1%;
+  text-align: left;
 }
 
 h1 {
@@ -118,20 +213,23 @@ h1 {
   margin: 10%;
 }
 
+p,
+table {
+  padding-bottom: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
 p a {
   margin: 0;
   /* font-style: italic; */
-  color: #54a61e;
+  color: #2b580c;
   text-decoration: none;
   font-weight: bold;
 }
 
 p a:hover {
-  color: #5c3d2e;
-}
-
-p {
-  margin: 3%;
+  color: #2bad61;
 }
 
 .subtitle {
@@ -144,10 +242,12 @@ h3 {
   font-family: "Merriweather", serif;
   color: #2b580c;
   font-family: "WindSong", cursive;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 hr {
@@ -173,6 +273,7 @@ a:hover {
   color: #feffe2;
 }
 
+/* transparent card */
 .card {
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   border-radius: 5px;
@@ -182,7 +283,6 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
   margin-top: 3%;
-  /* text-align: center; */
 }
 
 .top-container {
@@ -200,7 +300,7 @@ a:hover {
 }
 
 .external-links {
-  background-color: #dad0c2;
+  /* background-color: #dad0c2; */
   /* margin-bottom: 1%; */
 }
 
@@ -266,27 +366,52 @@ a:hover {
   text-decoration: none;
 }
 
-/* .last-container {
-  background-color: #eae3c8;
+.d-col-2 {
+  flex-basis: 16.66%;
+}
+.d-col-3 {
+  flex-basis: 25%;
+}
+.d-col-4 {
+  flex-basis: 33.33%;
+}
+.d-col-5 {
+  flex-basis: 41.66%;
+}
+.d-col-6 {
+  flex-basis: 50%;
+}
+.d-col-7 {
+  flex-basis: 58.33%;
+}
+.d-col-8 {
+  flex-basis: 66.66%;
+}
+.d-col-9 {
+  flex-basis: 75%;
+}
+.d-col-10 {
+  flex-basis: 83.33%;
+}
+.d-col-11 {
+  flex-basis: 91.66%;
+}
+.d-col-12 {
+  flex-basis: 100%;
 }
 
-.owner {
-  margin: 20px auto 0 auto;
-  color: #cdbba7;
-  font-size: 0.85rem;
-} */
+
 
 @media (max-width: 956px) {
   body {
     font-size: 1rem;
   }
+  .flex-container {
+    height: 20vh;
+  }
   h1 {
     font-size: 2rem;
   }
-  /* .cloud {
-    max-width: 70%;
-    max-height: auto;
-  } */
 }
 
 @media (max-width: 786px) {
@@ -294,15 +419,30 @@ a:hover {
     font-size: 1rem;
   }
 
+  .red > * {
+    padding: 0 5px 10px;
+  }
+
+  #nav-title {
+    font-size: 1.3rem;
+  }
+
+  /* provjeriti je li ovo dobro i potrebno: */
+  .flex-container {
+    height: 20vh;
+  }
+
+  .cloud {
+    max-width: 90%;
+    height: auto;
+    /* z-index: 2; */
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   table {
     width: 90%;
   }
-  /* .cloud {
-    max-width: 50%;
-    max-height: auto;
-  } */
 }
