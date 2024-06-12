@@ -6,50 +6,66 @@
     <title>J. R. R. Tolkien's Site</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="pictures/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div id="sky" class="flex-container">
       <picture>
-        <source srcset="pictures/cloud-min.png" media="(max-width: 786px)">
+        <source srcset="pictures/cloud-min.png" media="(max-width: 786px)" />
         <source srcset="pictures/cloud-mid.png" media="(max-width: 1400px)>
-        <source srcset="pictures/cloud.png">
-        <img src="pictures/cloud.png" class="top-cloud cloud" alt="cloud-img">
+        <source srcset="pictures/cloud.png" />
+        <img src="pictures/cloud.png" class="top-cloud cloud" alt="cloud-img" />
       </picture>
-      <picture> 
-        <source srcset="pictures/cloud-min.png" class="bottom-cloud cloud" alt="cloud-img"media="(max-width: 786px)">
-        <source srcset="pictures/cloud-mid.png" class="bottom-cloud cloud" alt="cloud-img" media="(max-width: 1400px)>
-        <source srcset="pictures/cloud.png">
-        <img src="pictures/cloud.png" class="bottom-cloud cloud" alt="cloud-img">
+      <picture>
+        <source
+          srcset="pictures/cloud-min.png"
+          class="bottom-cloud cloud"
+          alt="cloud-img"
+          media="(max-width: 786px)"
+        />
+        <source srcset="pictures/cloud-mid.png" class="bottom-cloud cloud"
+        alt="cloud-img" media="(max-width: 1400px)>
+        <source srcset="pictures/cloud.png" />
+        <img
+          src="pictures/cloud.png"
+          class="bottom-cloud cloud"
+          alt="cloud-img"
+        />
       </picture>
       <!-- <img src="pictures/cloud.png" class="top-cloud cloud" alt="cloud-img"/>
       <img src="pictures/cloud.png" class="bottom-cloud cloud" alt="cloud-img"/> -->
       <!-- <div class="mountain"><img  src="pictures/mountain.png" height="80%" weight="80%" alt="mountain-img" /></div> -->
     </div>
-    <div id="start">
+    <section id="start">
       <table>
         <tbody>
-        <tr>
-          <td class="picture-td">
-            <p><img src="pictures/circle-cropped Tolkien.png" /></p>
-          </td>
-          <td class="title-td">
-            <p><h1>J. R. R. Tolkien</h1></p>
-            <p id="under-title">
-              <em
-                >English writer, poet, WWI veteran, philologist and university
-                professor</em
-              >
-            </p>
-          </td>
-        </tr>
-      </tbody>
+          <tr>
+            <td class="picture-td">
+              <p><img src="pictures/circle-cropped Tolkien.png" /></p>
+            </td>
+            <td class="title-td">
+              <h1>J. R. R. Tolkien</h1>
+              <p id="subtitle">
+                <em
+                  >English writer, poet, philologist and university
+                  professor</em
+                >
+              </p>
+            </td>
+          </tr>
+        </tbody>
       </table>
-    </div>
+    </section>
 
     <hr />
 
-    <div id="biography">
+    <section id="biography">
       <h2>Short biography:</h2>
       <p>
         Tolkien was born on 3 January 1892, Bloemfontein, South Africa and died
@@ -77,11 +93,11 @@
         years later, was Tolkien's masterpiece, <em>The Lord of the Rings</em>,
         a modern version of the heroic epic.
       </p>
-    </div>
+    </section>
 
     <hr />
 
-    <div id="works">
+    <section id="works">
       <h3>Works:</h3>
       <p><em>The Hobbit</em></p>
       <p><em>The Lord of the Rings</em></p>
@@ -91,11 +107,11 @@
       <br />
 
       <p><a href="works.html">🐉 Works by J. R. R. Tolkien - more info</a></p>
-    </div>
+    </section>
 
     <hr />
 
-    <div id="edu-work">
+    <section id="edu-work">
       <h3>Education and work:</h3>
       <p>
         During his student days Tolkien was a close friend of C. S. Lewis, a
@@ -109,50 +125,111 @@
         Professor of English Language and Literature and Fellow of Merton
         College, Oxford from 1945 to 1959.
       </p>
-    </div>
+    </section>
 
     <hr />
 
-    <div id="occupations">
-      <table cellspacing="20">
+    <section id="lifespan">
+      <table cellspacing="2">
         <thead>
           <tr>
-            <th>Dates</th>
-            <th>Occupations</th>
+            <th>Years</th>
+            <th>Events</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1911-1915</td>
-            <td>- studying English Language and Literature in Oxford</td>
+            <td class="facts">1911-1915</td>
+            <td class="facts">Tolkien was studying English Language and Literature in Oxford.</td>
           </tr>
           <tr>
-            <td>1915-1918</td>
-            <td>- military service during WW2</td>
+            <td class="facts">1915-1918</td>
+            <td class="facts">Military service during WW2.</td>
           </tr>
           <tr>
-            <td>1925-1945</td>
-            <td>
-              - the Rawlinson and Bosworth Professor of Anglo-Saxon and Fellow
-              of Pembroke College, Oxford
+            <td class="facts">1925-1945</td>
+            <td class="facts">
+              Working as the Rawlinson and Bosworth Professor of Anglo-Saxon and Fellow
+              of Pembroke College, Oxford.
             </td>
           </tr>
           <tr>
-            <td>1945-1959</td>
-            <td>
-              - the Merton Professor of English Language and Literature and
-              Fellow of Merton College, Oxford
+            <td class="facts">1937</td>
+            <td class="facts"><em>The Hobbit</em> was published.</td>
+          </tr>
+          <tr>
+            <td class="facts">1945-1959</td>
+            <td class="facts">
+              Working as the Merton Professor of English Language and Literature and
+              Fellow of Merton College, Oxford.
             </td>
+          </tr>
+          <tr>
+            <td class="facts">1954</td>
+            <td class="facts"><em> The Lord of the Rings</em> was published.</td>
+          </tr>
+          <tr>
+            <td class="facts">1977</td>
+            <td class="facts"><em>The Silmarillion</em> was published.</td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </section>
 
     <hr />
 
-    <div>
-      <a href="Links_and_sources.html">🔗Links, sources and contact</a>
-    </div>
+    <section class="external-links">
+      <h2>Links and sources:</h2>
+
+      <p>
+        <a
+          class="footer-link"
+          href="https://en.wikipedia.org/wiki/J._R._R._Tolkien"
+          >J. R. R. Tolkien - Wikipedia article</a
+        >
+      </p>
+      <p>
+        <a class="footer-link" href="https://www.tolkienestate.com/"
+          >The Tolkien Estate</a
+        >
+      </p>
+      <p>
+        <a class="footer-link" href="https://www.tolkiensociety.org/"
+          >The Tolkien Society</a
+        >
+      </p>
+      <p>
+        <a class="footer-link" href="https://thetolkien.forum/"
+          >The Tolkien Forum</a
+        >
+      </p>
+      
+      <p>
+        <a href="https://www.goodreads.com/author/show/656983.J_R_R_Tolkien"
+          >J. R. R. Tolkien - Goodreads</a
+        >
+      </p>
+      <p>
+        <a href="https://www.britannica.com/biography/J-R-R-Tolkien"
+          >J. R. R. Tolkien - Britannica</a
+        >
+      </p>
+
+      <p>
+        <a href="Links_and_sources.html">🔗Links, sources and contact</a>
+      </p>
+
+      <hr />
+
+      <p><img class="gandalf" src="pictures/wizard.gif" alt="gandalf-img" /></p>
+      <p><a class="btn" href="mailto:name@email.com">CONTACT ME</a></p>
+    </section>
+
+    <footer class="last-container">
+      
+
+      <p class="owner">©2024 Marina Brezovic</p>
+    </footer>
   </body>
 </html>
 
