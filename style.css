@@ -9,11 +9,15 @@ html {
 body {
   margin: 0;
   text-align: center;
-  font-family: "Source Sans 3", sans-serif;
+
+  /* font-family: "Source Sans 3", sans-serif; */
   /* font-family: "Merriweather", serif; */
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   font-size: 1.3rem;
   color: #35231b;
-  background: radial-gradient(at 60% 40%, #ebf3ec, #2b7b3e);
+  background: radial-gradient(at 50% 37%, #e1f3e3, #6b9574);
+  /* background: radial-gradient(at 50% 80%, #e1f3e3, #509560); */
   line-height: 150%;
 }
 
@@ -26,7 +30,6 @@ body {
 
 .red > * {
   padding: 0 10px 10px;
-  
 }
 
 .red:first-child {
@@ -40,7 +43,12 @@ body {
   align-items: center;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  opacity: 0.6;
+  opacity: 0.9;
+}
+
+#navigation {
+  /* background-color: #a5caef; */
+  background: radial-gradient(at 20% 50%, #e0f1e3, #6b9574);
 }
 
 /* .flex-container {
@@ -57,9 +65,12 @@ body {
 }
 
 #nav-title {
-  font-family: "Source Sans 3", sans-serif;
+  /* font-family: "Source Sans 3", sans-serif; */
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 3px;
+  /* color: #2b580c; */
+  color: #040404;
   font-weight: bold;
-  color: #2b580c;
   font-size: 1.7rem;
 }
 
@@ -82,16 +93,12 @@ li a {
   color: #2b580c;
   padding: 2px 3px;
   text-decoration: none;
-  font-weight: bold;
-  
+  font-weight: 350;
+  color: #040404;
 }
 
 li a:hover {
   color: #2bad61;
-}
-
-#navigation {
-  background-color: #a5caef;
 }
 
 #sky {
@@ -117,6 +124,7 @@ li a:hover {
 img {
   max-width: 100%;
   height: auto;
+  
 }
 
 .cloud {
@@ -185,15 +193,20 @@ td {
   width: 30%;
 }
 
-th {
+/* th {
   padding-bottom: 2%;
-}
+  font-weight: 350;
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 500;
+} */
 
 .year-td {
   width: 20%;
-  padding: 1%;
-  font-weight: bold;
-  color: #2b580c;
+  padding: 1% 2% 1% 1%;
+  font-weight: 400;
+  color: #040404;
+  text-align: right;
 }
 
 .facts-td {
@@ -205,12 +218,18 @@ th {
 h1 {
   margin: 10% auto;
   font-size: 3rem;
-  font-family: "WindSong", cursive;
-  color: #2b580c;
+  /* font-family: "WindSong", cursive; */
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 3px;
+  /* color: #2b580c; */
+  color: #040404;
 }
 
 #subtitle {
   margin: 10%;
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 2.5px;
+  text-align: center;
 }
 
 p,
@@ -225,7 +244,7 @@ p a {
   /* font-style: italic; */
   color: #2b580c;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 p a:hover {
@@ -239,9 +258,12 @@ p a:hover {
 
 h2,
 h3 {
-  font-family: "Merriweather", serif;
-  color: #2b580c;
-  font-family: "WindSong", cursive;
+  /* font-family: "Merriweather", serif; */
+  /* font-family: "WindSong", cursive; */
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 2px;
+  /* color: #2b580c; */
+  color: #040404;
   padding-top: 3%;
   padding-bottom: 3%;
 }
@@ -275,7 +297,7 @@ a:hover {
 
 /* transparent card */
 .card {
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.3);
   border-radius: 5px;
   backdrop-filter: blur(14px);
   background-color: rgba(255, 255, 255, 0.2);
@@ -399,8 +421,6 @@ a:hover {
 .d-col-12 {
   flex-basis: 100%;
 }
-
-
 
 @media (max-width: 956px) {
   body {
