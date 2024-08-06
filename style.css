@@ -85,7 +85,8 @@ li {
   text-decoration: none;
   display: inline-block;
   margin: 0 10px;
-  background-color: #e0e7f1;
+  /* background-color: #e0e7f1; */
+  background-color: rgba(255, 255, 255, 0.547);
   border-radius: 5px;
 }
 
@@ -231,6 +232,10 @@ h1 {
   text-align: center;
 }
 
+.picture-title {
+  font-size: 1.1rem;
+}
+
 p,
 table {
   padding-bottom: 3%;
@@ -299,7 +304,8 @@ a:hover {
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.3);
   border-radius: 5px;
   backdrop-filter: blur(14px);
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: rgba(255, 255, 255, 0.316);
   width: 90%;
   margin-right: auto;
   margin-left: auto;
@@ -338,7 +344,7 @@ a:hover {
 
 .img-left {
   float: left;
-  padding: 25px 0 0 25px;
+  padding: 50px 0 0 50px;
 }
 
 .skill-row_2 {
@@ -390,6 +396,10 @@ a:hover {
   -moz-border-radius: 20px;
   border-radius: 20px;
   text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .d-col-2 {
