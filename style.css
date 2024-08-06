@@ -91,9 +91,9 @@ li {
 
 li a {
   color: #2b580c;
-  padding: 2px 3px;
+  padding: 0px 20px;
   text-decoration: none;
-  font-weight: 350;
+  font-weight: 400;
   color: #040404;
 }
 
@@ -124,7 +124,6 @@ li a:hover {
 img {
   max-width: 100%;
   height: auto;
-  
 }
 
 .cloud {
@@ -335,6 +334,10 @@ a:hover {
 .works {
   margin: 20px auto auto auto;
   line-height: 2.5;
+}
+
+.img-left {
+  float: left;
 }
 
 .skill-row_2 {
