@@ -141,7 +141,7 @@ img {
   /* position: relative;  */
   /* left: 100%;
   top: 10%;  */
-  animation: clouds-moving 10s alternate infinite;
+  animation: clouds-moving 5s alternate infinite;
 }
 
 .bottom-cloud {
@@ -150,7 +150,7 @@ img {
   top: 12vh;
   z-index: 3;
   /* right: 5vw; */
-  animation: clouds-moving2 10s alternate infinite;
+  animation: clouds-moving2 5s alternate infinite;
   /* left: 20%;
   top: 20%; 
   transform: translate(120%, 0);  */
@@ -310,6 +310,7 @@ a:hover {
   margin-right: auto;
   margin-left: auto;
   margin-top: 3%;
+  padding: 20px;
 }
 
 .top-container {
