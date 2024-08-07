@@ -185,8 +185,12 @@ td {
   padding: 3%;
 }
 
+td h1 {
+  text-shadow: 1px 1px 1px #09c341;
+}
+
 .picture-td {
-  width: 30%;
+  width: 40%;
 }
 
 .text-td {
@@ -239,9 +243,9 @@ h1 {
 
 p,
 table {
-  padding-bottom: 3%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 p a {
@@ -271,6 +275,7 @@ h3 {
   color: #040404;
   padding-top: 3%;
   padding-bottom: 3%;
+  text-shadow: 1px 1px 1px #09c341;
 }
 
 h2 {
@@ -463,6 +468,7 @@ a:hover {
 
   #nav-title {
     font-size: 1.3rem;
+    text-shadow: 1px 1px 1px #09c341;
   }
 
   /* provjeriti je li ovo dobro i potrebno: */
