@@ -234,6 +234,7 @@ h1 {
   font-family: "Italiana", sans-serif;
   letter-spacing: 2.5px;
   text-align: center;
+  text-shadow: none;
 }
 
 .picture-title {
@@ -260,10 +261,7 @@ p a:hover {
   color: #2bad61;
 }
 
-.subtitle {
-  font-size: 1.3rem;
-  font-weight: 900;
-}
+
 
 h2,
 h3 {
@@ -276,6 +274,12 @@ h3 {
   padding-top: 3%;
   padding-bottom: 3%;
   text-shadow: 1px 1px 1px #09c341;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 900;
+  
 }
 
 h2 {
@@ -407,7 +411,7 @@ a:hover {
 
 .half {
   display: inline-block;
-  padding: 40px;
+  padding: 5%;
   margin: auto;
 }
 
