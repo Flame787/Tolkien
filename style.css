@@ -85,6 +85,7 @@ li {
   text-decoration: none;
   display: inline-block;
   margin: 0 10px;
+  padding: 10px 0;
   /* background-color: #e0e7f1; */
   background-color: rgba(255, 255, 255, 0.547);
   border-radius: 5px;
@@ -103,13 +104,13 @@ li a:hover {
 }
 
 #sky {
-  background-color: #a5caef;
+  background-color: #9dd3e0;
 }
 
 .mountain-background {
   align-items: center;
-  width: 100%;
-  height: 40vh;
+  width: auto;
+  height: 50vh;
   /* height: 300px; */
   background: url(pictures/mountain.png) no-repeat center bottom/35%;
 
@@ -137,6 +138,8 @@ img {
   position: relative;
   top: 3vh;
   z-index: 2;
+  width: 12vw;
+  height: auto;
   /* object-position: 10% 20%; */
   /* position: relative;  */
   /* left: 100%;
@@ -149,6 +152,8 @@ img {
   position: relative;
   top: 12vh;
   z-index: 3;
+  width: 12vw;
+  height: auto;
   /* right: 5vw; */
   animation: clouds-moving2 5s alternate infinite;
   /* left: 20%;
@@ -162,7 +167,7 @@ img {
   }
 
   100% {
-    right: 30px;
+    right: 50px;
   }
 }
 
@@ -171,7 +176,7 @@ img {
     left: 10%;
   }
   100% {
-    left: 30px;
+    left: 50px;
   }
 }
 
@@ -245,8 +250,8 @@ h1 {
 p,
 table {
   padding-bottom: 1%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 p a {
@@ -260,8 +265,6 @@ p a {
 p a:hover {
   color: #2bad61;
 }
-
-
 
 h2,
 h3 {
@@ -279,7 +282,10 @@ h3 {
 .subtitle {
   font-size: 1.3rem;
   font-weight: 900;
-  
+}
+
+.text-block {
+  padding: 0 20px;
 }
 
 h2 {
@@ -449,7 +455,15 @@ a:hover {
   flex-basis: 100%;
 }
 
-@media (max-width: 956px) {
+@media (max-width: 1024px) {
+  .mountain-background {
+    height: 250px;
+
+    background: url(pictures/mountain.png) no-repeat center bottom/45%;
+  }
+}
+
+@media (max-width: 911px) {
   body {
     font-size: 1rem;
   }
@@ -459,25 +473,43 @@ a:hover {
   h1 {
     font-size: 2rem;
   }
+
+  .mountain-background {
+    height: 200px;
+    /* height: 300px; */
+    background: url(pictures/mountain.png) no-repeat center bottom/45%;
+  }
 }
 
-@media (max-width: 786px) {
+@media (max-width: 767px) {
   body {
     font-size: 1rem;
   }
 
   .red > * {
-    padding: 0 5px 10px;
+    padding: 0 5px 3px;
+  }
+
+  #navigation {
+    height: 22vh;
+  }
+
+  #top-title {
   }
 
   #nav-title {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-shadow: 1px 1px 1px #09c341;
   }
 
-  /* provjeriti je li ovo dobro i potrebno: */
-  .flex-container {
-    height: 20vh;
+  li {
+    margin: 0 2px;
+    padding: 5px 0;
+  }
+
+  li a {
+    padding: 0 5px;
+    font-size: 0.7rem;
   }
 
   .cloud {
@@ -490,7 +522,17 @@ a:hover {
     font-size: 1.8rem;
   }
 
+  #subtitle {
+    font-size: 1rem;
+  }
+
   table {
     width: 90%;
+  }
+
+  .mountain-background {
+    height: 150px;
+    /* height: 300px; */
+    background: url(pictures/mountain.png) no-repeat center bottom/45%;
   }
 }
