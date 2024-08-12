@@ -89,6 +89,7 @@ li {
   /* background-color: #e0e7f1; */
   background-color: rgba(255, 255, 255, 0.547);
   border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 li a {
@@ -315,9 +316,18 @@ a:hover {
   color: #feffe2;
 }
 
+a:link {
+  color: #559629;
+}
+
+a:visited {
+  color: #1c650f;
+}
+
 /* transparent card */
 .card {
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.3);
+  /* box-shadow: 0 15px 25px rgba(129, 124, 124, 0.3); */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   backdrop-filter: blur(14px);
   /* background-color: rgba(255, 255, 255, 0.2); */
@@ -536,6 +546,3 @@ a:hover {
     background: url(pictures/mountain.png) no-repeat center bottom/45%;
   }
 }
-
-
-
