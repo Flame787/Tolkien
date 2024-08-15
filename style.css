@@ -85,7 +85,7 @@ li {
   text-decoration: none;
   display: inline-block;
   margin: 0 10px;
-  padding: 10px 0;
+  padding: 5px 0;
   /* background-color: #e0e7f1; */
   background-color: rgba(255, 255, 255, 0.547);
   border-radius: 5px;
@@ -94,14 +94,19 @@ li {
 
 li a {
   color: #2b580c;
-  padding: 0px 20px;
+  padding: 0px 15px;
   text-decoration: none;
   font-weight: 400;
   color: #040404;
 }
 
 li a:hover {
-  color: #2bad61;
+  color: rgba(253, 253, 253, 0.6);
+}
+
+li:hover {
+  background: #1f7e47;
+  color: rgba(253, 253, 253, 0.6);
 }
 
 #sky {
@@ -389,36 +394,32 @@ a:visited {
 }
 
 .btn {
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #1c650f;
   /* height: 22px; */
   /* line-height: 13px; */
-  color: #ffffff;
-  font-family: "Merriweather", serif;
-  /* width: 110px; */
-  font-size: 15px;
-  /* padding: 1px; */
-  background-color: #cba24a;
+  /* color: #0a0a0a; */
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+
+  background-color: rgba(255, 255, 255, 0.274);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   text-decoration: none;
-  /* display: inline-block; */
   cursor: pointer;
   text-align: center;
-
   padding: 1%;
-  font-weight: bold;
-  width: 10rem;
-  height: 4rem;
   border-width: 0;
 }
 
 .btn:hover {
-  background: #85603f;
+  background: #1f7e47;
+  color: rgba(253, 253, 253, 0.6);
   border: solid #1c650f 1px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   text-decoration: none;
 }
 
@@ -442,6 +443,12 @@ a:visited {
 
 .works-title {
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+.poll {
+  margin-left: 30%;
+  text-align: justify;
 }
 
 .d-col-2 {
