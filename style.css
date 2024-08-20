@@ -368,11 +368,6 @@ a:visited {
   background-color: #eae3c8;
 }
 
-/* .external-links {
-  background-color: #dad0c2; 
-  margin-bottom: 1%;
-} 
-*/
 
 .skill-row_1 {
   width: 70%;
@@ -497,14 +492,7 @@ a:visited {
   flex-basis: 100%;
 }
 
-/* @media (max-width: 1024px) {
-  .mountain-background {
-    height: 250px;
 
-    background: url(pictures/anime-style-mountains3.jpg) no-repeat center
-      bottom/100%;
-  }
-} */
 
 @media (max-width: 911px) {
   body {
@@ -535,10 +523,6 @@ a:visited {
     height: 3vh;
   }
 
-  #navigation {
-    /* height: 10vh; */
-    /* margin-top: 5%; */
-  }
   .d-col-8 {
     flex-basis: 80%;
   }
