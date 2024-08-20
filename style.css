@@ -38,13 +38,10 @@ body {
   padding-left: 0px !important;
   padding-right: 0px !important;
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
-
-  
 }
 
 .navbar {
   justify-content: space-around;
-  
 }
 
 .big-heading {
@@ -59,7 +56,7 @@ body {
   margin-left: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;   /* move navbar items to the right margin */
+  justify-content: flex-end; /* move navbar items to the right margin */
   gap: 5px;
 }
 
@@ -119,31 +116,18 @@ li:hover {
 
 #sky {
   background-color: #78ace7;
-  /* background-color: linear-gradient(red, yellow); */
-  /* background-image: linear-gradient(red, yellow); */
 }
 
 .mountain-background {
   align-items: center;
-  /* height: 75vh; */
-  /* background: url(pictures/anime-style-mountains3.jpg) no-repeat bottom center/100%
-  relative; */
-
   background-image: url("pictures/anime-style-mountains3.jpg");
+  /* a default height is needed in order for background-element to be visible 
+  (vh doesn't scale good, better to use pixels): */
   height: 700px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
-
-  /* ne height: 20vh, jer se vh ne skalira dobro kasnije */
-}
-
-.flex-item {
-  position: relative;
-  /* flex-basis: 15%; */
-  /* display: inline-block; */
 }
 
 img {
@@ -164,7 +148,6 @@ img {
   width: 12vw;
   height: auto;
   /* object-position: 10% 20%; */
-  /* position: relative;  */
   /* left: 100%;
   top: 10%;  */
   animation: clouds-moving 7s linear alternate infinite;
@@ -225,14 +208,6 @@ td h1 {
   width: 30%;
 }
 
-/* th {
-  padding-bottom: 2%;
-  font-weight: 350;
-  font-family: "Italiana", sans-serif;
-  letter-spacing: 3px;
-  font-weight: 500;
-} */
-
 .year-td {
   width: 20%;
   padding: 1% 2% 1% 1%;
@@ -255,7 +230,6 @@ h1 {
   letter-spacing: 3px;
   /* color: #2b580c; */
   color: #040404;
-  
 }
 
 #subtitle {
@@ -272,6 +246,11 @@ h1 {
 .picture-title {
   font-size: 1.1rem;
   font-style: italic;
+  text-align: center;
+}
+
+.ancor {
+  text-align: center;
 }
 
 p,
@@ -285,7 +264,7 @@ p a {
   margin: 0;
   /* font-style: italic; */
   color: #2b580c;
-  text-decoration: none;
+  /* text-decoration: none; */
   font-weight: 400;
 }
 
@@ -304,6 +283,7 @@ h3 {
   padding-top: 3%;
   padding-bottom: 3%;
   text-shadow: 1px 1px 1px #09c341;
+  text-align: center;
 }
 
 .subtitle {
@@ -313,6 +293,11 @@ h3 {
 
 .text-block {
   padding: 0 20px;
+  text-align: center;
+}
+
+.illustration {
+  text-align: center;
 }
 
 h2 {
@@ -422,7 +407,7 @@ a:visited {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  color: #1c650f;
+  color: #2b580c;
   /* height: 22px; */
   /* line-height: 13px; */
   /* color: #0a0a0a; */
@@ -440,7 +425,9 @@ a:visited {
 
 .btn:hover {
   background: #1f7e47;
-  color: rgba(253, 253, 253, 0.6);
+  color: rgba(253, 253, 253, 0.989);
+  /* background: #1f7e47;
+  color: rgba(253, 253, 253, 0.6); */
   border: solid #1c650f 1px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -595,8 +582,6 @@ a:visited {
   table {
     width: 90%;
   }
-
-  
 }
 
 /* .col -sm- 540px */
@@ -637,10 +622,6 @@ a:visited {
 @media (max-width: 767px) {
   .navbar-nav .nav-link {
     padding-top: 0px !important;
-    padding-bottom: 0px !important; 
+    padding-bottom: 0px !important;
   }
 }
-
-
-
-
