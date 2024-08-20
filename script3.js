@@ -104,7 +104,6 @@ https://openlibrary.org/works/OL17755218W/ratings.json
 // a da se može i dodatno otvoriti Summary / Description te knjige.
 
 
-
 // i na kraju:
 
 // dodati direktan link na Preview svake knjige na Open libraryju, i direktan link na Get full book info
