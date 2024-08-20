@@ -125,11 +125,17 @@ li:hover {
 
 .mountain-background {
   align-items: center;
-  width: auto;
-  height: 75vh;
-  /* height: 300px; */
-  background: url(pictures/anime-style-mountains3.jpg) no-repeat center
-    bottom/100%;
+  /* height: 75vh; */
+  /* background: url(pictures/anime-style-mountains3.jpg) no-repeat bottom center/100%
+  relative; */
+
+  background-image: url("pictures/anime-style-mountains3.jpg");
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
 
   /* ne height: 20vh, jer se vh ne skalira dobro kasnije */
 }
@@ -152,7 +158,7 @@ img {
 }
 
 .left-cloud {
-  position: relative;
+  position: absolute;
   top: 10%;
   z-index: 2;
   width: 12vw;
@@ -166,7 +172,7 @@ img {
 
 .right-cloud {
   /* object-position: 20% 80%; */
-  position: relative;
+  position: absolute;
   top: 3%;
   z-index: 3;
   width: 12vw;
@@ -504,14 +510,14 @@ a:visited {
   flex-basis: 100%;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .mountain-background {
     height: 250px;
 
     background: url(pictures/anime-style-mountains3.jpg) no-repeat center
       bottom/100%;
   }
-}
+} */
 
 @media (max-width: 911px) {
   body {
@@ -524,12 +530,12 @@ a:visited {
     font-size: 2rem;
   }
 
-  .mountain-background {
+  /* .mountain-background {
     height: 200px;
-    /* height: 300px; */
+   
     background: url(pictures/anime-style-mountains3.jpg) no-repeat center
       bottom/100%;
-  }
+  } */
 }
 
 @media (max-width: 767px) {
@@ -590,11 +596,7 @@ a:visited {
     width: 90%;
   }
 
-  .mountain-background {
-    height: 20vh;
-    background: url(pictures/anime-style-mountains3.jpg) no-repeat center
-      bottom/100%;
-  }
+  
 }
 
 /* .col -sm- 540px */
@@ -614,6 +616,12 @@ a:visited {
 /* col-11 = 11/12 of the viewport width, flex-basis: 91.66%; */
 /* col-12 = 1 whole viewport width, flex-basis: 100%; */
 
+@media (max-width: 1124px) {
+  .mountain-background {
+    height: 500px;
+  }
+}
+
 @media (max-width: 991px) {
   .custom-nav .custom-item {
     width: 40%; /* nav-items take 50% of the container width on small screens */
@@ -625,5 +633,14 @@ a:visited {
     white-space: normal; /* if nav-item box gets smaller, words break into new line (don't drop out of the box) */
   }
 }
+
+@media (max-width: 767px) {
+  .navbar-nav .nav-link {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important; 
+  }
+}
+
+
 
 
