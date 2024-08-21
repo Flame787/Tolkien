@@ -44,6 +44,25 @@ body {
   justify-content: space-around;
 }
 
+/* this already applies by default: */
+
+/* .navbar-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+} */
+
+/* @media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav {
+      -ms-flex-direction: row;
+      flex-direction: row;
+  }
+} */
+
 .big-heading {
   text-align: center;
   text-shadow: 1px 1px 1px #0e601484;
@@ -63,16 +82,19 @@ body {
 .custom-nav .custom-item {
   flex-shrink: 0; /* to avoid items get smaller than their content */
   width: auto; /* enables that width adjusts to the content on larger screens */
-  /* text-shadow: 0.5px 1px 0.5px #0e601484; */
   font-family: "Italiana", sans-serif;
   font-weight: bolder;
   font-size: larger;
   letter-spacing: 1.7px;
+  background-color: rgba(255, 255, 255, 0.547);
+  color: #2b580c;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  margin: 0 10px;
 }
 
-.custom-item:hover {
+.custom-nav .custom-item:hover {
   background: #1f7e47;
-  color: rgba(253, 253, 253, 0.989);
 }
 
 .nav-link {
@@ -84,39 +106,13 @@ body {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
+.nav-item:hover .nav-link {
+  color: white;
 }
 
-.custom-item {
-  text-decoration: none;
-  display: inline-block;
-  margin: 0 10px;
-  padding: 5px 0;
-  color: #2b580c;
-  padding: 0px 15px;
-  font-weight: 400;
-  /* background-color: #e0e7f1; */
-  background-color: rgba(255, 255, 255, 0.547);
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-
-.custom-item :hover {
-  color: rgba(253, 253, 253, 0.6);
-}
-
-li:hover {
-  background: #1f7e47;
-  color: rgba(253, 253, 253, 0.6);
-}
-
-#sky {
+/* #sky {
   background-color: #78ace7;
-}
+} */
 
 .mountain-background {
   align-items: center;
@@ -368,7 +364,6 @@ a:visited {
   background-color: #eae3c8;
 }
 
-
 .skill-row_1 {
   width: 70%;
   margin: 70px auto auto auto;
@@ -491,8 +486,6 @@ a:visited {
 .d-col-12 {
   flex-basis: 100%;
 }
-
-
 
 @media (max-width: 911px) {
   body {
