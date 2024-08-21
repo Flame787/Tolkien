@@ -386,6 +386,7 @@ a:visited {
   text-align: left;
 }
 
+
 .works {
   margin: 20px auto auto auto;
   line-height: 2.5;
@@ -450,7 +451,7 @@ a:visited {
   display: flex;
   flex-direction: row !important;
   padding: 5%;
-  margin: auto;
+  margin-top: 3%;
 }
 
 .half img {
