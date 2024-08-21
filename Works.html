@@ -5,8 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Works by J. R. R. Tolkien</title>
-    
-    
+
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="pictures/icon2.jpg" />
     <link
@@ -106,34 +105,37 @@
 
     <section>
       <div class="card">
-        <h3>🐉 Works by J. R. R. Tolkien:</h3>
-
-        <p><em>The Hobbit, or There and Back Again</em> (1937)</p>
-        <p>
-          <em>The Lord of the Rings</em> trilogy: <br /><br /><em
-            >The Fellowship of the Ring</em
-          >
-          (1954),<br />
-          <em>The Two Towers</em> (1954), <br /><em>The Return of the King</em>
-          (1955)
-        </p>
-        <br />
-        <p>*Posthumous, edited by Christopher Tolkien:</p>
-        <p><em>The Silmarillion</em> (1977)</p>
-        <p><em>Unfinished Tales of Númenor and Middle-earth</em> (1980)</p>
-        <p><em>The Children of Húrin</em> (2007)</p>
-        <p><em>Beren and Lúthien</em> (2017)</p>
-        <p><em>The Fall of Gondolin</em> (2018)</p>
-        <br />
-        <p>and many others...</p>
+        <h2>🐉 Works by J. R. R. Tolkien:</h2>
+        <div class="works-list">
+          <p><em>The Hobbit, or There and Back Again</em> (1937)</p>
+          <p>
+            <em>The Lord of the Rings</em> trilogy: <br /><br /><em
+              >The Fellowship of the Ring</em
+            >
+            (1954),<br />
+            <em>The Two Towers</em> (1954), <br /><em
+              >The Return of the King</em
+            >
+            (1955)
+          </p>
+          <br />
+          <p>*Posthumous, edited by Christopher Tolkien:</p>
+          <p><em>The Silmarillion</em> (1977)</p>
+          <p><em>Unfinished Tales of Númenor and Middle-earth</em> (1980)</p>
+          <p><em>The Children of Húrin</em> (2007)</p>
+          <p><em>Beren and Lúthien</em> (2017)</p>
+          <p><em>The Fall of Gondolin</em> (2018)</p>
+          <br />
+          <p>and many others...</p>
+        </div>
         <br />
       </div>
     </section>
 
     <section>
       <div class="card">
-        <h3>Book ratings by Goodreads:</h3>
-       
+        <h2>Book ratings by Goodreads:</h2>
+
         <table cellspacing="25">
           <tr>
             <td>
@@ -163,21 +165,21 @@
         </table>
 
         <br />
-        Source:
-        <a
-          href="https://www.goodreads.com/search?utf8=%E2%9C%93&query=tolkien"
-          target="_blank"
-          >Goodreads Web</a
-        >
-        <br><br>
+        <p class="right-aligned">
+          Source:
+          <a
+            href="https://www.goodreads.com/search?utf8=%E2%9C%93&query=tolkien"
+            target="_blank"
+            >Goodreads Web</a
+          >
+        </p>
+        <br />
       </div>
-     
-      
     </section>
 
     <section id="vote-works">
       <div class="card">
-        <h3>Choose your favorite Tolkien's book:</h3>
+        <h2>Choose your favorite Tolkien's book:</h2>
         <form
           action="mailto:mbrezovic77@gmail.com"
           method="post"
@@ -201,9 +203,7 @@
               name="fav-book"
               value="unfinished"
             />
-            <label for="unfinished"
-              >Unfinished Tales of Númenor and Middle-earth</label
-            ><br />
+            <label for="unfinished">Unfinished Tales</label><br />
             <input
               type="radio"
               id="children"
@@ -223,7 +223,7 @@
             <input type="radio" id="other" name="fav-book" value="other" />
             <label for="other">something else</label><br />
           </p>
-          <p>
+          <p class="align-center">
             <input class="btn" type="submit" value="Submit" />
           </p>
         </form>
@@ -233,29 +233,31 @@
 
     <br />
     <br />
-    Links to Tolkien's most famous works:
-    <a href="https://en.wikipedia.org/wiki/The_Silmarillion" target="_blank"
-      ><em>The Silmarillion</em></a
-    >,
-    <a href="https://en.wikipedia.org/wiki/The_Hobbit" target="_blank"
-      ><em>The Hobbit</em></a
-    >
-    and
-    <a
-      href="https://en.wikipedia.org/wiki/The_Lord_of_the_RingsThe"
-      target="_blank"
-      ><em>The Lord of the Rings</em></a
-    >.
-    <br />
-    <br />
+    <p class="align-center">
+      Links to Tolkien's most famous works:
+      <a href="https://en.wikipedia.org/wiki/The_Silmarillion" target="_blank"
+        ><em>The Silmarillion</em></a
+      >,
+      <a href="https://en.wikipedia.org/wiki/The_Hobbit" target="_blank"
+        ><em>The Hobbit</em></a
+      >
+      and
+      <a
+        href="https://en.wikipedia.org/wiki/The_Lord_of_the_RingsThe"
+        target="_blank"
+        ><em>The Lord of the Rings</em></a
+      >.
+    </p>
 
     <br />
-    <a href="Links_and_sources.html">🔗Links, sources and contact</a>
-    <br />
-    <br />
-    <a href="index.html">🏡 Home</a>
+    <p class="align-center">
+      <a href="Links_and_sources.html">🔗Links, sources and contact</a>
+      <br />
+      <br />
+      <a href="index.html">🏡 Home</a>
+    </p>
 
-    <footer class="last-container">
+    <footer class="last-container align-center">
       <p class="owner">©2024 Marina Brezovic</p>
     </footer>
 
@@ -275,6 +277,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="script4.js"></script>
-
   </body>
 </html>

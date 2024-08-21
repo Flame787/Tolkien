@@ -5,12 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tolkien - links, sources and contact</title>
+
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="pictures/icon2.jpg" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italiana&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,33 +34,81 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
       rel="stylesheet"
     />
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    
-    <header id="navigation" class="red" class="flex-container">
-      <div id="top-title" class="d-col-2">
-        <img
-          id="tolkien-top-logo"
-          src="pictures/icon2-transparent.png"
-          alt="Tolkien-logo"
-        />
+
+    <section class="navbar-section" id="navigation1">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <!-- navbar-light / navbar-dark very important, without this class, navbar will not be visible-->
+
+
+          <!-- Logo -->
+
+          <div class="navbar-brand" href="">
+            <img
+              id="tolkien-top-logo"
+              src="pictures/icon2-transparent.png"
+              alt="Tolkien-logo"
+            />
+          </div>
+
+          <!-- Title -->
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <h1 class="big-heading">J. R. R. Tolkien</h1>
+          </div>
+
+          <!-- Toggler Button for Small Screens -->
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- data-bs-toggle and data-bs-target don't work in Bootstrap 4, use data-toggle and data-target instead! (Bootstrap 4 vs 5 syntax) -->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation, collapsable -->
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto custom-nav container">
+              <li class="nav-item custom-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item custom-item">
+                <a class="nav-link" href="works.html"
+                  >Works by J. R. R. Tolkien</a
+                >
+              </li>
+
+              <li class="nav-item custom-item">
+                <a class="nav-link" href="links_and_sources.html"
+                  >Links, sources and contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <div id="nav-title" class="d-col-2">J. R. R. Tolkien</div>
-      <nav id="navbar" class="d-col-8">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="works.html">Works by J. R. R. Tolkien</a></li>
-          <li>
-            <a href="links_and_sources.html">Links, sources and contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    </section>
 
     <section class="external-links">
-      <div class="card">
+      <div class="card align-center">
         <h2>🔗 Links and sources:</h2>
 
         <p>
@@ -94,8 +151,6 @@
             >The Tolkien Forum</a
           >
         </p>
-
-        
       </div>
     </section>
 
@@ -105,31 +160,31 @@
     <br />
 
     <section>
-      <div class="card">
-        <h3>Contact:</h3>
+      <div class="card align-center">
+        <h2>Contact:</h2>
         <form
           action="mailto:mbrezovic77@gmail.com"
           method="post"
           enctype="text/plain"
         >
           <label>Your name:</label>
-          <input type="text" name="yourName" value="" />
-          <input type="color" name="" value="" /><br />
+          <input type="text" name="yourName" />
+          <input type="color" name="" /><br />
           <br />
           <label>Your email:</label>
-          <input type="email" name="yourEmail" value="" /><br />
+          <input type="email" name="yourEmail" /><br />
           <br />
           <label>Your message:</label><br />
           <textarea name="yourMessage" rows="10" cols="50"></textarea><br />
           <br />
           <label>Upload a file:</label>
-          <input type="file" name="" value="" /><br />
+          <input type="file" name="" /><br />
           <br />
           <label>Do you want to sign up for an email list?</label>
-          <input type="checkbox" name="" value="" /><span>Yes</span><br />
+          <input type="checkbox" name="" /><span>Yes</span><br />
           <br />
           <label>Password for subscribers' content:</label>
-          <input type="password" name="" value="" /><br />
+          <input type="password" name="" /><br />
           <br />
           <input type="submit" name="" />
         </form>
@@ -137,15 +192,34 @@
       </div>
     </section>
 
-   
     <br />
+    <p class="align-center">
     <a href="Works.html">🐉 Works by J. R. R. Tolkien - detailed</a>
     <br />
     <br />
     <a href="index.html">🏡 Home</a>
+    </p>
 
-    <footer class="last-container">
+    <footer class="last-container align-center">
       <p class="owner">©2024 Marina Brezovic</p>
     </footer>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script4.js"></script>
   </body>
 </html>

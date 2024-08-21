@@ -233,11 +233,13 @@ h1 {
   letter-spacing: 3px;
   /* color: #2b580c; */
   color: #040404;
+  text-align: center;
 }
 
 #subtitle {
   margin: 10%;
   font-family: "Italiana", sans-serif;
+  font-size: 1.7rem;
   letter-spacing: 2.5px;
   text-align: center;
   /* text-shadow: 1px 2px 2px #0e601484; */
@@ -246,13 +248,17 @@ h1 {
   text-shadow: none;
 }
 
+#subtitle {
+  font-size: 1.7rem;
+}
+
 .picture-title {
   font-size: 1.1rem;
   font-style: italic;
   text-align: center;
 }
 
-.ancor {
+.align-center {
   text-align: center;
 }
 
@@ -461,6 +467,10 @@ a:visited {
 .works-list {
   padding-top: 0;
   text-align: center;
+}
+
+.right-aligned {
+  text-align: right;
 }
 
 .works-title {
