@@ -5,22 +5,22 @@ window.onscroll = function () {
   let currentScrollPos = window.scrollY;
 
   if (prevScrollPos > currentScrollPos) {
-    // Ako skrolamo prema gore, prikaži navigacijsku traku
+    //  If scrolling up, show navbar:
     navbar.style.top = "0";
   } else {
-    // Ako skrolamo prema dolje, sakrij navigacijsku traku
-    navbar.style.top = "-100px"; // Visina navigacijske trake - prilagodite po potrebi
+    // If scrolling down, hide navbar:
+    navbar.style.top = "-100px"; // Navbar height - adjustable
   }
 
   prevScrollPos = currentScrollPos;
 };
 
-// Prikazivanje navigacijske trake kad miš pređe preko njenog područja
+// Showing navbar when hovered over with mouse:
 navbar.addEventListener("mouseenter", () => {
   navbar.style.top = "0";
 });
 
-// Sakrivanje navigacijske trake kad miš napusti njeno područje i korisnik skrola prema dolje
+// Hiding navbar when mouse leaves navbar area and user scrolls down:
 navbar.addEventListener("mouseleave", () => {
   let currentScrollPos = window.scrollY;
   if (prevScrollPos < currentScrollPos) {

@@ -45,7 +45,7 @@
   <body>
     <section class="navbar-section" id="navigation1">
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-light">
           <!-- Logo -->
 
           <div class="navbar-brand" href="">
@@ -62,30 +62,40 @@
             <h1 class="big-heading">J. R. R. Tolkien</h1>
           </div>
 
-          <!-- Navigation -->
+          <!-- Toggler Button for Small Screens -->
 
-          <div class="navbar-collapse" id="navbarSupportedContent">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- data-bs-toggle and data-bs-target don't work, use data-toggle and data-target instead! -->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation, collapsable -->
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto custom-nav container">
+              <li class="nav-item custom-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
 
-              <div class="custom-item">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-              </div>
-              <div class="custom-item">
-                <li class="nav-item">
-                  <a class="nav-link" href="works.html"
-                    >Works by J. R. R. Tolkien</a
-                  >
-                </li>
-              </div>
-              <div class="custom-item">
-                <li class="nav-item">
-                  <a class="nav-link" href="links_and_sources.html"
-                    >Links, sources and contact</a
-                  >
-                </li>
-              </div>
+              <li class="nav-item custom-item">
+                <a class="nav-link" href="works.html"
+                  >Works by J. R. R. Tolkien</a
+                >
+              </li>
+
+              <li class="nav-item custom-item">
+                <a class="nav-link" href="links_and_sources.html"
+                  >Links, sources and contact</a
+                >
+              </li>
             </ul>
           </div>
         </nav>
@@ -96,7 +106,6 @@
 
     <section id="sky" class="mountain-background">
       <picture>
-        
         <source srcset="pictures/clouds-collection2.png" />
         <img
           src="pictures/clouds-collection2.png"
@@ -105,7 +114,6 @@
         />
       </picture>
       <picture>
-        
         <source srcset="pictures/clouds-collection3.png" />
         <img
           src="pictures/clouds-collection3.png"
@@ -186,7 +194,7 @@
           <img
             src="pictures/hobbit illustration.jpg"
             alt="Image of Hobbit Dust Jacket, 1937"
-          /><br><br>
+          /><br /><br />
           <p class="picture-title">
             Image of Hobbit Dust Jacket, MS/ Tolkien Drawings 32 - 1937
           </p>
@@ -215,7 +223,7 @@
             src="pictures/Doors_of_Durin.jpg"
             alt="Tolkien's illustration of the Doors of Durin for The Fellowship of the Ring"
           />
-          <br><br>
+          <br /><br />
 
           <p class="picture-title">
             Tolkien's illustration of the Doors of Durin for The Fellowship of
@@ -299,13 +307,13 @@
           <img
             src="pictures/bilbo_illustration - smaller.jpg"
             alt="Tolkien's illustration for The Hobbit: Bilbo comes to the Huts of the Raft-elves, 1937"
-          /><br><br>
+          /><br /><br />
           <p class="picture-title">
             One of Tolkien's illustrations for The Hobbit:<br />
             Bilbo comes to the Huts of the Raft-elves, 1937
           </p>
         </div>
-        <div class="col-lg-6  works-list">
+        <div class="col-lg-6 works-list">
           <h2 class="works-title">Works:</h2>
           <br />
           <p><em>The Hobbit, or There and Back Again (1937)</em></p>
@@ -322,16 +330,17 @@
           <p><em>The Children of Húrin (2007)</em></p>
           <p><em>Beren and Lúthien (2017)</em></p>
           <p><em>The Fall of Gondolin (2018)</em></p>
-          <br>
-        
-        <p class="ancor">
-          <a href="works.html"
-            >🐉
-            <span class="underline"
-              >Works by J. R. R. Tolkien - find out more details</span
-            ></a>
-        </p>
-      </div>
+          <br />
+
+          <p class="ancor">
+            <a href="works.html"
+              >🐉
+              <span class="underline"
+                >Works by J. R. R. Tolkien - find out more details</span
+              ></a
+            >
+          </p>
+        </div>
       </div>
     </section>
 
@@ -339,9 +348,8 @@
 
     <section class="external-links">
       <div class="card">
-        <p class="ancor">
-        <h2>Links and sources:</h2>
-      </p>
+        <h2 class="ancor">Links and sources:</h2>
+
         <p class="ancor">
           <a href="links_and_sources.html"
             >🔗 <span class="underline">Links, sources and contact</span></a
@@ -351,14 +359,17 @@
         <p class="ancor">
           <img class="gandalf" src="pictures/wizard.gif" alt="gandalf-img" />
         </p>
-        <p class="ancor"><a class="btn" href="mailto:name@email.com">Contact me</a></p>
+
+        <p class="ancor">
+          <a class="btn" href="mailto:name@email.com">Contact me</a>
+        </p>
       </div>
     </section>
 
     <!-- // contact-me button prebaciti možda u podstranicu za linkove i kontakt -->
 
     <footer class="last-container">
-      <br>
+      <br />
       <p class="owner ancor">©2024 Marina Brezovic</p>
     </footer>
     <script
@@ -379,5 +390,3 @@
     <script src="script4.js"></script>
   </body>
 </html>
-
-

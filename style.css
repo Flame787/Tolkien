@@ -45,6 +45,12 @@ body {
   justify-content: space-around;
 }
 
+.navbar-toggler {
+  border: none; /* no border around hamburger icon */
+  padding: 0.25rem 0.75rem; /* enlarging the clickable area */
+  outline: none; /* removing the focus outline */
+}
+
 /* this already applies by default in Bootstrap: */
 
 /* .navbar-nav {
@@ -504,9 +510,9 @@ a:visited {
   body {
     font-size: 1rem;
   }
-  .flex-container {
+  /* .flex-container {
     height: 20vh;
-  }
+  } */
   h1 {
     font-size: 2rem;
   }
@@ -524,10 +530,10 @@ a:visited {
     font-size: 1rem;
   }
 
-  .red > * {
+  /* .red > * {
     padding: 0 5px 3px;
     height: 3vh;
-  }
+  } */
 
   .d-col-8 {
     flex-basis: 80%;
