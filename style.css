@@ -94,7 +94,8 @@ body {
   font-size: larger;
   letter-spacing: 1.7px;
   background-color: rgba(255, 255, 255, 0.547);
-  color: #2b580c;
+  /* color: #2b580c; */
+  color: #1c650f !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   margin: 0 10px;
@@ -104,22 +105,19 @@ body {
   background: #1f7e47;
 }
 
+.custom-nav .custom-item:hover .nav-link {
+  color: white !important;
+}
+
 .nav-link {
   white-space: nowrap; /* no breaking text into new line */
   padding: 0.5rem 1rem;
+  color: #1c650f !important;
 }
 
 .nav-item {
   text-align: center;
 }
-
-.nav-item:hover .nav-link {
-  color: white;
-}
-
-/* #sky {
-  background-color: #78ace7;
-} */
 
 .mountain-background {
   align-items: center;
@@ -141,7 +139,6 @@ img {
 .cloud {
   max-width: 100%;
   height: auto;
-  /* z-index: 2; */
 }
 
 .left-cloud {
@@ -236,6 +233,7 @@ h1 {
   text-align: center;
 }
 
+/* applied for title and subtitle in the 1st card: */
 #subtitle {
   margin: 10%;
   font-family: "Italiana", sans-serif;
@@ -248,12 +246,8 @@ h1 {
   text-shadow: none;
 }
 
-#subtitle {
-  font-size: 1.7rem;
-}
-
 .picture-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-style: italic;
   text-align: center;
 }
@@ -271,9 +265,7 @@ table {
 
 p a {
   margin: 0;
-  /* font-style: italic; */
   color: #2b580c;
-  /* text-decoration: none; */
   font-weight: 400;
 }
 
@@ -295,8 +287,6 @@ h3 {
   text-align: center;
 
   text-shadow: 1px 1px 1px #27c73284;
- 
-  
 }
 
 .card h2 {
@@ -319,7 +309,6 @@ h3 {
 
 h2 {
   font-size: 1.5rem;
-  
 }
 
 hr {
@@ -392,7 +381,6 @@ a:visited {
   text-align: left;
 }
 
-
 .works {
   margin: 20px auto auto auto;
   line-height: 2.5;
@@ -420,14 +408,18 @@ a:visited {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  color: #2b580c;
   /* height: 22px; */
   /* line-height: 13px; */
   /* color: #0a0a0a; */
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
+  font-family: "Italiana", sans-serif;
+  font-weight: bolder !important;
+  font-size: larger !important;
+  letter-spacing: 1.7px;
 
-  background-color: rgba(255, 255, 255, 0.274);
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  background-color: #e4f4e2a8 !important;
+  color: #1c650f !important;
+
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   text-decoration: none;
   cursor: pointer;
@@ -438,9 +430,8 @@ a:visited {
 
 .btn:hover {
   background: #1f7e47;
-  color: rgba(253, 253, 253, 0.989);
-  /* background: #1f7e47;
-  color: rgba(253, 253, 253, 0.6); */
+  color: white !important;
+
   border: solid #1c650f 1px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -630,5 +621,11 @@ a:visited {
   .navbar-nav .nav-link {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
+  }
+  .sub-title {
+    font-size: 1.5rem;
+  }
+  .card.half {
+    flex-direction: column !important;
   }
 }
