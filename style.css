@@ -376,6 +376,14 @@ a:visited {
   margin-top: 3%;
 }
 
+.card .half {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: row !important;
+  padding: 5%;
+  margin-top: 3%;
+}
+
 .half img {
   padding-top: 5%;
 }
@@ -397,6 +405,20 @@ a:visited {
 .poll {
   margin-left: 30%;
   text-align: justify;
+}
+
+.fetchedData {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.showButton {
+  margin: 25px;
+  width: 250px;
+  text-align: center !important;
 }
 
 /* .d-col-2 {

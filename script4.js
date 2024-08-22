@@ -150,7 +150,7 @@ const bookUrls = [
   "https://openlibrary.org/works/OL27466W.json",
   "https://openlibrary.org/works/OL27471W.json",
   "https://openlibrary.org/works/OL8997784W.json",
-  "https://openlibrary.org/works/OL17755218W.json"
+  "https://openlibrary.org/works/OL17755218W.json",
 ];
 
 // Lista URL-ova za ratinge knjiga (povezano po redoslijedu s bookUrls)
@@ -159,24 +159,26 @@ const ratingUrls = [
   "https://openlibrary.org/works/OL27513W/ratings.json",
   "https://openlibrary.org/works/OL27479W/ratings.json",
   "https://openlibrary.org/works/OL27455W/ratings.json",
-  "https://openlibrary.org/works/OL27495W/ratings.json",  // Sillmarillion
-  "https://openlibrary.org/works/OL27466W/ratings.json",  // Unfinished Tales
-  "https://openlibrary.org/works/OL27471W/ratings.json",  // Children of Hurin
+  "https://openlibrary.org/works/OL27495W/ratings.json", // Sillmarillion
+  "https://openlibrary.org/works/OL27466W/ratings.json", // Unfinished Tales
+  "https://openlibrary.org/works/OL27471W/ratings.json", // Children of Hurin
   "https://openlibrary.org/works/OL8997784W/ratings.json", // Fall of Gondolin
-  "https://openlibrary.org/works/OL17755218W/ratings.json" // Beren & Luthien
+  "https://openlibrary.org/works/OL17755218W/ratings.json", // Beren & Luthien
 ];
 
-// Funkcija za dohvaćanje podataka za jedan URL
-async function fetchBookData(bookUrl, ratingUrl) {
+// Function for fetching data:
+async function fetchBookData(bookUrl, ratingUrl, index) {
   try {
-    const [bookResponse, ratingResponse] = await Promise.all([fetch(bookUrl), fetch(ratingUrl)]);
-    if  (!bookResponse.ok || !ratingResponse.ok)  {
-      throw new Error('Error fetching data');
+    const [bookResponse, ratingResponse] = await Promise.all([
+      fetch(bookUrl),
+      fetch(ratingUrl),
+    ]);
+    if (!bookResponse.ok || !ratingResponse.ok) {
+      throw new Error("Error fetching data");
     }
 
     const bookData = await bookResponse.json();
     const ratingData = await ratingResponse.json();
-  
 
     let title = bookData.title;
     let publishDate = bookData.first_publish_date;
@@ -185,7 +187,7 @@ async function fetchBookData(bookUrl, ratingUrl) {
       : "No rating";
     let summary;
 
-    // Obrada summary-a
+    // Summary fetching function (according to different data structure possibilities on api-link):
     if (typeof bookData.description === "string") {
       summary = bookData.description;
     } else if (
@@ -198,21 +200,56 @@ async function fetchBookData(bookUrl, ratingUrl) {
       summary = "Description not available";
     }
 
-    // Prikazivanje podataka
-   const data = `<div class='fetchedData'>
-      <div class='bookTitle'><strong>${title}</strong></div><br>
-      Published: ${publishDate}<br>
-      Average rating: ${rating}<br>
-      Book summary: <div class='summary'>${summary}<div><br>
+    let coverImage = `<img src="pictures/cover-${index}.jpg" alt="Cover of ${title}" class="book-cover">`;
+
+    // Showing data + adding button to show/hide summary:
+    const data = `<div class='fetchedData card'>
+   
+      <div class='bookTitle '><strong>${title}</strong>
+      </div>
+      <br>
+      
+     <div class='half'>
+
+      <div class="col-lg-6 col-md-6 col-sm-12">
+      ${coverImage}
+      </div><br>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      Published: ${publishDate}<br><br>
+      Average rating: ${rating}<br><br>
+      Book summary: </br>
+      <div id='summary-${index}' class='summary hidden'>${summary}</div>
+      <button class='btn showButton' onclick='toggleSummary(${index})'>Show Summary</button>
+      </div>
+
+      </div>
+
       </div>`;
 
-      document.getElementById("bookDataContainer").innerHTML += data;
-    } catch (error) {
-      console.error('Error:', error);
-      document.getElementById("bookDataContainer").innerHTML += `<div class='fetchedData'>Error loading data</div>`;
-    }
+    // Book summary: <div class='summary'>${summary}<div><br></br>
+
+    document.getElementById("bookDataContainer").innerHTML += data;
+  } catch (error) {
+    console.error("Error:", error);
+    document.getElementById(
+      "bookDataContainer"
+    ).innerHTML += `<div class='fetchedData'>Error loading data</div>`;
   }
-  
+}
+
+// Funkcija za prikazivanje/sakrivanje summary podataka
+function toggleSummary(index) {
+  const summaryDiv = document.getElementById(`summary-${index}`);
+  const button = summaryDiv.nextElementSibling;
+
+  if (summaryDiv.classList.contains("hidden")) {
+    summaryDiv.classList.remove("hidden");
+    button.textContent = "Hide Summary";
+  } else {
+    summaryDiv.classList.add("hidden");
+    button.textContent = "Show Summary";
+  }
+}
 
 // Funkcija za dohvaćanje i prikaz trenutnog datuma i vremena
 function displayLastUpdateTime() {
@@ -227,7 +264,7 @@ function displayLastUpdateTime() {
 // Glavna funkcija koja pokreće API zahtjeve za sve URL-ove
 async function fetchAllBooks() {
   for (let i = 0; i < bookUrls.length; i++) {
-    await fetchBookData(bookUrls[i], ratingUrls[i]);
+    await fetchBookData(bookUrls[i], ratingUrls[i], i);
   }
 
   // Nakon što su svi podaci dohvaćeni, prikaži vrijeme ažuriranja
