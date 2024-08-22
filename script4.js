@@ -180,8 +180,8 @@ async function fetchBookData(bookUrl, ratingUrl) {
 
     let title = bookData.title;
     let publishDate = bookData.first_publish_date;
-    let rating = ratingData.average_rating
-      ? ratingData.average_rating.toFixed(2)
+    let rating = ratingData.summary.average
+      ? ratingData.summary.average.toFixed(2)
       : "No rating";
     let summary;
 
