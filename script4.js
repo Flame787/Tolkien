@@ -205,7 +205,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     // Showing data + adding button to show/hide summary:
     const data = `<div class='fetchedData card'>
    
-      <div class='bookTitle '><strong>${title}</strong>
+      <div class='bookTitle'><h2>${title}</h2>
       </div>
       <br>
       
@@ -255,7 +255,7 @@ function toggleSummary(index) {
 function displayLastUpdateTime() {
   const now = new Date();
   const formattedTime = now.toLocaleString(); // Prikazuje datum i vrijeme u lokalnom formatu
-  const updateInfo = `<br><div><em><strong>All data provided by Open Library API, last update on: ${formattedTime}</strong></em></div><br>`;
+  const updateInfo = `<br><div class='align-center'><strong>All data provided by Open Library API, last update on: ${formattedTime}</strong></div><br>`;
 
   // Dodavanje informacije o posljednjem ažuriranju u HTML
   document.getElementById("bookDataContainer").innerHTML += updateInfo;

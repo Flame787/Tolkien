@@ -421,6 +421,15 @@ a:visited {
   text-align: center !important;
 }
 
+/* smanjiti gap između naslova i card-half dijela u Works -> Books details! */
+
+/* .bookTitle {
+  margin-bottom: 0;
+  padding-bottom: 0 !important;
+} */
+
+
+
 /* .d-col-2 {
   flex-basis: 16.66%;
 }
