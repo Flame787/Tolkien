@@ -1,3 +1,5 @@
+// Za parsiranje podataka (ali ne radi na Goodreads stranici):
+
 
 // Koristite Fetch API za dohvaćanje HTML-a stranice pretrage
 fetch('https://www.goodreads.com/search?utf8=%E2%9C%93&query=tolkien'), {
