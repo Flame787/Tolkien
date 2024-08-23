@@ -15,8 +15,10 @@ body {
   font-weight: 300;
   font-size: 1.3rem;
   color: #35231b;
-  background: radial-gradient(at 50% 37%, #e1f3e3, #6b9574);
+  /* background: radial-gradient(at 50% 37%, #e1f3e3, #5e5e4e); */
+  /* background: radial-gradient(at 50% 37%, #e1f3e3, #262c27);     */
   /* background: radial-gradient(at 50% 80%, #e1f3e3, #509560); */
+  background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
   line-height: 150%;
 }
 
@@ -39,6 +41,8 @@ body {
   padding-left: 0px !important;
   padding-right: 0px !important;
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
+    /* background: radial-gradient(at 30% 50%, #b3deba, #3c463e); */
+    /* background: radial-gradient(at 50% 37%, #e1f3e3, #4b4b44); */
 }
 
 .navbar {
@@ -319,7 +323,8 @@ a:visited {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   backdrop-filter: blur(14px);
-  background: radial-gradient(at 50% 37%, #e1f3e3, #6b9574);
+  /* background: radial-gradient(at 50% 37%, #e1f3e3, #6b9574); */
+  background: radial-gradient(at 50% 37%, #e1f3e3, #81a088);
   width: 90%;
   margin-right: auto;
   margin-left: auto;
@@ -407,6 +412,10 @@ a:visited {
   text-align: center;
 }
 
+.bookDetails {
+  background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
+}
+
 .hidden {
   display: none;
 }
@@ -425,6 +434,11 @@ a:visited {
 .coverImage img {
   max-width: 40%;
   height: auto;
+}
+
+.bookTitle {
+  font-size: 1.5rem !important;
+  text-shadow: none;
 }
 
 /* smanjiti gap između naslova i card-half dijela u Works -> Books details! */
