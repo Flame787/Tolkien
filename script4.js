@@ -221,7 +221,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     // Showing data + adding button to show/hide summary:
     const data = `<div class='fetchedData card'>
    
-      <div><h2 class='bookTitle'>${title}</h2>
+      <div><h2 class='bookTitle sub-title'>${title}</h2>
       </div>    
       <br>
       
