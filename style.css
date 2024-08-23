@@ -41,8 +41,8 @@ body {
   padding-left: 0px !important;
   padding-right: 0px !important;
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
-    /* background: radial-gradient(at 30% 50%, #b3deba, #3c463e); */
-    /* background: radial-gradient(at 50% 37%, #e1f3e3, #4b4b44); */
+  /* background: radial-gradient(at 30% 50%, #b3deba, #3c463e); */
+  /* background: radial-gradient(at 50% 37%, #e1f3e3, #4b4b44); */
 }
 
 .navbar {
@@ -198,6 +198,7 @@ table {
 
 td {
   padding: 3%;
+  /* text-align: center !important; */
 }
 
 td h1 {
@@ -217,7 +218,9 @@ td h1 {
   padding: 1% 2% 1% 1%;
   font-weight: 400;
   color: #040404;
-  text-align: right;
+  text-align: right !important;
+  /* font-weight: bold; */
+  color: #1c650f;
 }
 
 .facts-td {
@@ -286,7 +289,17 @@ h3 {
   padding-top: 3%;
   padding-bottom: 3%;
   text-align: center;
-  text-shadow: 1px 1px 1px #27c73284;
+  /* text-shadow: 1px 1px 1px #27c73284; */
+}
+
+h4 {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  color: #040404;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  text-align: center;
+
 }
 
 .card h2 {
@@ -441,12 +454,29 @@ a:visited {
   text-shadow: none;
 }
 
-/* smanjiti gap između naslova i card-half dijela u Works -> Books details! */
+#subtitle2 {
+  font-size: 1.2rem !important;
+  text-align: center !important;
+}
 
-/* .bookTitle {
-  margin-bottom: 0;
-  padding-bottom: 0 !important;
-} */
+/* borders in Table (Chronology): */
+
+#lifespan .card table {
+  width: 100%; /* table uses whole page width */
+  border-collapse: collapse; /* gives control over gaps between cells */
+}
+
+#lifespan .card tr:not(:last-child) {
+  border-bottom: 1px solid #ccc; /* puts lower border on all rows except the last one */
+}
+
+
+#lifespan .card td {
+  text-align: left; /* aligns text in all cells to the left */
+  padding: 10px; /* provides bigger gaps between cells for better readability */
+  vertical-align: top; /* Aligns cell content to the top */
+}
+
 
 /* .d-col-2 {
   flex-basis: 16.66%;
@@ -523,9 +553,7 @@ a:visited {
     font-size: 1.8rem;
   }
 
-  #subtitle {
-    font-size: 1rem;
-  }
+
 
   table {
     width: 90%;
@@ -572,7 +600,12 @@ a:visited {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
   }
+  /* Tolkien's name on 1st card */
   .sub-title {
+    font-size: 1.5rem;
+  }
+  /* years of life on 1st card */
+  #subtitle {
     font-size: 1.5rem;
   }
   .card.half {
