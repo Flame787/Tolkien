@@ -369,7 +369,6 @@ a:visited {
 }
 
 .card.half {
-  /* display: inline-block; */
   display: flex;
   flex-direction: row !important;
   padding: 5%;
@@ -377,16 +376,13 @@ a:visited {
 }
 
 .card .half {
-  /* display: inline-block; */
   display: flex;
   flex-direction: row !important;
-  padding: 5%;
-  margin-top: 3%;
 }
 
-.half img {
+/* .half img {
   padding-top: 5%;
-}
+} */
 
 .works-list {
   padding-top: 0;
@@ -417,8 +413,18 @@ a:visited {
 
 .showButton {
   margin: 25px;
-  width: 250px;
+  width: 200px;
   text-align: center !important;
+  font-size: smaller !important;
+}
+
+.coverImage {
+  padding: 0 0 3% !important;
+}
+
+.coverImage img {
+  max-width: 40%;
+  height: auto;
 }
 
 /* smanjiti gap između naslova i card-half dijela u Works -> Books details! */
@@ -427,8 +433,6 @@ a:visited {
   margin-bottom: 0;
   padding-bottom: 0 !important;
 } */
-
-
 
 /* .d-col-2 {
   flex-basis: 16.66%;
@@ -558,6 +562,9 @@ a:visited {
     font-size: 1.5rem;
   }
   .card.half {
+    flex-direction: column !important;
+  }
+  .card .half {
     flex-direction: column !important;
   }
 }

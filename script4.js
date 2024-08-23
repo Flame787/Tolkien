@@ -159,11 +159,25 @@ const ratingUrls = [
   "https://openlibrary.org/works/OL27513W/ratings.json",
   "https://openlibrary.org/works/OL27479W/ratings.json",
   "https://openlibrary.org/works/OL27455W/ratings.json",
-  "https://openlibrary.org/works/OL27495W/ratings.json", // Sillmarillion
+  "https://openlibrary.org/works/OL27495W/ratings.json", // Silmarillion
   "https://openlibrary.org/works/OL27466W/ratings.json", // Unfinished Tales
   "https://openlibrary.org/works/OL27471W/ratings.json", // Children of Hurin
   "https://openlibrary.org/works/OL8997784W/ratings.json", // Fall of Gondolin
   "https://openlibrary.org/works/OL17755218W/ratings.json", // Beren & Luthien
+];
+
+// Lista externih linkova na knjige, s Open Libraryja:
+
+const extLinks = [
+  "https://openlibrary.org/works/OL27482W/The_Hobbit?edition=key%3A/books/OL33891995M",
+  "https://openlibrary.org/works/OL27513W/The_fellowship_of_the_ring?edition=key%3A/books/OL43079986M",
+  "https://openlibrary.org/works/OL27479W/The_Two_Towers",
+  "https://openlibrary.org/works/OL27455W/The_Return_of_the_King?edition=key%3A/books/OL10682515M",
+  "https://openlibrary.org/works/OL27495W/The_Silmarillion?edition=key%3A/books/OL51711297M",
+  "https://openlibrary.org/books/OL10236383M/Unfinished_Tales_of_N%C3%BAmenor_and_Middle-earth",
+  "https://openlibrary.org/works/OL27471W/The_Children_of_H%C3%BArin",
+  "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin",
+  "https://openlibrary.org/works/OL17755218W/Beren_and_L%C3%BAthien",
 ];
 
 // Function for fetching data:
@@ -202,29 +216,36 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
     let coverImage = `<img src="pictures/cover-${index}.jpg" alt="Cover of ${title}" class="book-cover">`;
 
+    let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
+
     // Showing data + adding button to show/hide summary:
     const data = `<div class='fetchedData card'>
    
       <div class='bookTitle'><h2>${title}</h2>
-      </div>
+      </div>    
       <br>
       
      <div class='half'>
 
-      <div class="col-lg-6 col-md-6 col-sm-12">
-      ${coverImage}
+      <div class="col-lg-6 col-md-6 col-sm-12 coverImage">
+      ${coverImage}<br>
       </div><br>
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      Published: ${publishDate}<br><br>
-      Average rating: ${rating}<br><br>
-      Book summary: </br>
-      <div id='summary-${index}' class='summary hidden'>${summary}</div>
-      <button class='btn showButton' onclick='toggleSummary(${index})'>Show Summary</button>
-      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12">
+
+       <strong>Published</strong>: ${publishDate}<br><br>
+       <strong>Average rating</strong>: ${rating}<br><br>
+       <strong>Book summary</strong>: </br>
+       <div id='summary-${index}' class='summary hidden'>${summary}</div>
+       <button class='btn showButton' onclick='toggleSummary(${index})'>Show Summary</button><br>
+       <div class='externLinks'><strong>Link to the book:</strong><br> ${link}<br></div>
 
       </div>
+      
+     </div>     
+      <br>
 
-      </div>`;
+    </div>`;   // here ends card-div
 
     // Book summary: <div class='summary'>${summary}<div><br></br>
 
@@ -250,6 +271,7 @@ function toggleSummary(index) {
     button.textContent = "Show Summary";
   }
 }
+
 
 // Funkcija za dohvaćanje i prikaz trenutnog datuma i vremena
 function displayLastUpdateTime() {
