@@ -149,8 +149,8 @@ const bookUrls = [
   "https://openlibrary.org/works/OL27495W.json",
   "https://openlibrary.org/works/OL27466W.json",
   "https://openlibrary.org/works/OL27471W.json",
-  "https://openlibrary.org/works/OL8997784W.json",
   "https://openlibrary.org/works/OL17755218W.json",
+  "https://openlibrary.org/works/OL8997784W.json"
 ];
 
 // Lista URL-ova za ratinge knjiga (povezano po redoslijedu s bookUrls)
@@ -162,8 +162,8 @@ const ratingUrls = [
   "https://openlibrary.org/works/OL27495W/ratings.json", // Silmarillion
   "https://openlibrary.org/works/OL27466W/ratings.json", // Unfinished Tales
   "https://openlibrary.org/works/OL27471W/ratings.json", // Children of Hurin
-  "https://openlibrary.org/works/OL8997784W/ratings.json", // Fall of Gondolin
   "https://openlibrary.org/works/OL17755218W/ratings.json", // Beren & Luthien
+  "https://openlibrary.org/works/OL8997784W/ratings.json" // Fall of Gondolin
 ];
 
 // Lista externih linkova na knjige, s Open Libraryja:
@@ -176,8 +176,9 @@ const extLinks = [
   "https://openlibrary.org/works/OL27495W/The_Silmarillion?edition=key%3A/books/OL51711297M",
   "https://openlibrary.org/books/OL10236383M/Unfinished_Tales_of_N%C3%BAmenor_and_Middle-earth",
   "https://openlibrary.org/works/OL27471W/The_Children_of_H%C3%BArin",
-  "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin",
   "https://openlibrary.org/works/OL17755218W/Beren_and_L%C3%BAthien",
+  "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin"
+  
 ];
 
 // Function for fetching data:
@@ -219,7 +220,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
 
     // Showing data + adding button to show/hide summary:
-    const data = `<div class='fetchedData card'>
+    const data = `<div class='fetchedData card' id='product-${index}'>
    
       <div><h2 class='bookTitle sub-title'>${title}</h2>
       </div>    
