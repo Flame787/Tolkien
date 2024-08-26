@@ -192,7 +192,6 @@ img {
 
 .tolkien-img {
   border-radius: 50%;
-  
 }
 
 table {
@@ -304,7 +303,6 @@ h4 {
   padding-top: 3%;
   padding-bottom: 3%;
   text-align: center;
-
 }
 
 .card h2 {
@@ -434,9 +432,33 @@ a:visited {
   text-align: justify;
 }
 
-.fetchedData {
+/* .fetchedData {
+  display: flex;
+  flex-direction: column !important;
   text-align: center;
+} */
+
+.bookcard {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  /* background: radial-gradient(at 50% 37%, #e1f3e3, #6b9574); */
+  background: radial-gradient(at 50% 37%, #e1f3e3, #81a088);
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column !important;
+  text-align: center;
+  display: inline-block;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
+/* check Flexbox to adjust bookcards */
 
 .bookDetails {
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
@@ -448,16 +470,17 @@ a:visited {
 
 .showButton {
   margin: 25px;
-  width: 200px;
+  /* width: 200px; */
+  width: 10em;
   text-align: center !important;
   font-size: smaller !important;
 }
 
-.coverImage {
+/* .coverImage {
   padding: 0 0 3% !important;
-}
+} */
 
-.coverImage img {
+.book-cover {
   max-width: 40%;
   height: auto;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
@@ -468,12 +491,30 @@ a:visited {
   text-shadow: none;
 }
 
+/* .bookInfo {
+  flex-direction: column;
+  justify-content: baseline;
+  
+} */
+
 .sub-title {
   border-bottom: 1px solid #9c9c9c;
 }
 
 .border-b {
   border-bottom: 1px solid #9c9c9c;
+}
+
+.summary {
+  text-align: justify;
+}
+
+/* .border-right {
+  border-right: 1px solid #9c9c9c;
+} */
+
+.no-lower-padding {
+  padding-bottom: 0;
 }
 
 #subtitle2 {
@@ -492,13 +533,11 @@ a:visited {
   border-bottom: 1px solid #ccc; /* puts lower border on all rows except the last one */
 }
 
-
 #lifespan .card td {
   text-align: left; /* aligns text in all cells to the left */
   padding: 10px; /* provides bigger gaps between cells for better readability */
   vertical-align: top; /* Aligns cell content to the top */
 }
-
 
 /* .d-col-2 {
   flex-basis: 16.66%;
@@ -575,8 +614,6 @@ a:visited {
     font-size: 1.8rem;
   }
 
-
-
   table {
     width: 90%;
   }
@@ -615,6 +652,9 @@ a:visited {
   .nav-link {
     white-space: normal; /* if nav-item box gets smaller, words break into new line (don't drop out of the box) */
   }
+  .book-cover {
+    max-width: 60%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -636,4 +676,5 @@ a:visited {
   .card .half {
     flex-direction: column !important;
   }
+ 
 }
