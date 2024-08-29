@@ -480,6 +480,46 @@ btn-standard {
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
 }
 
+.card_wrap-outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  
+}
+
+/* for 2 cards in a row: */
+.card_wrap-inner {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+}
+
+.book-card {
+  background: radial-gradient(at 50% 37%, #e1f3e3, #81a088);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  text-align: center;
+}
+
+.book-cover {
+  text-align: center;
+}
+
+.flexible {
+  flex-grow: 1;
+}
+
+/* .card-footer {
+padding-bottom: 15%;
+} */
+
+
+
 .hidden {
   display: none;
 }
@@ -523,6 +563,7 @@ btn-standard {
 
 .summary {
   text-align: justify;
+  padding: 5%;
 }
 
 /* .border-right {

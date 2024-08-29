@@ -220,32 +220,27 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
 
     // Showing data + adding button to show/hide summary:
-    const data = `<div class="fetchedData bookcard col-lg-5 col-md-5 col-sm-12" id='product-${index}'>
+    const data = `<div class="fetchedData card_wrap-outer " id='product-${index}'>
    
-    <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="card_wrap-inner ">
 
-      <div><h2 class=" bookTitle sub-title">${title}</h2>
-      </div>    
-      <br>
+      <div class="book-card">
 
-      <div class="no-lower-padding">
-      ${coverImage}<br>
-      </div>
-      <br>
+        <div><h2 class="bookTitle sub-title">${title}</h2></div>    
+
+        <div class="no-lower-padding book-cover">
+        ${coverImage}
+        </div>
     
-    </div>
+        <div class="card__item flexible">
+          <strong>Published</strong>: ${publishDate}<br><br>
+          <strong>Average rating</strong>: ${rating}<br><br>
+          <strong>Book summary</strong>: </br>
+          <div id="summary-${index}" class='summary hidden'>${summary}</div>
+          <button class="btn showButton" onclick="toggleSummary(${index})">Show summary</button><br>
+        </div>
 
-
-    <div class="col-lg-6 col-md-6 col-sm-12 bookInfo">
-     
-       <strong>Published</strong>: ${publishDate}<br><br>
-       <strong>Average rating</strong>: ${rating}<br><br>
-       <strong>Book summary</strong>: </br>
-       <div id="summary-${index}" class='summary hidden'>${summary}</div>
-       <button class="btn showButton" onclick="toggleSummary(${index})">Show summary</button><br>
-       <div class="externLinks"><strong>Link to the book:</strong><br> ${link}<br></div>
-     
-    </div>
+        <div class="externLinks card-footer"><strong>Link to the book:</strong><br> ${link}</div>
 
 
     </div>`;   // here ends card-div
