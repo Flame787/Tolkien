@@ -143,7 +143,6 @@ img {
   height: auto;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .cloud {
@@ -473,7 +472,7 @@ btn-standard {
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
-  height: 50%;    /* doesn't work, cards are uneven and have too much space on the right */
+  height: 50%; /* doesn't work, cards are uneven and have too much space on the right */
 }
 /* check Flexbox to adjust bookcards */
 
@@ -556,9 +555,7 @@ btn-standard {
   vertical-align: top; /* Aligns cell content to the top */
 }
 
-
-input[type=checkbox]
-{
+input[type="checkbox"] {
   /* Double-sized Checkboxes */
   -ms-transform: scale(1.5); /* IE */
   -moz-transform: scale(1.5); /* FF */
@@ -575,7 +572,6 @@ input[type=checkbox]
 .art-big {
   max-width: 70%;
 }
-
 
 /* .d-col-2 {
   flex-basis: 16.66%;
@@ -611,7 +607,34 @@ input[type=checkbox]
   flex-basis: 100%;
 } */
 
-@media (max-width: 911px) {
+/* .col -sm- 540px */
+/* .col -md- 768px */
+/* .col -lg- 960px */
+/* .col -xl- 1200px */
+
+/* col-2 = 1/6 of the viewport width, flex-basis: 16.66%; */
+/* col-3 = 1/4 of the viewport width, flex-basis: 25%; */
+/* col-4 = 1/3 of the viewport width, flex-basis: 33.33%; */
+/* col-5 = 5/12 of the viewport width, flex-basis: 41.66%; */
+/* col-6 = 1/2 of the viewport width, flex-basis: 50%; */
+/* col-7 = 7/12 of the viewport width, flex-basis: 58.33%; */
+/* col-8 = 2/3 of the viewport width, flex-basis: 66.66%; */
+/* col-9 = 3/4 of the viewport width, flex-basis: 75%; */
+/* col-10 = 5/6 of the viewport width, flex-basis: 83.33%; */
+/* col-11 = 11/12 of the viewport width, flex-basis: 91.66%; */
+/* col-12 = 1 whole viewport width, flex-basis: 100%; */
+
+@media (max-width: 1124px) {
+  .mountain-background {
+    height: 500px;
+  }
+
+  .art {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 991px) {
   body {
     font-size: 1rem;
   }
@@ -619,9 +642,46 @@ input[type=checkbox]
   h1 {
     font-size: 2rem;
   }
+
+  .custom-nav .custom-item {
+    width: 40%; /* nav-items take 50% of the container width on small screens */
+    align-self: center;
+    margin: 10px 0;
+    padding: 0 2px;
+  }
+  .nav-link {
+    white-space: normal; /* if nav-item box gets smaller, words break into new line (don't drop out of the box) */
+  }
+  .book-cover {
+    max-width: 60%;
+  }
+
+  .art {
+    max-width: 70%;
+  }
 }
 
 @media (max-width: 767px) {
+  .navbar-nav .nav-link {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  /* Tolkien's name on 1st card */
+  .sub-title {
+    font-size: 1.5rem;
+  }
+  /* years of life on 1st card */
+
+  #subtitle {
+    font-size: 1.5rem;
+  }
+  .card.half {
+    flex-direction: column !important;
+  }
+  .card .half {
+    flex-direction: column !important;
+  }
+
   #tolkien-top-logo {
     margin-bottom: 5%;
     max-width: 70%;
@@ -655,72 +715,4 @@ input[type=checkbox]
   table {
     width: 90%;
   }
-}
-
-/* .col -sm- 540px */
-/* .col -md- 768px */
-/* .col -lg- 960px */
-/* .col -xl- 1200px */
-
-/* col-2 = 1/6 of the viewport width, flex-basis: 16.66%; */
-/* col-3 = 1/4 of the viewport width, flex-basis: 25%; */
-/* col-4 = 1/3 of the viewport width, flex-basis: 33.33%; */
-/* col-5 = 5/12 of the viewport width, flex-basis: 41.66%; */
-/* col-6 = 1/2 of the viewport width, flex-basis: 50%; */
-/* col-7 = 7/12 of the viewport width, flex-basis: 58.33%; */
-/* col-8 = 2/3 of the viewport width, flex-basis: 66.66%; */
-/* col-9 = 3/4 of the viewport width, flex-basis: 75%; */
-/* col-10 = 5/6 of the viewport width, flex-basis: 83.33%; */
-/* col-11 = 11/12 of the viewport width, flex-basis: 91.66%; */
-/* col-12 = 1 whole viewport width, flex-basis: 100%; */
-
-@media (max-width: 1124px) {
-  .mountain-background {
-    height: 500px;
-  }
-
-  .art {
-    max-width: 70%;
-  }
-}
-
-@media (max-width: 991px) {
-  .custom-nav .custom-item {
-    width: 40%; /* nav-items take 50% of the container width on small screens */
-    align-self: center;
-    margin: 10px 0;
-    padding: 0 2px;
-  }
-  .nav-link {
-    white-space: normal; /* if nav-item box gets smaller, words break into new line (don't drop out of the box) */
-  }
-  .book-cover {
-    max-width: 60%;
-  }
-
-  .art {
-    max-width: 70%;
-  }
-}
-
-@media (max-width: 767px) {
-  .navbar-nav .nav-link {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-  }
-  /* Tolkien's name on 1st card */
-  .sub-title {
-    font-size: 1.5rem;
-  }
-  /* years of life on 1st card */
-  #subtitle {
-    font-size: 1.5rem;
-  }
-  .card.half {
-    flex-direction: column !important;
-  }
-  .card .half {
-    flex-direction: column !important;
-  }
- 
 }
