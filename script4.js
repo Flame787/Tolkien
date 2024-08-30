@@ -228,7 +228,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
         <div><h2 class="bookTitle sub-title">${title}</h2></div>    
 
-        <div class="no-lower-padding book-cover">
+        <div class=" book-cover">
         ${coverImage}
         </div>
     
@@ -242,8 +242,12 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
         <div class="externLinks card-footer"><strong>Link to the book:</strong><br> ${link}</div>
 
+      </div>   
+    </div>
 
-    </div>`;   // here ends card-div
+  </div>`;   // here ends outer-div
+
+    
 
     // Book summary: <div class='summary'>${summary}<div><br></br>
 
