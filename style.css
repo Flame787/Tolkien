@@ -493,24 +493,33 @@ btn-standard {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+
+  justify-content: space-between; /* Raspoređuje kartice s razmakom između njih */
+  gap: 2%; /* Razmak između kartica */
+  box-sizing: border-box;
+  padding: 10px; /* Unutarnji razmak oko cijelog kontejnera */
   
 }
 
 /* for 2 cards in a row: */
 .card_wrap-inner {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  /* width: calc(45% - 2%); */
   width: 45%;
+  box-sizing: border-box;
 }
 
 .book-card {
   background: radial-gradient(at 50% 37%, #e1f3e3, #81a088);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   /* centering all elements (specially pictures) in the middle of the card (vertically and horizontally): */
   align-items: center;
   justify-content: center;
   width: 100%;
+  /* width: 48%; */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   backdrop-filter: blur(14px);
@@ -547,7 +556,7 @@ btn-standard {
   height: auto; 
   background: transparent;
   box-shadow: none;
-
+/* if card-footer style should be unvisible, then use this: */
   /* background-color: transparent !important; 
   border-top: none !important; 
   box-shadow: none !important;  */
