@@ -220,9 +220,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
 
     // Showing data + adding button to show/hide summary:
-    const data = `<div class="fetchedData card_wrap-outer " id='product-${index}'>
-   
-    <div class="card_wrap-inner ">
+    const data = `<div class="card_wrap-inner fetchedData" id='product-${index}'">
 
       <div class="book-card">
 
@@ -243,7 +241,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
         <div class="externLinks card-footer"><strong>Link to the book:</strong><br> ${link}</div>
 
       </div>   
-    </div>
+  
 
   </div>`;   // here ends outer-div
 

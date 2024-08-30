@@ -504,10 +504,11 @@ btn-standard {
 /* for 2 cards in a row: */
 .card_wrap-inner {
   display: flex;
-  flex-direction: column;
-  /* width: calc(45% - 2%); */
+  flex-direction: row;
+  /* flex: 1 1 calc(50% - 2%); */
   width: 45%;
   box-sizing: border-box;
+  
 }
 
 .book-card {
@@ -744,6 +745,11 @@ input[type="checkbox"] {
   .art {
     max-width: 70%;
   }
+
+  .summary{
+    font-size: smaller !important;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -799,5 +805,13 @@ input[type="checkbox"] {
 
   table {
     width: 90%;
+  }
+
+  .card_wrap-inner {
+    width: 100%;
+  }
+
+  .summary{
+    font-size: smaller !important;
   }
 }
