@@ -517,7 +517,7 @@ btn-standard {
   display: flex;
   flex-direction: column;
   /* centering all elements (specially pictures) in the middle of the card (vertically and horizontally): */
-  align-items: center;
+  /* align-items: center;  - not needed, only problem for summary-2 and summary-3 */
   justify-content: center;
   width: 100%;
   /* width: 48%; */
