@@ -25,6 +25,19 @@ body {
   line-height: 150%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tolkien-img {
+  border-radius: 50%;
+}
+
+/* navbar elements: */
+
 .navbar-section {
   position: -webkit-sticky; /* for browser compatibility */
   position: sticky;
@@ -77,13 +90,6 @@ body {
   }
 } */
 
-.big-heading {
-  text-align: center;
-  text-shadow: 1px 1px 1px #0e601484;
-  font-weight: bolder;
-  color: #2b580c;
-}
-
 /* ul - list of 3 navbar items: */
 .custom-nav {
   margin-left: auto;
@@ -126,6 +132,8 @@ body {
   text-align: center;
 }
 
+/* animation: */
+
 .mountain-background {
   align-items: center;
   background-image: url("pictures/anime-style-mountains3.jpg");
@@ -136,13 +144,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .cloud {
@@ -195,9 +196,7 @@ img {
   }
 }
 
-.tolkien-img {
-  border-radius: 50%;
-}
+/* elements of the table: */
 
 table {
   margin-left: auto;
@@ -236,6 +235,15 @@ td h1 {
   width: 90%;
   padding: 1%;
   text-align: left;
+}
+
+/* headings */
+
+.big-heading {
+  text-align: center;
+  text-shadow: 1px 1px 1px #0e601484;
+  font-weight: bolder;
+  color: #2b580c;
 }
 
 h1 {
@@ -480,6 +488,83 @@ btn-standard {
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
 }
 
+.card_wrap-outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  justify-content: space-between; /* Raspoređuje kartice s razmakom između njih */
+  gap: 2%; /* Razmak između kartica */
+  box-sizing: border-box;
+  padding: 10px; /* Unutarnji razmak oko cijelog kontejnera */
+  
+}
+
+/* for 2 cards in a row: */
+.card_wrap-inner {
+  display: flex;
+  flex-direction: row;
+  /* flex: 1 1 calc(50% - 2%); */
+  width: 45%;
+  box-sizing: border-box;
+  
+}
+
+.book-card {
+  background: radial-gradient(at 50% 37%, #e1f3e3, #81a088);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* centering all elements (specially pictures) in the middle of the card (vertically and horizontally): */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* width: 48%; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  text-align: center;
+}
+
+.book-cover {
+  /* text-align: center; */
+  margin: auto;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); */
+  background: none;
+  border: none;
+  width: auto; /* Podesite širinu da automatski prilagodi sadržaj */
+  height: auto; /* Podesite visinu da automatski prilagodi sadržaj */
+}
+
+.book-cover img {
+  width: 70%; /* Postavite širinu slike na 50% kontejnera */
+  height: auto; /* Zadržava omjer slike */
+  object-fit: cover; /* Osigurava da slika ispuni svoj prostor proporcionalno */
+  display: block; /* Uklanja neželjeni razmak ispod slike */
+  margin: 0 auto; /* Centriranje slike unutar kontejnera */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.flexible {
+  flex-grow: 1;
+}
+
+.card-footer {
+  background: none;
+  border: none;
+  width: 100%; 
+  height: auto; 
+  background: transparent;
+  box-shadow: none;
+/* if card-footer style should be unvisible, then use this: */
+  /* background-color: transparent !important; 
+  border-top: none !important; 
+  box-shadow: none !important;  */
+  padding: 0 !important; 
+  margin: 0 !important; 
+}
+
 .hidden {
   display: none;
 }
@@ -496,11 +581,11 @@ btn-standard {
   padding: 0 0 3% !important;
 } */
 
-.book-cover {
+/* .book-cover {
   max-width: 40%;
   height: auto;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
+} */
 
 .bookTitle {
   font-size: 1.5rem !important;
@@ -523,6 +608,7 @@ btn-standard {
 
 .summary {
   text-align: justify;
+  padding: 5%;
 }
 
 /* .border-right {
@@ -659,6 +745,11 @@ input[type="checkbox"] {
   .art {
     max-width: 70%;
   }
+
+  .summary{
+    font-size: smaller !important;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -714,5 +805,13 @@ input[type="checkbox"] {
 
   table {
     width: 90%;
+  }
+
+  .card_wrap-inner {
+    width: 100%;
+  }
+
+  .summary{
+    font-size: smaller !important;
   }
 }
