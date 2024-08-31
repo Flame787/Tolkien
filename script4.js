@@ -224,13 +224,13 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
       <div class="book-card">
 
-        <div><h2 class="bookTitle sub-title">${title}</h2></div>    
+        <div><h2 class="book-title sub-title">${title}</h2></div>    
 
         <div class=" book-cover">
         ${coverImage}
         </div>
     
-        <div class="card__item flexible">
+        <div class="card_item flexible">
           <strong>Published</strong>: ${publishDate}<br><br>
           <strong>Average rating</strong>: ${rating}<br><br>
           <strong>Book summary</strong>: </br>
@@ -277,7 +277,7 @@ function toggleSummary(index) {
 function displayLastUpdateTime() {
   const now = new Date();
   const formattedTime = now.toLocaleString(); // Prikazuje datum i vrijeme u lokalnom formatu
-  const updateInfo = `<br><div class='align-center'><strong>Data provided by Open Library API, last update on: ${formattedTime}</strong></div><br>`;
+  const updateInfo = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
 
   // Dodavanje informacije o posljednjem ažuriranju u HTML
   document.getElementById("bookDataContainer").innerHTML += updateInfo;

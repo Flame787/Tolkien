@@ -493,12 +493,10 @@ btn-standard {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-
-  justify-content: space-between; /* Raspoređuje kartice s razmakom između njih */
-  gap: 2%; /* Razmak između kartica */
+  justify-content: space-between; 
+  gap: 2%; /* horizontal gap between 2 cards in a row */
   box-sizing: border-box;
-  padding: 10px; /* Unutarnji razmak oko cijelog kontejnera */
-  
+  padding: 2% 7%; /* inside padding around container's content */
 }
 
 /* for 2 cards in a row: */
@@ -506,9 +504,11 @@ btn-standard {
   display: flex;
   flex-direction: row;
   /* flex: 1 1 calc(50% - 2%); */
-  width: 45%;
+  width: 44%;
   box-sizing: border-box;
-  
+  margin-bottom: 5%; /* vertical gap between card rows */
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .book-card {
@@ -522,9 +522,16 @@ btn-standard {
   width: 100%;
   /* width: 48%; */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
+  
   backdrop-filter: blur(14px);
   text-align: center;
+}
+
+.book-title {
+  font-size: 1.5rem !important;
+  text-shadow: none;
+  background: radial-gradient(at 50% 37%, #e1f3e3, #b1cfb8);
+  /* background: radial-gradient(at 50% 37%, #e1f3e3, #e4f4e2a8); */
 }
 
 .book-cover {
@@ -533,17 +540,22 @@ btn-standard {
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); */
   background: none;
   border: none;
-  width: auto; /* Podesite širinu da automatski prilagodi sadržaj */
-  height: auto; /* Podesite visinu da automatski prilagodi sadržaj */
+  width: auto; /* content will be automatically adjusted */
+  height: auto; /* content will be automatically adjusted */
+  margin-top: 5%;
 }
 
 .book-cover img {
-  width: 70%; /* Postavite širinu slike na 50% kontejnera */
-  height: auto; /* Zadržava omjer slike */
-  object-fit: cover; /* Osigurava da slika ispuni svoj prostor proporcionalno */
-  display: block; /* Uklanja neželjeni razmak ispod slike */
-  margin: 0 auto; /* Centriranje slike unutar kontejnera */
+  width: 70%; /* picture taking this percentage og the container */
+  height: auto; /* img ratio kept the same */
+  object-fit: cover; /* picture covers it's container proportionally */
+  display: block; /* removes any gap under the picture */
+  margin: 0 auto; /* centers the img inside container */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.card_item {
+  margin-top: 5%;
 }
 
 .flexible {
@@ -553,16 +565,17 @@ btn-standard {
 .card-footer {
   background: none;
   border: none;
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   background: transparent;
   box-shadow: none;
-/* if card-footer style should be unvisible, then use this: */
+  /* if card-footer style should be unvisible, then use this: */
   /* background-color: transparent !important; 
   border-top: none !important; 
   box-shadow: none !important;  */
-  padding: 0 !important; 
-  margin: 0 !important; 
+  /* padding: 0 !important;  */
+  padding: 0 0 5%;
+  margin: 0 !important;
 }
 
 .hidden {
@@ -577,26 +590,10 @@ btn-standard {
   font-size: smaller !important;
 }
 
-/* .coverImage {
-  padding: 0 0 3% !important;
-} */
-
-/* .book-cover {
-  max-width: 40%;
-  height: auto;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-} */
-
-.bookTitle {
-  font-size: 1.5rem !important;
-  text-shadow: none;
+.footer-info {
+  padding: 3% 0 0;
+  margin: 0 auto; /* center element in the middle */
 }
-
-/* .bookInfo {
-  flex-direction: column;
-  justify-content: baseline;
-  
-} */
 
 .sub-title {
   border-bottom: 1px solid #9c9c9c;
@@ -746,10 +743,9 @@ input[type="checkbox"] {
     max-width: 70%;
   }
 
-  .summary{
+  .summary {
     font-size: smaller !important;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -811,7 +807,7 @@ input[type="checkbox"] {
     width: 100%;
   }
 
-  .summary{
+  .summary {
     font-size: smaller !important;
   }
 }
