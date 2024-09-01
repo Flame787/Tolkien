@@ -326,7 +326,45 @@
 
     <section id="works">
       <div class="card half">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        
+        <div class="col-lg-6 col-md-6 col-sm-12 works-list">
+          <h2 class="works-title border-b">Works:</h2>
+          <br />
+          <p><em><strong>The Hobbit, or There and Back Again</strong></em> (1937)</p>
+          
+          <p class="border-b">
+            <em>The Lord of the Rings</em> trilogy: <br /><br /><em
+              ><strong>The Fellowship of the Ring</strong></em
+            >
+            (1954),<br />
+            <em><strong>The Two Towers</strong></em> (1954), <br /><em
+              ><strong>The Return of the King</strong></em
+            >
+            (1955)
+            <br /><br />
+          </p>
+
+          <p>*Posthumous, edited by Christopher Tolkien:</p>
+          <p><em><strong>The Silmarillion</strong></em> (1977)</p>
+          <p><em><strong>Unfinished Tales of Númenor and Middle-earth</strong></em> (1980)</p>
+          <p><em><strong>The Children of Húrin</strong></em> (2007)</p>
+          <p><em><strong>Beren and Lúthien</strong></em> (2017)</p>
+          <p class="border-b">
+            <em><strong>The Fall of Gondolin</strong></em> (2018)<br /><br />
+          </p>
+
+          <br />
+          <p class="align-center">
+            <a href="works.html"
+              >🐉
+              <span class="underline"
+                >Works by J. R. R. Tolkien - see more details</span
+              ></a
+            >
+          </p>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 side">
           <img
             class="pic-shadow"
             src="pictures/bilbo_illustration - smaller.jpg"
@@ -337,41 +375,8 @@
             Huts of the Raft-elves', 1937
           </p>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 works-list">
-          <h2 class="works-title border-b">Works:</h2>
-          <br />
-          <p><em>The Hobbit, or There and Back Again</em> (1937)</p>
-          <p class="border-b">
-            <em>The Lord of the Rings</em> trilogy: <br /><br /><em
-              >The Fellowship of the Ring</em
-            >
-            (1954),<br />
-            <em>The Two Towers</em> (1954), <br /><em
-              >The Return of the King</em
-            >
-            (1955)
-            <br /><br />
-          </p>
 
-          <p>*Posthumous, edited by Christopher Tolkien:</p>
-          <p><em>The Silmarillion</em> (1977)</p>
-          <p><em>Unfinished Tales of Númenor and Middle-earth</em> (1980)</p>
-          <p><em>The Children of Húrin</em> (2007)</p>
-          <p><em>Beren and Lúthien</em> (2017)</p>
-          <p class="border-b">
-            <em>The Fall of Gondolin</em> (2018)<br /><br />
-          </p>
 
-          <br />
-          <p class="align-center">
-            <a href="works.html"
-              >🐉
-              <span class="underline"
-                >Works by J. R. R. Tolkien - find out more details</span
-              ></a
-            >
-          </p>
-        </div>
       </div>
     </section>
 
@@ -383,31 +388,37 @@
         <br />
         <div class="align-center">
           <a href="links_and_sources.html"
-            >🔗 <span class="underline">Legacy, links and contact</span></a
+            >🔗 <span class="underline">Explore: Tolkien's legacy, external links and contact</span></a
           >
         </div>
         <br />
 
         <div class="align-center">
           <img
-            class="pic-shadow gandalf"
-            src="pictures/wizard.gif"
-            alt="gandalf-img"
+            class="pic-shadow one-ring"
+            src="pictures/one-ring.jpg"
+            alt="one-ring-img"
           />
         </div>
-        <br />
+        <br /><br>
 
         <div class="align-center">
-          <a class="btn btn-standard" href="mailto:name@email.com">Contact me</a>
+          <a class="btn btn-standard" href="./links_and_sources.html#contact-us" target="_blank">Contact us</a>
+          <br><br>
         </div>
       </div>
     </section>
 
-    <!-- // contact-me button prebaciti možda u podstranicu za linkove i kontakt -->
-
     <footer class="last-container">
       <br />
-      <p class="owner align-center">©2024 Marina Brezovic</p>
+      <div class="owner align-center">
+        &copy;
+        <span id="copyright">
+            <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        </span>
+        Marina Brezovic
+    </div>
+
     </footer>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

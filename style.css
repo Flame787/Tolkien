@@ -277,7 +277,7 @@ h1 {
 }
 
 .align-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 p,
@@ -339,6 +339,21 @@ h4 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
+.side {
+  padding-top: 5%;
+}
+
+.side img {
+  /* width: 70%;  picture taking this percentage og the container */
+  height: auto; /* img ratio kept the same */
+  object-fit: cover; /* picture covers it's container proportionally */
+  display: block; /* removes any gap under the picture */
+  margin: 0 auto; /* centers the img inside container */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+
+
 h2 {
   font-size: 1.5rem;
 }
@@ -369,9 +384,19 @@ a:visited {
   padding: 20px;
 }
 
-.gandalf {
-  width: 20%;
+.one-ring {
+  width: 35%;
   height: auto;
+  border-radius: 5px;
+}
+
+.gandalf {
+  width: 25%;
+  height: auto;
+}
+
+.gandalf-div{
+  padding-bottom: 2%;
 }
 
 .btn {

@@ -293,6 +293,11 @@ async function fetchAllBooks() {
   displayLastUpdateTime();
 }
 
+
+//Fuction for showing stars for book ratings:
+
+
+
 // Pokreni dohvaćanje podataka nakon što se HTML učita
 document.addEventListener("DOMContentLoaded", function () {
   fetchAllBooks();

@@ -328,7 +328,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="contact-us">
       <div class="card align-center">
         <h2 class="border-b">Contact us:</h2>
         <br />
@@ -336,6 +336,7 @@
           action="mailto:mbrezovic77@gmail.com"
           method="post"
           enctype="text/plain"
+          class="border-b"
         >
           <p>
             <label>Your name:</label><br />
@@ -355,32 +356,53 @@
               style="max-width: 80%; font-size: smaller"
             ></textarea>
           </p>
-          <br />
-          <p>
-            <label>Upload a file:</label>
-            <input type="file" name="" />
-          </p>
-          <p>
-            <p><label>Do you want to sign up for an email list? </label></p>
-            <p><input type="checkbox" name="yes" value="yes" /> Yes
-          </p><br>
-         
-        
-          <input type="submit" value="Submit" class="btn btn-standard" />
+
+          <div class="align-center">
+            <label>Do you want to sign up for an email list? </label>
+          </div>
+          <p><input type="checkbox" name="yes" value="yes" /> Yes</p>
+
+          <input
+            type="submit"
+            value="Submit"
+            class="btn btn-standard"
+          /><br /><br />
         </form>
 
-        <br /><br />
+        <br />
+
         <p class="align-center">
-          <a href="Works.html">🐉 Works by J. R. R. Tolkien - detailed</a>
+          <a href="Works.html"
+            >🐉 <span class="underline">Works by J. R. R. Tolkien - see more details</span></a
+          >
           <br />
           <br />
-          <a href="index.html">🏡 Home</a>
+          <a href="index.html">🏘️ <span class="underline">Home</span></a>
         </p>
+
+        <div class="align-center gandalf-div">
+          <img
+            class="pic-shadow gandalf"
+            src="pictures/wizard.gif"
+            alt="gandalf-img"
+          />
+        </div>
       </div>
     </section>
 
     <footer class="last-container align-center">
-      <p class="owner">©2024 Marina Brezovic</p>
+      <br />
+      <div class="owner align-center">
+        &copy;
+        <span id="copyright">
+          <script>
+            document
+              .getElementById("copyright")
+              .appendChild(document.createTextNode(new Date().getFullYear()));
+          </script>
+        </span>
+        Marina Brezovic
+      </div>
     </footer>
 
     <script
