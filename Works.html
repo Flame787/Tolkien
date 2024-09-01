@@ -195,12 +195,11 @@
 
       
       <div class="card half">
-        <h2 class="works-title border-b">Book ratings by Open library:</h2>
-        <br />  
+        
 
         <div class="col-lg-6 col-md-6 col-sm-12 img-ratings">
           <img
-            class="pic-shadow"
+            class="pic-shadow smaug"
             src="pictures/smaug_illustration.jpg"
             alt="Tolkien's illustration: 'Conversation with Smaug'"
           /><br /><br />
@@ -210,6 +209,8 @@
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-12 star-ratings">
+          <h2 class="works-title border-b">Book ratings by Open library:</h2>
+        <br />  
           <table cellspacing="25" id="star-ratings">
             <!-- populated by dynamic JS-data (title, rating and number of stars + current time/date) -->
           </table>
@@ -223,7 +224,7 @@
       <div class="card">
         <h2 class="border-b">Choose your favorite Tolkien's book:</h2>
         <br />
-        <form action=" " method="post" enctype="text/plain">
+        <form action=" " method="post" enctype="text/plain" id="voting-form" class="border-b">
           <div class="poll">
             <div class="options">
               <input type="radio" id="hobbit" name="fav-book" value="hobbit" />
@@ -280,30 +281,12 @@
           </div>
           <br />
           <p class="options">
-            <input type="submit" value="Vote" class="btn btn-standard" />
+            <input type="submit" value="Vote" class="btn btn-standard" id="voting-form-button" />
           </p>
         </form>
         <br />
         <br />
-        <p class="align-center">
-          Links to Tolkien's most famous works:
-          <a
-            href="https://en.wikipedia.org/wiki/The_Silmarillion"
-            target="_blank"
-            ><em>The Silmarillion</em></a
-          >,
-          <a href="https://en.wikipedia.org/wiki/The_Hobbit" target="_blank"
-            ><em>The Hobbit</em></a
-          >
-          and
-          <a
-            href="https://en.wikipedia.org/wiki/The_Lord_of_the_RingsThe"
-            target="_blank"
-            ><em>The Lord of the Rings</em></a
-          >.
-        </p>
-
-        <br />
+        
         <p class="align-center">
           <a href="Links_and_sources.html"
             >🔗

@@ -28,6 +28,11 @@ navbar.addEventListener("mouseleave", () => {
   }
 });
 
+
+document.getElementById("voting-form-button").addEventListener("click", function(event){
+  event.preventDefault()
+});
+
 // API-request:
 
 /*
@@ -198,7 +203,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     let publishDate = bookData.first_publish_date;
     let rating = ratingData.summary.average
       ? ratingData.summary.average.toFixed(2)
-      : "No rating";
+      : "0.00";
     let summary;
 
     // Summary fetching function (according to different data structure possibilities on api-link):
@@ -249,7 +254,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     document.getElementById("bookDataContainer").innerHTML += data;
 
     // Collect the data for star ratings:
-    return { title, rating };
+    return { title, rating: parseFloat(rating) };
   } catch (error) {
     console.error("Error:", error);
     document.getElementById(
@@ -258,7 +263,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
   }
 }
 
-// Funkcija za prikazivanje/sakrivanje summary podataka
+// Funkcion for showing / hiding summary data:
 function toggleSummary(index) {
   const summaryDiv = document.getElementById(`summary-${index}`);
   const button = summaryDiv.nextElementSibling;
@@ -282,7 +287,6 @@ function displayLastUpdateTime() {
   document.getElementById("bookDataContainer").innerHTML += updateInfo;
 }
 
-//Fuction for showing stars for book ratings:
 
 // function that calculates star number:
 function displayRatingStars(rating) {
@@ -297,17 +301,19 @@ function displayRatingStars(rating) {
   return stars;
 }
 
-// output:
-// console.log(displayRatingStars(3.54)); // Izlaz: ⭐⭐⭐✨
-// console.log(displayRatingStars(4.2));  // Izlaz: ⭐⭐⭐⭐
-// console.log(displayRatingStars(2.99)); // Izlaz: ⭐⭐✨
+
+
+//Fuction for displaying stars for book ratings:
 
 function showStarRatings(bookData) {
+   // Sort books by rating in descending order
+   bookData.sort((a, b) => b.rating - a.rating);
+
   let starRatingsHTML = ""; // inicialazing new variable
 
   bookData.forEach((book, index) => {
-    const { title, rating } = book; // Destructure title and rating from book object
-    const stars = displayRatingStars(parseFloat(rating)); // Calculate stars
+    const { title, rating } = book; // destructure title and rating from book object
+    const stars = displayRatingStars(parseFloat(rating)); // calculate stars
     starRatingsHTML += `<tr>
     <td>
       ${title} – ${rating}<br>
@@ -319,36 +325,36 @@ function showStarRatings(bookData) {
   document.getElementById("star-ratings").innerHTML += starRatingsHTML;
 }
 
-// Funkcija za dohvaćanje i prikaz trenutnog datuma i vremena
+// Funkcion for displaying actual time and date:
 function displayRatingTime() {
   const now = new Date();
   const formattedTime = now.toLocaleString(); // Prikazuje datum i vrijeme u lokalnom formatu
   const updateInfo2 = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
 
-  // Dodavanje informacije o posljednjem ažuriranju u HTML
+  // Adding info about last update time:
   document.getElementById("star-ratings").innerHTML += updateInfo2;
 }
 
-// Glavna funkcija koja pokreće API zahtjeve za sve URL-ove
+// Main function which starts API requests for all URLs:
 async function fetchAllBooks() {
-  const allBookData = []; // Initialize an array to store all book data
+  const allBookData = [];    // initialize an array to store all book data
 
   for (let i = 0; i < bookUrls.length; i++) {
     const bookData = await fetchBookData(bookUrls[i], ratingUrls[i], i);
     if (bookData) {
-      allBookData.push(bookData); // Add book data to the array if valid
+      allBookData.push(bookData);    // add book data to the array if valid
     }
   }
 
   showStarRatings(allBookData);
 
-  // Nakon što su svi podaci dohvaćeni, prikaži vrijeme ažuriranja
+  // After all data has been fetched, show last update time:
   displayLastUpdateTime();
   
   displayRatingTime();
 }
 
-// Pokreni dohvaćanje podataka nakon što se HTML učita
+// Start fetching data when the HTML loads:
 document.addEventListener("DOMContentLoaded", function () {
   fetchAllBooks();
 });
