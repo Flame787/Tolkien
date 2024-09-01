@@ -617,7 +617,7 @@ btn-standard {
 
 .footer-info {
   padding: 3% 0 0;
-  margin: 0 auto; /* center element in the middle */
+  text-align: center !important;
 }
 
 .sub-title {

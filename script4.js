@@ -150,7 +150,7 @@ const bookUrls = [
   "https://openlibrary.org/works/OL27466W.json",
   "https://openlibrary.org/works/OL27471W.json",
   "https://openlibrary.org/works/OL17755218W.json",
-  "https://openlibrary.org/works/OL8997784W.json"
+  "https://openlibrary.org/works/OL8997784W.json",
 ];
 
 // Lista URL-ova za ratinge knjiga (povezano po redoslijedu s bookUrls)
@@ -163,7 +163,7 @@ const ratingUrls = [
   "https://openlibrary.org/works/OL27466W/ratings.json", // Unfinished Tales
   "https://openlibrary.org/works/OL27471W/ratings.json", // Children of Hurin
   "https://openlibrary.org/works/OL17755218W/ratings.json", // Beren & Luthien
-  "https://openlibrary.org/works/OL8997784W/ratings.json" // Fall of Gondolin
+  "https://openlibrary.org/works/OL8997784W/ratings.json", // Fall of Gondolin
 ];
 
 // Lista externih linkova na knjige, s Open Libraryja:
@@ -177,8 +177,7 @@ const extLinks = [
   "https://openlibrary.org/books/OL10236383M/Unfinished_Tales_of_N%C3%BAmenor_and_Middle-earth",
   "https://openlibrary.org/works/OL27471W/The_Children_of_H%C3%BArin",
   "https://openlibrary.org/works/OL17755218W/Beren_and_L%C3%BAthien",
-  "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin"
-  
+  "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin",
 ];
 
 // Function for fetching data:
@@ -243,13 +242,14 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
       </div>   
   
 
-  </div>`;   // here ends outer-div
-
-    
+  </div>`; // here ends outer-div
 
     // Book summary: <div class='summary'>${summary}<div><br></br>
 
     document.getElementById("bookDataContainer").innerHTML += data;
+
+    // Collect the data for star ratings:
+    return { title, rating };
   } catch (error) {
     console.error("Error:", error);
     document.getElementById(
@@ -272,7 +272,6 @@ function toggleSummary(index) {
   }
 }
 
-
 // Funkcija za dohvaćanje i prikaz trenutnog datuma i vremena
 function displayLastUpdateTime() {
   const now = new Date();
@@ -283,20 +282,71 @@ function displayLastUpdateTime() {
   document.getElementById("bookDataContainer").innerHTML += updateInfo;
 }
 
+//Fuction for showing stars for book ratings:
+
+// function that calculates star number:
+function displayRatingStars(rating) {
+  const fullStars = Math.floor(rating); // whole number
+  const partialStar = rating % 1; // decimal part of the rating
+  let stars = "⭐".repeat(fullStars); // add full stars fo whole numbers
+
+  if (partialStar >= 0.01 && partialStar <1.00) {
+    stars += "✨"; // Ako je decimalni dio veći ili jednak 0.51, dodaje se posebna zvjezdica
+  }
+
+  return stars;
+}
+
+// output:
+// console.log(displayRatingStars(3.54)); // Izlaz: ⭐⭐⭐✨
+// console.log(displayRatingStars(4.2));  // Izlaz: ⭐⭐⭐⭐
+// console.log(displayRatingStars(2.99)); // Izlaz: ⭐⭐✨
+
+function showStarRatings(bookData) {
+  let starRatingsHTML = ""; // inicialazing new variable
+
+  bookData.forEach((book, index) => {
+    const { title, rating } = book; // Destructure title and rating from book object
+    const stars = displayRatingStars(parseFloat(rating)); // Calculate stars
+    starRatingsHTML += `<tr>
+    <td>
+      ${title} – ${rating}<br>
+      ${stars}
+    </td>
+  </tr>`;
+  });
+
+  document.getElementById("star-ratings").innerHTML += starRatingsHTML;
+}
+
+// Funkcija za dohvaćanje i prikaz trenutnog datuma i vremena
+function displayRatingTime() {
+  const now = new Date();
+  const formattedTime = now.toLocaleString(); // Prikazuje datum i vrijeme u lokalnom formatu
+  const updateInfo2 = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
+
+  // Dodavanje informacije o posljednjem ažuriranju u HTML
+  document.getElementById("star-ratings").innerHTML += updateInfo2;
+}
+
 // Glavna funkcija koja pokreće API zahtjeve za sve URL-ove
 async function fetchAllBooks() {
+  const allBookData = []; // Initialize an array to store all book data
+
   for (let i = 0; i < bookUrls.length; i++) {
-    await fetchBookData(bookUrls[i], ratingUrls[i], i);
+    const bookData = await fetchBookData(bookUrls[i], ratingUrls[i], i);
+    if (bookData) {
+      allBookData.push(bookData); // Add book data to the array if valid
+    }
   }
+
+  showStarRatings(allBookData);
 
   // Nakon što su svi podaci dohvaćeni, prikaži vrijeme ažuriranja
   displayLastUpdateTime();
+  
+  displayRatingTime();
 }
-
-
-//Fuction for showing stars for book ratings:
-
-
 
 // Pokreni dohvaćanje podataka nakon što se HTML učita
 document.addEventListener("DOMContentLoaded", function () {
