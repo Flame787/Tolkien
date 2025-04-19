@@ -28,10 +28,11 @@ navbar.addEventListener("mouseleave", () => {
   }
 });
 
-
-document.getElementById("voting-form-button").addEventListener("click", function(event){
-  event.preventDefault()
-});
+document
+  .getElementById("voting-form-button")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+  });
 
 // API-request:
 
@@ -171,7 +172,7 @@ const ratingUrls = [
   "https://openlibrary.org/works/OL8997784W/ratings.json", // Fall of Gondolin
 ];
 
-// Lista externih linkova na knjige, s Open Libraryja:
+// List of external links for books, from Open Library:
 
 const extLinks = [
   "https://openlibrary.org/works/OL27482W/The_Hobbit?edition=key%3A/books/OL33891995M",
@@ -287,27 +288,24 @@ function displayLastUpdateTime() {
   document.getElementById("bookDataContainer").innerHTML += updateInfo;
 }
 
-
 // function that calculates star number:
 function displayRatingStars(rating) {
   const fullStars = Math.floor(rating); // whole number
   const partialStar = rating % 1; // decimal part of the rating
   let stars = "⭐".repeat(fullStars); // add full stars fo whole numbers
 
-  if (partialStar >= 0.01 && partialStar <1.00) {
+  if (partialStar >= 0.01 && partialStar < 1.0) {
     stars += "✨"; // Ako je decimalni dio veći ili jednak 0.51, dodaje se posebna zvjezdica
   }
 
   return stars;
 }
 
-
-
 //Fuction for displaying stars for book ratings:
 
 function showStarRatings(bookData) {
-   // Sort books by rating in descending order
-   bookData.sort((a, b) => b.rating - a.rating);
+  // Sort books by rating in descending order
+  bookData.sort((a, b) => b.rating - a.rating);
 
   let starRatingsHTML = ""; // inicialazing new variable
 
@@ -325,10 +323,10 @@ function showStarRatings(bookData) {
   document.getElementById("star-ratings").innerHTML += starRatingsHTML;
 }
 
-// Funkcion for displaying actual time and date:
+// Function for displaying actual time and date:
 function displayRatingTime() {
   const now = new Date();
-  const formattedTime = now.toLocaleString(); // Prikazuje datum i vrijeme u lokalnom formatu
+  const formattedTime = now.toLocaleString(); // local date/time format
   const updateInfo2 = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
 
   // Adding info about last update time:
@@ -337,12 +335,12 @@ function displayRatingTime() {
 
 // Main function which starts API requests for all URLs:
 async function fetchAllBooks() {
-  const allBookData = [];    // initialize an array to store all book data
+  const allBookData = []; // initialize an array to store all book data
 
   for (let i = 0; i < bookUrls.length; i++) {
     const bookData = await fetchBookData(bookUrls[i], ratingUrls[i], i);
     if (bookData) {
-      allBookData.push(bookData);    // add book data to the array if valid
+      allBookData.push(bookData); // add book data to the array if valid
     }
   }
 
@@ -350,7 +348,7 @@ async function fetchAllBooks() {
 
   // After all data has been fetched, show last update time:
   displayLastUpdateTime();
-  
+
   displayRatingTime();
 }
 
@@ -358,3 +356,4 @@ async function fetchAllBooks() {
 document.addEventListener("DOMContentLoaded", function () {
   fetchAllBooks();
 });
+

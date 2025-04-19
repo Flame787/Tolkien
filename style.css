@@ -11,10 +11,11 @@ body {
   text-align: center;
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
   color: #35231b;
 
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
+  background-image: url("./pictures/autumn-forest6.png");
   line-height: 150%;
 }
 
@@ -127,10 +128,10 @@ img {
 
 .mountain-background {
   align-items: center;
-  background-image: url("pictures/anime-style-mountains3.jpg");
+  background-image: url("pictures/anime-style-fading.png");
   /* a default height is needed in order for background-element to be visible 
   (vh doesn't scale good, better to use pixels): */
-  height: 700px;
+  height: 120vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -250,7 +251,7 @@ h1 {
 }
 
 .picture-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
   text-align: center;
 }
@@ -300,7 +301,7 @@ h4 {
 }
 
 .text-block {
-  padding: 0 20px;
+  padding: 0 50px;
 
   text-align: justify;
   text-justify: inter-word;
@@ -349,12 +350,16 @@ a:visited {
   border-radius: 5px;
   backdrop-filter: blur(14px);
   background: radial-gradient(at 50% 37%, #e1f3e3, #81a088);
+  /* background: radial-gradient(at 50% 37%, #e1f3e365, #81a0889e); */
+  opacity: 0.9;
   width: 90%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 3%;
   padding: 20px;
 }
+
+
 
 .one-ring {
   width: 35%;
@@ -599,7 +604,7 @@ btn-standard {
 }
 
 #subtitle2 {
-  font-size: 1.5rem !important;
+  font-size: 1.2rem !important;
   text-align: center !important;
 }
 
@@ -636,6 +641,10 @@ input[type="checkbox"] {
 
 .art-big {
   max-width: 70%;
+}
+
+.owner{
+  color: #b8cc7c;
 }
 
 /* .d-col-2 {
