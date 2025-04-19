@@ -28,11 +28,19 @@ navbar.addEventListener("mouseleave", () => {
   }
 });
 
-document
-  .getElementById("voting-form-button")
-  .addEventListener("click", function (event) {
+// document
+//   .getElementById("voting-form-button")
+//   .addEventListener("click", function (event) {
+//     event.preventDefault();
+//   });
+
+const votingButton = document.getElementById("voting-form-button");
+
+if (votingButton) {
+  votingButton.addEventListener("click", function (event) {
     event.preventDefault();
   });
+}
 
 // API-request:
 
@@ -356,4 +364,3 @@ async function fetchAllBooks() {
 document.addEventListener("DOMContentLoaded", function () {
   fetchAllBooks();
 });
-
