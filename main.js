@@ -47,7 +47,7 @@ if (votingButton) {
 /*
 document.addEventListener("DOMContentLoaded", function () {
   // as soon as html loads,
-  // an Ajax request is sent to fetch data:
+  // Send an Ajax request to fetch data:
   var xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function () {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // varijable s API-ja +  preview-link & full book link on Open library - puni a-linkovi
 
-      // cover - cover pictures of each book, saved to pictures-file
+      // cover images of each book, saved to pictures-file
 
       // request fetches data in JSON-format:
       var jsonData = JSON.parse(this.responseText);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // ** iteration through the list/collection to fetch each element - alternative code is saved in script3...
 
 
-// Dohvati podatke iz objekta:
+// Fetch data from object:
 key = jsonData.key;
 title = jsonData.title;
 publishDate = jsonData.first_publish_date;
@@ -81,7 +81,7 @@ rating = jsonData.ratings_average
   ? jsonData.ratings_average.toFixed(2)
   : "No rating";
 
-// Obrada summary-a:
+// Handle summary:
 if (typeof jsonData.description === "string") {
   summary = jsonData.description;
 } else if (
@@ -101,7 +101,7 @@ if (typeof jsonData.description === "string") {
 
         data += "<div class='fetchedData'>";
 
-        // building-in fetched data:
+        // Populate the wrapper div with fetched data:
         // podaci += "<span><strong>" + imePrezime + " (" + korisnickoIme + ")</strong></span>";
         data +=
           "<span><strong>" +
@@ -116,14 +116,14 @@ if (typeof jsonData.description === "string") {
         // closing both <div>-elements:
         data += "</div>";
 
-      // }    // here ends the for(each)-loop, if we'd have more objects in data-structure ti search through (but in this case, we don't).
+      // }    // here ends the for(each)-loop, if we'd have more objects in data-structure to search through (but in this case, we don't).
 
-      // filling out the container in html with fetched data:
+      // Insert fetched data into the HTML container:
 
       document.getElementById("bookDataContainer").innerHTML = data;
 
     } 
-    // here ends if-loop
+    // here ends if-block:
   }; 
   // here ends xhttp.onreadystatechange-function
 
@@ -138,15 +138,14 @@ if (typeof jsonData.description === "string") {
 
 */
 
-// za summary dodati mogućnost da se prikaže ili sakrije (Show / Hide)
 
-/*  svi linkovi za api-requestove po istom principu:
+/*  all links for api-requests via the same principle:
 
 https://openlibrary.org/works/OL27482W.json - hobbit
 https://openlibrary.org/works/OL27513W.json - lotr 1
 https://openlibrary.org/works/OL27479W.json - lotr 2
 https://openlibrary.org/works/OL27455W.json - lotr 3
-https://openlibrary.org/works/OL27495W.json - sillmarillion
+https://openlibrary.org/works/OL27495W.json - silmarillion
 https://openlibrary.org/works/OL27466W.json - unfinished tales
 https://openlibrary.org/works/OL27471W.json - children of hurin
 https://openlibrary.org/works/OL8997784W.json - fall of gondolin
@@ -154,7 +153,7 @@ https://openlibrary.org/works/OL17755218W.json - beren & luthien
 
 */
 
-// Lista svih URL-ova
+// List of all URLs
 const bookUrls = [
   "https://openlibrary.org/works/OL27482W.json",
   "https://openlibrary.org/works/OL27513W.json",
@@ -167,7 +166,7 @@ const bookUrls = [
   "https://openlibrary.org/works/OL8997784W.json",
 ];
 
-// Lista URL-ova za ratinge knjiga (povezano po redoslijedu s bookUrls)
+// List of all URLs for book ratings (matching the books-order in the 'bookUrls' list)
 const ratingUrls = [
   "https://openlibrary.org/works/OL27482W/ratings.json",
   "https://openlibrary.org/works/OL27513W/ratings.json",
@@ -194,7 +193,7 @@ const extLinks = [
   "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin",
 ];
 
-// Funkcion for showing / hiding summary data - PREVIOUS VERSION:
+// Function for showing / hiding summary data - PREVIOUS VERSION:
 
 // function toggleSummary(index) {
 //   const summaryDiv = document.getElementById(`summary-${index}`);
@@ -209,16 +208,17 @@ const extLinks = [
 //   }
 // }
 
-function toggleSummary(event) {
-  const button = event.currentTarget;
-  const index = button.dataset.index;
-  const summary = document.getElementById(`summary-${index}`);
+// NOT USED ANYMORE - TOGGLESUMMARY:
+// function toggleSummary(event) {
+//   const button = event.currentTarget;
+//   const index = button.dataset.index;
+//   const summary = document.getElementById(`summary-${index}`);
 
-  if (!summary || !button) return;
+//   if (!summary || !button) return;
 
-  const isHidden = summary.classList.toggle("hidden");
-  button.textContent = isHidden ? "Show Summary" : "Hide Summary";
-}
+//   const isHidden = summary.classList.toggle("hidden");
+//   button.textContent = isHidden ? "Show Summary" : "Hide Summary";
+// }
 
 // Function for fetching data:
 async function fetchBookData(bookUrl, ratingUrl, index) {
@@ -241,7 +241,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
       : "0.00";
     let summary;
 
-    // Summary fetching function (according to different data structure possibilities on api-link):
+    // Fetch book summary (based on possible data structure variations from the API):
     if (typeof bookData.description === "string") {
       summary = bookData.description;
     } else if (
@@ -258,8 +258,8 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
     let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
 
-    // Showing data + adding button to show/hide summary:
-    const data = `<div class="card_wrap-inner fetchedData" id='product-${index}'>
+    // Generate book card HTML to show book-data + add button to show/hide the summary:
+    const data = `<div class="card_wrap-inner fetchedData" id="product-${index}">
 
       <div class="book-card">
 
@@ -288,13 +288,31 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
     // document.getElementById("bookDataContainer").innerHTML += data;
 
-     document.getElementById("bookDataContainer").insertAdjacentHTML("beforeend", data);
-     
-      const button = document.querySelector(`#product-${index} .showButton`);
-    if (button) {
-      button.addEventListener("click", toggleSummary);
-    }
+    document
+      .getElementById("bookDataContainer")
+      .insertAdjacentHTML("beforeend", data);
 
+    //   const button = document.querySelector(`#product-${index} .showButton`);
+    // if (button) {
+    //   button.addEventListener("click", toggleSummary);
+    // }
+
+    // NEW for BUTTONS:
+
+    // const button = document.querySelector(`#product-${index} .showButton`);
+    // if (button) {
+    //   button.addEventListener("click", (event) => {
+    //     const btn = event.currentTarget;
+    //     const cardItem = btn.closest(".card_item");
+    //     if (!cardItem) return;
+
+    //     const summary = cardItem.querySelector(".summary");
+    //     if (!summary) return;
+
+    //     const isHidden = summary.classList.toggle("hidden");
+    //     btn.textContent = isHidden ? "Show Summary" : "Hide Summary";
+    //   });
+    // }
 
     // Collect the data for star ratings:
     return { title, rating: parseFloat(rating) };
@@ -306,36 +324,36 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
   }
 }
 
-// Funkcija za dohvaćanje i prikaz trenutnog datuma i vremena
+// Function for fetching and displaying current date and time:
 function displayLastUpdateTime() {
   const now = new Date();
-  const formattedTime = now.toLocaleString(); // Prikazuje datum i vrijeme u lokalnom formatu
+  const formattedTime = now.toLocaleString(); // Local date/time format
   const updateInfo = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
 
-  // Dodavanje informacije o posljednjem ažuriranju u HTML
+  // Adding info about last update into HTML-rendered content:
   document.getElementById("bookDataContainer").innerHTML += updateInfo;
 }
 
-// function that calculates star number:
+// Calculate how many stars to display based on rating value:
 function displayRatingStars(rating) {
   const fullStars = Math.floor(rating); // whole number
   const partialStar = rating % 1; // decimal part of the rating
-  let stars = "⭐".repeat(fullStars); // add full stars fo whole numbers
+  let stars = "⭐".repeat(fullStars); // add full stars for whole numbers
 
   if (partialStar >= 0.01 && partialStar < 1.0) {
-    stars += "✨"; // Ako je decimalni dio veći ili jednak 0.51, dodaje se posebna zvjezdica
+    stars += "✨"; // If decimal part is bigger or equal to 0.51, a special star is added (but not yet a full star)
   }
 
   return stars;
 }
 
-//Fuction for displaying stars for book ratings:
+//Function for displaying stars for book ratings:
 
 function showStarRatings(bookData) {
-  // Sort books by rating in descending order
+  // Sort books by rating in descending order:
   bookData.sort((a, b) => b.rating - a.rating);
 
-  let starRatingsHTML = ""; // inicialazing new variable
+  let starRatingsHTML = ""; // initialize new variable
 
   bookData.forEach((book, index) => {
     const { title, rating } = book; // destructure title and rating from book object
@@ -357,12 +375,18 @@ function displayRatingTime() {
   const formattedTime = now.toLocaleString(); // local date/time format
   const updateInfo2 = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
 
-  // Adding info about last update time:
+  // Adding info about last-update time:
   document.getElementById("star-ratings").innerHTML += updateInfo2;
 }
 
 // Main function which starts API requests for all URLs:
 async function fetchAllBooks() {
+  // NEW - CLEANING THE CONTENT:
+  const bookContainer = document.getElementById("bookDataContainer");
+  const ratingsContainer = document.getElementById("star-ratings");
+  if (bookContainer) bookContainer.innerHTML = "";
+  if (ratingsContainer) ratingsContainer.innerHTML = "";
+
   const allBookData = []; // initialize an array to store all book data
 
   for (let i = 0; i < bookUrls.length; i++) {
@@ -382,8 +406,6 @@ async function fetchAllBooks() {
 
 // console.log(document.getElementById("bookDataContainer"));
 
-
-
 function waitForContainerAndFetch() {
   const check = setInterval(() => {
     const container = document.getElementById("bookDataContainer");
@@ -391,7 +413,7 @@ function waitForContainerAndFetch() {
       clearInterval(check);
       fetchAllBooks();
     }
-  }, 100); // provjerava svakih 100ms
+  }, 100); // checks every 100ms
 }
 
 // Start fetching data when the HTML loads:
@@ -401,3 +423,25 @@ function waitForContainerAndFetch() {
 
 // Start fetching data when the HTML loads
 window.addEventListener("load", waitForContainerAndFetch);
+
+// NEW: ADDED UNIQUE EVENT-LISTENER FOR ALL BUTTONS, ONCE THE PAGE IS LOADED:
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("bookDataContainer");
+
+  if (!container) return;
+
+  container.addEventListener("click", (event) => {
+    const button = event.target.closest(".showButton");
+    if (!button) return;
+
+    const cardItem = button.closest(".card_item");
+    if (!cardItem) return;
+
+    const summary = cardItem.querySelector(".summary");
+    if (!summary) return;
+
+    const isHidden = summary.classList.toggle("hidden");
+    button.textContent = isHidden ? "Show Summary" : "Hide Summary";
+  });
+});
