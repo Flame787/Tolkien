@@ -233,7 +233,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
 
     // Showing data + adding button to show/hide summary:
-    const data = `<div class="card_wrap-inner fetchedData" id='product-${index}'">
+    const data = `<div class="card_wrap-inner fetchedData" id='product-${index}'>
 
       <div class="book-card">
 
@@ -248,7 +248,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
           <strong>Average rating</strong>: ${rating}<br><br>
           <strong>Book summary</strong>: </br>
           <div id="summary-${index}" class='summary hidden'>${summary}</div>
-          <button class="btn showButton" onclick="toggleSummary(${index})">Show summary</button><br>
+          <button class="btn showButton" data-index="${index}">Show summary</button><br>
         </div>
 
         <div class="externLinks card-footer"><strong>Link to the book:</strong><br> ${link}</div>
@@ -259,8 +259,21 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
   </div>`; // here ends outer-div
 
     // Book summary: <div class='summary'>${summary}<div><br></br>
+    // document.getElementById("bookDataContainer").innerHTML += data;
 
-    document.getElementById("bookDataContainer").innerHTML += data;
+    // Append new book card:
+    const container = document.getElementById("bookDataContainer");
+    container.insertAdjacentHTML("beforeend", data);
+
+    // Fetch new card element via index:
+    const newCard = document.getElementById(`product-${index}`);
+
+    // Add event listener for the new button:
+    // const newButton = container.querySelector(
+    //   `button.showButton[data-index="${index}"]`
+    // );
+    const newButton = newCard.querySelector(`button.showButton[data-index="${index}"]`);
+    newButton.addEventListener("click", (event) => toggleSummary(event));
 
     // Collect the data for star ratings:
     return { title, rating: parseFloat(rating) };
@@ -272,10 +285,15 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
   }
 }
 
-// Funkcion for showing / hiding summary data:
-function toggleSummary(index) {
+// Function for showing / hiding summary data:
+function toggleSummary(event) {
+  const button = event.target;
+  const index = button.getAttribute("data-index");
   const summaryDiv = document.getElementById(`summary-${index}`);
-  const button = summaryDiv.nextElementSibling;
+  // const button = summaryDiv.nextElementSibling;
+  // const button = document.querySelector(
+  //   `button.showButton[data-index="${index}"]`
+  // );
 
   if (summaryDiv.classList.contains("hidden")) {
     summaryDiv.classList.remove("hidden");
