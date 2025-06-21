@@ -138,7 +138,6 @@ if (typeof jsonData.description === "string") {
 
 */
 
-
 /*  all links for api-requests via the same principle:
 
 https://openlibrary.org/works/OL27482W.json - hobbit
@@ -426,35 +425,68 @@ window.addEventListener("load", waitForContainerAndFetch);
 
 // EMAILJS-FUNCTIONALLITY:
 
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
+// Render reCAPTCHA when the API is loaded:
+
+window.onRecaptchaLoadCallback = function () {
+  const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const container = document.getElementById("recaptcha-container");
+  if (container) {
+    grecaptcha.render("recaptcha-container", {
+      sitekey: sitekey,
+      theme: "light",
+    });
+  }
+};
+
+function loadRecaptchaScript() {
+  const script = document.createElement("script");
+  script.src =
+    "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoadCallback&render=explicit";
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+}
+
+loadRecaptchaScript();
+
+// Form submission with reCAPTCHA check and EmailJS:
 const form = document.getElementById("email-form");
 
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      this
-    ).then(
-      function () {
-        alert("Message sent successfully!");
-        form.reset();
-      },
-      function (error) {
-        console.error("EmailJS error:", error);
-        alert("Oops... Something went wrong. Please try again later.");
-      }
-    );
+    const token = grecaptcha.getResponse();
+    if (!token) {
+      alert("Please complete the CAPTCHA");
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        this
+      )
+      .then(
+        function () {
+          alert("Message sent successfully!");
+          form.reset();
+          grecaptcha.reset(); // reset captcha
+        },
+        function (error) {
+          console.error("EmailJS error:", error);
+          alert("Oops... Something went wrong. Please try again later.");
+        }
+      );
   });
 }
 
-
-// NEW: ADDED UNIQUE EVENT-LISTENER FOR ALL BUTTONS, ONCE THE PAGE IS LOADED:
+// NEW: ADDED UNIQUE EVENT-LISTENER FOR ALL BUTTONS, ONCE THE PAGE IS LOADED (otherwise buttons-click doesn't work in Vite):
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("bookDataContainer");

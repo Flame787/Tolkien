@@ -286,6 +286,14 @@ h1 {
   text-align: center !important;
 }
 
+#recaptcha-container {
+  text-align: center;
+}
+
+#recaptcha-container > div {
+  display: inline-block;
+}
+
 p,
 table {
   padding-bottom: 1%;
@@ -384,6 +392,7 @@ a:link {
 #voting-form-button,
 #submit-button {
   font-size: smaller !important;
+  margin: 25px 0 15px;
 }
 
 a:visited {

@@ -329,11 +329,7 @@
       <div class="card align-center">
         <h3 class="border-b">Contact us:</h3>
         <br />
-        <form
-        
-          class="border-b"
-          id="email-form"
-        >
+        <form class="border-b" id="email-form">
           <p>
             <label>Your name:</label><br />
             <input type="text" name="from_name" />
@@ -350,6 +346,7 @@
               rows="8"
               cols="50"
               style="max-width: 80%; font-size: smaller"
+              required
             ></textarea>
           </p>
 
@@ -357,6 +354,8 @@
             <label>Do you want to sign up for an email list? </label>
           </div>
           <p><input type="checkbox" name="newsletter" value="yes" /> Yes</p> -->
+
+          <div id="recaptcha-container"></div>
 
           <input
             type="submit"
@@ -425,5 +424,12 @@
     ></script>
     <!-- <script src="main.js"></script> -->
     <script type="module" src="/main.js"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <!-- <script
+      type="text/javascript"
+      src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoadCallback&render=explicit"
+      async
+      defer
+    ></script> -->
   </body>
 </html>
