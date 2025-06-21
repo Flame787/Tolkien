@@ -424,6 +424,36 @@ function waitForContainerAndFetch() {
 // Start fetching data when the HTML loads
 window.addEventListener("load", waitForContainerAndFetch);
 
+// EMAILJS-FUNCTIONALLITY:
+
+import emailjs from '@emailjs/browser';
+
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+const form = document.getElementById("email-form");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully!");
+        form.reset();
+      },
+      function (error) {
+        console.error("EmailJS error:", error);
+        alert("Oops... Something went wrong. Please try again later.");
+      }
+    );
+  });
+}
+
+
 // NEW: ADDED UNIQUE EVENT-LISTENER FOR ALL BUTTONS, ONCE THE PAGE IS LOADED:
 
 document.addEventListener("DOMContentLoaded", () => {
