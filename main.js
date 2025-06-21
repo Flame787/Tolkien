@@ -194,6 +194,32 @@ const extLinks = [
   "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin",
 ];
 
+// Funkcion for showing / hiding summary data - PREVIOUS VERSION:
+
+// function toggleSummary(index) {
+//   const summaryDiv = document.getElementById(`summary-${index}`);
+//   const button = summaryDiv.nextElementSibling;
+
+//   if (summaryDiv.classList.contains("hidden")) {
+//     summaryDiv.classList.remove("hidden");
+//     button.textContent = "Hide Summary";
+//   } else {
+//     summaryDiv.classList.add("hidden");
+//     button.textContent = "Show Summary";
+//   }
+// }
+
+function toggleSummary(event) {
+  const button = event.currentTarget;
+  const index = button.dataset.index;
+  const summary = document.getElementById(`summary-${index}`);
+
+  if (!summary || !button) return;
+
+  const isHidden = summary.classList.toggle("hidden");
+  button.textContent = isHidden ? "Show Summary" : "Hide Summary";
+}
+
 // Function for fetching data:
 async function fetchBookData(bookUrl, ratingUrl, index) {
   try {
@@ -259,21 +285,16 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
   </div>`; // here ends outer-div
 
     // Book summary: <div class='summary'>${summary}<div><br></br>
+
     // document.getElementById("bookDataContainer").innerHTML += data;
 
-    // Append new book card:
-    const container = document.getElementById("bookDataContainer");
-    container.insertAdjacentHTML("beforeend", data);
+     document.getElementById("bookDataContainer").insertAdjacentHTML("beforeend", data);
+     
+      const button = document.querySelector(`#product-${index} .showButton`);
+    if (button) {
+      button.addEventListener("click", toggleSummary);
+    }
 
-    // Fetch new card element via index:
-    const newCard = document.getElementById(`product-${index}`);
-
-    // Add event listener for the new button:
-    // const newButton = container.querySelector(
-    //   `button.showButton[data-index="${index}"]`
-    // );
-    const newButton = newCard.querySelector(`button.showButton[data-index="${index}"]`);
-    newButton.addEventListener("click", (event) => toggleSummary(event));
 
     // Collect the data for star ratings:
     return { title, rating: parseFloat(rating) };
@@ -282,25 +303,6 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
     document.getElementById(
       "bookDataContainer"
     ).innerHTML += `<div class='fetchedData'>Error loading data</div>`;
-  }
-}
-
-// Function for showing / hiding summary data:
-function toggleSummary(event) {
-  const button = event.target;
-  const index = button.getAttribute("data-index");
-  const summaryDiv = document.getElementById(`summary-${index}`);
-  // const button = summaryDiv.nextElementSibling;
-  // const button = document.querySelector(
-  //   `button.showButton[data-index="${index}"]`
-  // );
-
-  if (summaryDiv.classList.contains("hidden")) {
-    summaryDiv.classList.remove("hidden");
-    button.textContent = "Hide Summary";
-  } else {
-    summaryDiv.classList.add("hidden");
-    button.textContent = "Show Summary";
   }
 }
 
@@ -378,7 +380,24 @@ async function fetchAllBooks() {
   displayRatingTime();
 }
 
+// console.log(document.getElementById("bookDataContainer"));
+
+
+
+function waitForContainerAndFetch() {
+  const check = setInterval(() => {
+    const container = document.getElementById("bookDataContainer");
+    if (container) {
+      clearInterval(check);
+      fetchAllBooks();
+    }
+  }, 100); // provjerava svakih 100ms
+}
+
 // Start fetching data when the HTML loads:
-document.addEventListener("DOMContentLoaded", function () {
-  fetchAllBooks();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   fetchAllBooks();
+// });
+
+// Start fetching data when the HTML loads
+window.addEventListener("load", waitForContainerAndFetch);
