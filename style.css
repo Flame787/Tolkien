@@ -391,15 +391,14 @@ a:link {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
 }
 
 #voting-results h3 {
-   font-family: "Italiana", sans-serif;
+  font-family: "Italiana", sans-serif;
 }
 
 #voting-results li {
-  /* list-style-type: none; */
+  display: block;
   margin-bottom: 0.4rem;
 }
 
@@ -473,8 +472,6 @@ a:visited {
 .img-ratings {
   margin-top: 5%;
 }
-
-
 
 .btn {
   -webkit-border-radius: 5px;
@@ -919,4 +916,31 @@ form textarea {
   .summary {
     font-size: smaller !important;
   }
+}
+
+@media screen and (max-width: 768px) {
+  #voteChart {
+    max-width: 90%;
+    height: 320px;
+    margin: 1.5rem auto;
+  }
+
+  #voting-results ul {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #voteChart {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  #voting-results ul {
+    font-size: 0.9rem;
+  }
+  .poll {
+    font-size: 0.9rem;
+  }
+ 
 }

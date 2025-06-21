@@ -499,8 +499,10 @@ function renderVoteResults() {
   // sorting (from most votes to the least votes):
   const sortedVotes = Object.entries(votes).sort((a, b) => b[1] - a[1]);
 
+  const totalVotes = sortedVotes.reduce((sum, [, count]) => sum + count, 0);
+
   // displaying sorted list of voting results (from local storage):
-  let resultsHTML = "<h3>Current voting results:</h3><ul>";
+  let resultsHTML = `<h3>Current voting results:</h3><p>Total votes: ${totalVotes}</p><ul>`;
   for (const [key, count] of sortedVotes) {
     const bookName = labels[key] || key;
     resultsHTML += `<li>${bookName}: ${count} vote(s)</li>`;
