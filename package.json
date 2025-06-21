@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/Flame787/Tolkien#readme",
   "dependencies": {
-    "@emailjs/browser": "^4.4.1"
+    "@emailjs/browser": "^4.4.1",
+    "chart.js": "^4.5.0"
   },
   "devDependencies": {
     "vite": "^6.3.5"

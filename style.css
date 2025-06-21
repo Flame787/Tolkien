@@ -41,7 +41,7 @@ img {
 }
 
 .illustration {
-  text-align: center; 
+  text-align: center;
 }
 
 .pic-smaller {
@@ -358,8 +358,6 @@ h4 {
   letter-spacing: 0.1rem;
 }
 
-
-
 .side {
   padding-top: 5%;
 }
@@ -389,10 +387,40 @@ a:link {
   font-size: smaller !important;
 }
 
+#voting-results ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+#voting-results h3 {
+   font-family: "Italiana", sans-serif;
+}
+
+#voting-results li {
+  /* list-style-type: none; */
+  margin-bottom: 0.4rem;
+}
+
 #voting-form-button,
 #submit-button {
   font-size: smaller !important;
   margin: 25px 0 15px;
+}
+
+#voteChart {
+  max-width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+#voteChart.hidden {
+  display: none !important;
+  margin: 0 !important;
+  height: 0 !important;
 }
 
 a:visited {
@@ -445,6 +473,8 @@ a:visited {
 .img-ratings {
   margin-top: 5%;
 }
+
+
 
 .btn {
   -webkit-border-radius: 5px;

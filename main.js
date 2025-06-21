@@ -1,3 +1,6 @@
+import emailjs from "@emailjs/browser";
+import Chart from "chart.js/auto";
+
 let prevScrollPos = window.scrollY;
 const navbar = document.querySelector(".navbar-section");
 
@@ -27,20 +30,6 @@ navbar.addEventListener("mouseleave", () => {
     navbar.style.top = "-100px";
   }
 });
-
-// document
-//   .getElementById("voting-form-button")
-//   .addEventListener("click", function (event) {
-//     event.preventDefault();
-//   });
-
-const votingButton = document.getElementById("voting-form-button");
-
-if (votingButton) {
-  votingButton.addEventListener("click", function (event) {
-    event.preventDefault();
-  });
-}
 
 // API-request:
 
@@ -425,8 +414,6 @@ window.addEventListener("load", waitForContainerAndFetch);
 
 // EMAILJS-FUNCTIONALLITY:
 
-import emailjs from "@emailjs/browser";
-
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 // Render reCAPTCHA when the API is loaded:
@@ -483,6 +470,106 @@ if (form) {
           alert("Oops... Something went wrong. Please try again later.");
         }
       );
+  });
+}
+
+// VOTING-POLL FOR BOOKS:
+
+const votingForm = document.getElementById("voting-form");
+const resultsBox = document.getElementById("voting-results");
+
+const labels = {
+  hobbit: "The Hobbit",
+  lord: "The Lord of the Rings",
+  silmarillion: "The Silmarillion",
+  unfinished: "Unfinished Tales",
+  children: "The Children of Húrin",
+  beren: "Beren and Lúthien",
+  gondolin: "The Fall of Gondolin",
+  other: "something else",
+};
+
+// show results from localStorage:
+function renderVoteResults() {
+  const votes = JSON.parse(localStorage.getItem("voteResults")) || {};
+  if (!resultsBox) return;
+
+  document.getElementById("voteChart").classList.remove("hidden");
+
+  // sorting (from most votes to the least votes):
+  const sortedVotes = Object.entries(votes).sort((a, b) => b[1] - a[1]);
+
+  // displaying sorted list of voting results (from local storage):
+  let resultsHTML = "<h3>Current voting results:</h3><ul>";
+  for (const [key, count] of sortedVotes) {
+    const bookName = labels[key] || key;
+    resultsHTML += `<li>${bookName}: ${count} vote(s)</li>`;
+  }
+  resultsHTML += "</ul>";
+
+  resultsBox.innerHTML += resultsHTML;
+
+  // adding a graphical visualisation:
+
+  const chartCanvas = document.getElementById("voteChart");
+  if (chartCanvas) {
+    const ctx = chartCanvas.getContext("2d");
+
+    // clean existing graph (if needed):
+    if (window.voteChartInstance) {
+      window.voteChartInstance.destroy();
+    }
+
+    window.voteChartInstance = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: sortedVotes.map(([key]) => labels[key] || key),
+        datasets: [
+          {
+            label: "Number of votes",
+            data: sortedVotes.map(([_, count]) => count),
+            backgroundColor: "rgba(9, 138, 37, 0.6)",
+            borderColor: "rgb(1, 68, 10)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true },
+        },
+      },
+    });
+  }
+}
+
+if (votingForm && resultsBox) {
+  votingForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const selected = votingForm.querySelector('input[name="fav-book"]:checked');
+    if (!selected) {
+      alert("Please select a book before voting!");
+      return;
+    }
+
+    const choice = selected.value;
+    const label = labels[choice] || "Unknown";
+
+    // fetch results:
+    const votes = JSON.parse(localStorage.getItem("voteResults")) || {};
+
+    // add voices number for the selected book:
+    votes[choice] = (votes[choice] || 0) + 1;
+
+    // save updated results:
+    localStorage.setItem("voteResults", JSON.stringify(votes));
+
+    // show message + results:
+    resultsBox.innerHTML = `<p class="subtle">You voted for: <strong>${label}</strong>. Thanks for participating!</p>`;
+    renderVoteResults();
+
+    votingForm.reset();
   });
 }
 
