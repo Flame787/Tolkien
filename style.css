@@ -15,9 +15,7 @@ body {
   color: #35231b;
 
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
-  /* background-image: url("./pictures/autumn-forest6.png"); */
-  background-image: url("./pictures/autumn-forest9999.png");
-  /* background-image: url("./pictures/new/aerial-shot-road-middle-forest-day.jpg");  */
+  background-image: url("/pictures/autumn-forest9999.png");
   /* background-size: cover;
   background-size: auto; */
   background-size: contain;
