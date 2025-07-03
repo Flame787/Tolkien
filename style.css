@@ -154,7 +154,7 @@ img {
 
 .mountain-background {
   align-items: center;
-  background-image: url("pictures/anime-style-fading.png");
+  background-image: url("/pictures/anime-style-fading.png");
   /* a default height is needed in order for background-element to be visible 
   (vh doesn't scale good, better to use pixels): */
   height: 120vh;
