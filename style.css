@@ -429,6 +429,13 @@ a:visited {
   font-size: 1.1rem !important;
 }
 
+.footer-link {
+  font-family: "Italiana", sans-serif;
+  font-weight: bolder;
+  font-size: larger;
+  letter-spacing: 1.7px;
+}
+
 /* transparent card: */
 .card {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
