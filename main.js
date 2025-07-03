@@ -242,7 +242,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
       summary = "Description not available";
     }
 
-    let coverImage = `<img src="pictures/cover-${index}.jpg" alt="Cover of ${title}" class="book-cover">`;
+    let coverImage = `<img src="/pictures/cover-${index}.jpg" alt="Cover of ${title}" class="book-cover">`;
 
     let link = `<a href="${extLinks[index]}" target="_blank">Read more on Open Library</a>`;
 
