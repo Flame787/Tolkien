@@ -382,7 +382,14 @@ a:link {
   color: #1c650f;
   font-family: "Italiana", sans-serif;
   font-weight: bolder !important;
-  font-size: smaller !important;
+  /* font-size: smaller !important; */
+}
+
+a:visited {
+  color: #1c650f;
+  font-family: "Italiana", sans-serif;
+  font-weight: bolder !important;
+  /* font-size: smaller !important; */
 }
 
 #voting-results ul {
@@ -432,7 +439,7 @@ a:visited {
 .footer-link {
   font-family: "Italiana", sans-serif;
   font-weight: bolder;
-  font-size: larger;
+  font-size: larger !important;
   letter-spacing: 1.7px;
 }
 
