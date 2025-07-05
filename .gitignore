@@ -11,3 +11,5 @@ node_modules
 #notes related to API:
 API_notes.txt
 notes_plan.txt
+# Local Netlify folder
+.netlify

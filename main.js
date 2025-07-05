@@ -236,20 +236,65 @@ function waitForContainerAndFetch() {
   }, 100); // checks every 100ms
 }
 
-// Start fetching data when the HTML loads
-window.addEventListener("load", waitForContainerAndFetch);
+// NEW - Fetching secret keys and implementing EmailJs-functionality:
 
-// EMAILJS-FUNCTIONALITY:
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+let emailKeys = {};
+let recaptchaKey;
+
+// async-function for fetching secret keys and saving them into new object for EmailJS / new variable for Recaptcha:
+async function loadKeys() {
+  try {
+    const response = await fetch("/.netlify/functions/getKeys");
+    const data = await response.json();
+
+    emailKeys = {
+      serviceId: data.emailJsServiceId,
+      templateId: data.emailJsTemplateId,
+      publicKey: data.emailJsPublicKey,
+    };
+    recaptchaKey = data.recaptchaSiteKey;
+
+    // EmailJS initializes only after it's public-key was fetched:
+    emailjs.init(emailKeys.publicKey);
+  } catch (error) {
+    console.error("Error while loading secret key:", error);
+  }
+}
+
+// Start fetching book-data when the HTML loads:
+// * CHANGED to include Neltify serverless functions -> added loadKeys() function:
+// window.addEventListener("load", loadKeys(), waitForContainerAndFetch);
+
+window.addEventListener("load", async () => {
+  await loadKeys();
+  waitForContainerAndFetch();
+});
+
+// (previous EmailJs-functionality):
+// emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 // Render reCAPTCHA when the API is loaded:
+// window.onRecaptchaLoadCallback = function () {
+//   // const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+//   const container = document.getElementById("recaptcha-container");
+//   if (container && recaptchaKey) {
+//     grecaptcha.render("recaptcha-container", {
+//       sitekey: recaptchaKey,
+//       theme: "light",
+//     });
+//   }
+// };
 
-window.onRecaptchaLoadCallback = function () {
-  const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+window.onRecaptchaLoadCallback = async function () {
+  // added waiting time:
+  while (!recaptchaKey) {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+  }
+
   const container = document.getElementById("recaptcha-container");
-  if (container) {
-    grecaptcha.render("recaptcha-container", {
-      sitekey: sitekey,
+  if (container && grecaptcha) {
+    grecaptcha.render(container, {
+      sitekey: recaptchaKey,
       theme: "light",
     });
   }
@@ -264,7 +309,12 @@ function loadRecaptchaScript() {
   document.body.appendChild(script);
 }
 
-loadRecaptchaScript();
+// loadRecaptchaScript();
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadRecaptchaScript(); 
+});
+
 
 // Form submission with reCAPTCHA check and EmailJS:
 const form = document.getElementById("email-form");
@@ -279,10 +329,18 @@ if (form) {
       return;
     }
 
+    // new:
+    if (!emailKeys.serviceId || !emailKeys.templateId) {
+      alert("Email service not initialized yet.");
+      return;
+    }
+
     emailjs
       .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        // import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        // import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        emailKeys.serviceId,
+        emailKeys.templateId,
         this
       )
       .then(
