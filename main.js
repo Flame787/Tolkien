@@ -8,11 +8,11 @@ window.onscroll = function () {
   let currentScrollPos = window.scrollY;
 
   if (prevScrollPos > currentScrollPos) {
-    //  If scrolling up, show navbar:
+    //  if scrolling up, show navbar:
     navbar.style.top = "0";
   } else {
-    // If scrolling down, hide navbar:
-    navbar.style.top = "-100px"; // Navbar height - adjustable
+    // if scrolling down, hide navbar:
+    navbar.style.top = "-100px"; // navbar height - adjustable
   }
 
   prevScrollPos = currentScrollPos;
@@ -30,116 +30,6 @@ navbar.addEventListener("mouseleave", () => {
     navbar.style.top = "-100px";
   }
 });
-
-// API-request:
-
-/*
-document.addEventListener("DOMContentLoaded", function () {
-  // as soon as html loads,
-  // Send an Ajax request to fetch data:
-  var xhttp = new XMLHttpRequest();
-
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      // declaring new variables:
-      // var podaci = "", korisnickoIme, imePrezime, email, slikaKorisnika;
-      var data = "",
-        key,
-        title,
-        publishDate,
-        rating,
-        summary;
-
-      //  https://openlibrary.org/works/OL27482W.json - Hobbit
-
-      // varijable s API-ja +  preview-link & full book link on Open library - puni a-linkovi
-
-      // cover images of each book, saved to pictures-file
-
-      // request fetches data in JSON-format:
-      var jsonData = JSON.parse(this.responseText);
-
-      // ** iteration through the list/collection to fetch each element - alternative code is saved in script3...
-
-
-// Fetch data from object:
-key = jsonData.key;
-title = jsonData.title;
-publishDate = jsonData.first_publish_date;
-rating = jsonData.ratings_average
-  ? jsonData.ratings_average.toFixed(2)
-  : "No rating";
-
-// Handle summary:
-if (typeof jsonData.description === "string") {
-  summary = jsonData.description;
-} else if (
-  typeof jsonData.description === "object" &&
-  jsonData.description !== null &&
-  jsonData.description.value
-) {
-  summary = jsonData.description.value;
-} else {
-  summary = "Description not available";
-}
-
-
-        // Showing fetched data:
-
-        // opening new two divs for fetched data:
-
-        data += "<div class='fetchedData'>";
-
-        // Populate the wrapper div with fetched data:
-        // podaci += "<span><strong>" + imePrezime + " (" + korisnickoIme + ")</strong></span>";
-        data +=
-          "<span><strong>" +
-          title +
-          "</strong></span> <br>Published: " +
-          publishDate +
-          "<br>Average rating: " +
-          rating +
-          "<br>Book summary: " +
-          summary;
-
-        // closing both <div>-elements:
-        data += "</div>";
-
-      // }    // here ends the for(each)-loop, if we'd have more objects in data-structure to search through (but in this case, we don't).
-
-      // Insert fetched data into the HTML container:
-
-      document.getElementById("bookDataContainer").innerHTML = data;
-
-    } 
-    // here ends if-block:
-  }; 
-  // here ends xhttp.onreadystatechange-function
-
-  // Methods xhttp.open(GET...) & xhttp.send():
-
-  // xhttp.open("GET", `https://frodo.ess.hr/api/ponavljanje/filmovi-json.php?godinamin=${godinaMin}&godinamax=${godinaMax}`, true);
-
-  xhttp.open("GET", "https://openlibrary.org/works/OL27482W.json", true);
-
-  xhttp.send();
-});
-
-*/
-
-/*  all links for api-requests via the same principle:
-
-https://openlibrary.org/works/OL27482W.json - hobbit
-https://openlibrary.org/works/OL27513W.json - lotr 1
-https://openlibrary.org/works/OL27479W.json - lotr 2
-https://openlibrary.org/works/OL27455W.json - lotr 3
-https://openlibrary.org/works/OL27495W.json - silmarillion
-https://openlibrary.org/works/OL27466W.json - unfinished tales
-https://openlibrary.org/works/OL27471W.json - children of hurin
-https://openlibrary.org/works/OL8997784W.json - fall of gondolin
-https://openlibrary.org/works/OL17755218W.json - beren & luthien
-
-*/
 
 // List of all URLs
 const bookUrls = [
@@ -168,7 +58,6 @@ const ratingUrls = [
 ];
 
 // List of external links for books, from Open Library:
-
 const extLinks = [
   "https://openlibrary.org/works/OL27482W/The_Hobbit?edition=key%3A/books/OL33891995M",
   "https://openlibrary.org/works/OL27513W/The_fellowship_of_the_ring?edition=key%3A/books/OL43079986M",
@@ -180,33 +69,6 @@ const extLinks = [
   "https://openlibrary.org/works/OL17755218W/Beren_and_L%C3%BAthien",
   "https://openlibrary.org/works/OL8997784W/The_Fall_of_Gondolin",
 ];
-
-// Function for showing / hiding summary data - PREVIOUS VERSION:
-
-// function toggleSummary(index) {
-//   const summaryDiv = document.getElementById(`summary-${index}`);
-//   const button = summaryDiv.nextElementSibling;
-
-//   if (summaryDiv.classList.contains("hidden")) {
-//     summaryDiv.classList.remove("hidden");
-//     button.textContent = "Hide Summary";
-//   } else {
-//     summaryDiv.classList.add("hidden");
-//     button.textContent = "Show Summary";
-//   }
-// }
-
-// NOT USED ANYMORE - TOGGLESUMMARY:
-// function toggleSummary(event) {
-//   const button = event.currentTarget;
-//   const index = button.dataset.index;
-//   const summary = document.getElementById(`summary-${index}`);
-
-//   if (!summary || !button) return;
-
-//   const isHidden = summary.classList.toggle("hidden");
-//   button.textContent = isHidden ? "Show Summary" : "Hide Summary";
-// }
 
 // Function for fetching data:
 async function fetchBookData(bookUrl, ratingUrl, index) {
@@ -269,38 +131,11 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
 
       </div>   
   
-
-  </div>`; // here ends outer-div
-
-    // Book summary: <div class='summary'>${summary}<div><br></br>
-
-    // document.getElementById("bookDataContainer").innerHTML += data;
+    </div>`; // here ends outer-div of each book-card
 
     document
       .getElementById("bookDataContainer")
       .insertAdjacentHTML("beforeend", data);
-
-    //   const button = document.querySelector(`#product-${index} .showButton`);
-    // if (button) {
-    //   button.addEventListener("click", toggleSummary);
-    // }
-
-    // NEW for BUTTONS:
-
-    // const button = document.querySelector(`#product-${index} .showButton`);
-    // if (button) {
-    //   button.addEventListener("click", (event) => {
-    //     const btn = event.currentTarget;
-    //     const cardItem = btn.closest(".card_item");
-    //     if (!cardItem) return;
-
-    //     const summary = cardItem.querySelector(".summary");
-    //     if (!summary) return;
-
-    //     const isHidden = summary.classList.toggle("hidden");
-    //     btn.textContent = isHidden ? "Show Summary" : "Hide Summary";
-    //   });
-    // }
 
     // Collect the data for star ratings:
     return { title, rating: parseFloat(rating) };
@@ -336,7 +171,6 @@ function displayRatingStars(rating) {
 }
 
 //Function for displaying stars for book ratings:
-
 function showStarRatings(bookData) {
   // Sort books by rating in descending order:
   bookData.sort((a, b) => b.rating - a.rating);
@@ -369,7 +203,7 @@ function displayRatingTime() {
 
 // Main function which starts API requests for all URLs:
 async function fetchAllBooks() {
-  // NEW - CLEANING THE CONTENT:
+  // NEW - cleaning the content:
   const bookContainer = document.getElementById("bookDataContainer");
   const ratingsContainer = document.getElementById("star-ratings");
   if (bookContainer) bookContainer.innerHTML = "";
@@ -392,8 +226,6 @@ async function fetchAllBooks() {
   displayRatingTime();
 }
 
-// console.log(document.getElementById("bookDataContainer"));
-
 function waitForContainerAndFetch() {
   const check = setInterval(() => {
     const container = document.getElementById("bookDataContainer");
@@ -404,16 +236,10 @@ function waitForContainerAndFetch() {
   }, 100); // checks every 100ms
 }
 
-// Start fetching data when the HTML loads:
-// document.addEventListener("DOMContentLoaded", function () {
-//   fetchAllBooks();
-// });
-
 // Start fetching data when the HTML loads
 window.addEventListener("load", waitForContainerAndFetch);
 
-// EMAILJS-FUNCTIONALLITY:
-
+// EMAILJS-FUNCTIONALITY:
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 // Render reCAPTCHA when the API is loaded:
@@ -473,8 +299,7 @@ if (form) {
   });
 }
 
-// VOTING-POLL FOR BOOKS:
-
+// Voting-poll for Tolkien's books:
 const votingForm = document.getElementById("voting-form");
 const resultsBox = document.getElementById("voting-results");
 
@@ -511,8 +336,7 @@ function renderVoteResults() {
 
   resultsBox.innerHTML += resultsHTML;
 
-  // adding a graphical visualisation:
-
+  // Adding a graphical visualisation:
   const chartCanvas = document.getElementById("voteChart");
   if (chartCanvas) {
     const ctx = chartCanvas.getContext("2d");
@@ -575,7 +399,7 @@ if (votingForm && resultsBox) {
   });
 }
 
-// NEW: ADDED UNIQUE EVENT-LISTENER FOR ALL BUTTONS, ONCE THE PAGE IS LOADED (otherwise buttons-click doesn't work in Vite):
+// NEW: Added Event-listener for ALL buttons, once teh page is loaded (otherwise buttons-clicks don't work in Vite):
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("bookDataContainer");
