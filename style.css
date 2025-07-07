@@ -39,6 +39,9 @@ img {
   min-width: 150px;
   align-content: center;
 }
+#tolkien-top-logo {
+  max-width: 70%;
+}
 
 .illustration {
   text-align: center;
@@ -163,6 +166,7 @@ img {
   padding: 0.5rem 1.5rem !important;
   color: #1c650f !important;
   color: white !important;
+  font-size: 1.1rem;
 }
 
 .nav-item {
@@ -273,6 +277,7 @@ td h1 {
   text-shadow: 1px 1px 1px #0e601484;
   font-weight: bolder;
   color: #255009;
+  font-size: 2rem;
 }
 
 h1 {
@@ -587,6 +592,8 @@ btn-standard {
 .poll {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .options {
@@ -879,15 +886,24 @@ form textarea {
   #subtitle {
     font-size: 1.5rem !important;
   }
+  .nav-link {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 1124px) {
+  .big-heading {
+    font-size: 1.8rem;
+  }
   .mountain-background {
     height: 500px;
   }
 
   .art {
     max-width: 70%;
+  }
+  .nav-link {
+    font-size: 0.9rem;
   }
 }
 
@@ -949,9 +965,6 @@ form textarea {
   .navbar-nav .nav-link {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
-  }
-  .big-heading {
-    font-size: 2.3rem;
   }
   .sub-title {
     font-size: 1.3rem !important;
@@ -1029,14 +1042,10 @@ form textarea {
     border-radius: 2px;
   }
 }
-@media (max-width: 633px) {
-  .big-heading {
-    font-size: 2.1rem;
-  }
-}
 
 @media (max-width: 576px) {
-  .navbar-brand, .navbar-toggler {
+  .navbar-brand,
+  .navbar-toggler {
     text-align: center;
   }
   #tolkien-top-logo {

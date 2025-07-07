@@ -127,7 +127,7 @@ async function fetchBookData(bookUrl, ratingUrl, index) {
           <button class="btn showButton" data-index="${index}">Show summary</button><br>
         </div>
 
-        <div class="externLinks card-footer"><strong>Link to the book:</strong><br> ${link}</div>
+        <div class="externLinks card-footer">Link to the book:<br> ${link}</div>
 
       </div>   
   
