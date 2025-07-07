@@ -281,7 +281,7 @@ td h1 {
 }
 
 h1 {
-  margin: 10% auto;
+  /* margin: 10% auto; */
   font-size: 3rem;
   font-family: "Italiana", sans-serif;
   letter-spacing: 3px;
@@ -940,6 +940,9 @@ form textarea {
   }
   .year-lato {
     font-size: 1.2rem !important;
+  }
+  h1 {
+  margin: 10% auto;
   }
 }
 
