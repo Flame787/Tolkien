@@ -40,7 +40,7 @@ img {
   align-content: center;
 }
 #tolkien-top-logo {
-  max-width: 70%;
+  max-width: 60%;
 }
 
 .illustration {
@@ -277,7 +277,7 @@ td h1 {
   text-shadow: 1px 1px 1px #0e601484;
   font-weight: bolder;
   color: #255009;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 h1 {
@@ -368,7 +368,7 @@ h4 {
 
 .card h3 {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .text-block {
@@ -475,7 +475,8 @@ a:visited {
 .footer-link {
   font-family: "Italiana", sans-serif;
   font-weight: bolder;
-  font-size: larger !important;
+  /* font-size: larger !important; */
+  font-size: 1rem;
   letter-spacing: 1.7px;
 }
 
@@ -589,17 +590,37 @@ btn-standard {
   text-align: right;
 }
 
-.poll {
+#voting-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  text-align: center;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.poll {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#voting-form-button {
+  text-align: center;
 }
 
 .options {
-  margin-left: 40%;
-  margin-right: auto;
+  margin-left: 30%;
+  /* margin-right: auto;
+  text-align: justify; */
+  width: 100%;
   text-align: justify;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 .bookcard {
@@ -880,6 +901,9 @@ form textarea {
 /* col-12 = 1 whole viewport width, flex-basis: 100%; */
 
 @media (max-width: 1350px) {
+  .big-heading {
+    font-size: 1.6rem;
+  }
   .sub-title {
     font-size: 1.5rem !important;
   }
@@ -892,9 +916,7 @@ form textarea {
 }
 
 @media (max-width: 1124px) {
-  .big-heading {
-    font-size: 1.8rem;
-  }
+  
   .mountain-background {
     height: 500px;
   }
@@ -917,7 +939,7 @@ form textarea {
   }
 
   .custom-nav .custom-item {
-    width: 40%; /* nav-items take 50% of the container width on small screens */
+    width: 40%; /* nav-items take % of the container width on small screens */
     align-self: center;
     margin: 10px 0;
     padding: 0 2px;
@@ -943,9 +965,7 @@ form textarea {
 }
 
 @media (max-width: 800px) {
-  #tolkien-top-logo {
-    max-width: 80%;
-  }
+  
   .sub-title {
     font-size: 1.4rem !important;
   }
@@ -956,12 +976,13 @@ form textarea {
     max-width: 90%;
     border-radius: 2px;
   }
+  .custom-nav .custom-item {
+    width: 50%;
+  }
 }
 
 @media (max-width: 767px) {
-  #tolkien-top-logo {
-    max-width: 70%;
-  }
+  
   .navbar-nav .nav-link {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
@@ -984,7 +1005,6 @@ form textarea {
 
   #tolkien-top-logo {
     margin-bottom: 5%;
-    max-width: 70%;
   }
 
   #nav-title {
@@ -1041,6 +1061,9 @@ form textarea {
     max-width: 100%;
     border-radius: 2px;
   }
+  .poll {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1049,10 +1072,10 @@ form textarea {
     text-align: center;
   }
   #tolkien-top-logo {
-    max-width: 60%;
+    max-width: 50%;
   }
   .big-heading {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .title-container {
@@ -1067,12 +1090,19 @@ form textarea {
     width: 6px !important;
     height: 1px !important;
   }
+   .custom-nav .custom-item {
+    width: 60%;
+  }
+
+  /* #voteChart {
+    width: 100% !important;
+    height: auto !important;
+  } */
 }
 
 @media (max-width: 480px) {
   #tolkien-top-logo {
     margin-bottom: 0;
-    max-width: 50%;
   }
   #subtitle2 {
     font-size: 1rem !important;
@@ -1111,6 +1141,10 @@ form textarea {
   .animated-movie {
     min-width: 240px;
   }
+   .options {
+  margin-left: 20%;
+  }
+ 
 }
 
 @media (max-width: 400px) {
@@ -1118,7 +1152,7 @@ form textarea {
     max-width: 40%;
   }
   .big-heading {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .sub-title {
@@ -1136,6 +1170,12 @@ form textarea {
   .animated-movie {
     min-width: 210px;
   }
+  .options {
+  margin-left: 15%;
+  }
+   .custom-nav .custom-item {
+    width: 80%;
+  }
 }
 
 @media (max-width: 350px) {
@@ -1145,5 +1185,8 @@ form textarea {
   }
   .animated-movie {
     min-width: 190px;
+  }
+   .options {
+  margin-left: 10%;
   }
 }
