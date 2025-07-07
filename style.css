@@ -378,19 +378,22 @@ a:hover {
   color: #072c16 !important;
 }
 
-a:link {
-  color: #1c650f;
-  font-family: "Italiana", sans-serif;
-  font-weight: bolder !important;
-  /* font-size: smaller !important; */
-}
-
+a:link,
 a:visited {
   color: #1c650f;
   font-family: "Italiana", sans-serif;
-  font-weight: bolder !important;
+  /* font-weight: bolder !important; */
+  font-weight: 900;
   /* font-size: smaller !important; */
 }
+
+/* a:visited {
+  color: #1c650f;
+  font-family: "Italiana", sans-serif;
+  font-weight: bolder !important;
+  font-weight: 900;
+  
+} */
 
 #voting-results ul {
   list-style-type: none;
@@ -433,6 +436,10 @@ a:visited {
 
 .works-list p a,
 .link-a a {
+  font-size: 1.1rem !important;
+}
+
+.works-list p {
   font-size: 1.1rem !important;
 }
 
@@ -611,6 +618,10 @@ btn-standard {
   margin-bottom: 5%; /* vertical gap between card rows */
   border-radius: 5px;
   overflow: hidden;
+  /* box-shadow:
+  0 4px 10px rgba(0, 0, 0, 0.3),
+  0 8px 30px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 .book-card {
@@ -623,8 +634,6 @@ btn-standard {
   justify-content: center;
   width: 100%;
   /* width: 48%; */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-
   backdrop-filter: blur(14px);
   text-align: center;
 }
@@ -660,6 +669,7 @@ btn-standard {
 
 .card_item {
   margin-top: 5%;
+  font-weight: 400;
 }
 
 .flexible {
@@ -672,6 +682,8 @@ btn-standard {
   width: 100%;
   height: auto;
   background: transparent;
+  background: radial-gradient(at 50% 37%, #e1f3e3, #b1cfb8);
+
   box-shadow: none;
   /* if card-footer style should be unvisible, then use this: */
   /* background-color: transparent !important; 
@@ -679,6 +691,11 @@ btn-standard {
   box-shadow: none !important;  */
   padding: 0 0 5%;
   margin: 0 !important;
+}
+
+.card-footer a {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 600;
 }
 
 .hidden {
@@ -954,5 +971,4 @@ form textarea {
   .poll {
     font-size: 0.9rem;
   }
- 
 }
