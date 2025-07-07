@@ -12,7 +12,7 @@ window.onscroll = function () {
     navbar.style.top = "0";
   } else {
     // if scrolling down, hide navbar:
-    navbar.style.top = "-100px"; // navbar height - adjustable
+    navbar.style.top = "-150px"; // navbar height - adjustable
   }
 
   prevScrollPos = currentScrollPos;
