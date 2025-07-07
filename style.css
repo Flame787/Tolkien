@@ -10,7 +10,7 @@ body {
   margin: 0;
   text-align: center;
   font-family: "Lato", sans-serif !important;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem !important;
   color: #35231b;
 
@@ -677,11 +677,12 @@ btn-standard {
 }
 
 .card-footer {
-  background: none;
+  /* background: none; */
+  margin-top: 3px;
   border: none;
   width: 100%;
   height: auto;
-  background: transparent;
+  /* background: transparent; */
   background: radial-gradient(at 50% 37%, #e1f3e3, #b1cfb8);
 
   box-shadow: none;
@@ -690,7 +691,7 @@ btn-standard {
   border-top: none !important; 
   box-shadow: none !important;  */
   padding: 0 0 5%;
-  margin: 0 !important;
+  /* margin: 0 !important; */
 }
 
 .card-footer a {
@@ -738,7 +739,7 @@ btn-standard {
   text-align: center !important;
 }
 
-/* borders in Table (Chronology): */
+/* Table borders (Chronology): */
 
 #lifespan .card table {
   width: 100%; /* table uses whole page width */
@@ -746,13 +747,14 @@ btn-standard {
 }
 
 #lifespan .card tr:not(:last-child) {
-  border-bottom: 1px solid #ccc; /* puts lower border on all rows except the last one */
+  border-bottom: 1px solid #ccc; /* lower border on all rows except the last one */
 }
 
 #lifespan .card td {
-  text-align: left; /* aligns text in all cells to the left */
-  padding: 10px; /* provides bigger gaps between cells for better readability */
-  vertical-align: top; /* Aligns cell content to the top */
+  text-align: left; 
+  padding: 10px; 
+  vertical-align: top; 
+  font-weight: 400;
 }
 
 input[type="checkbox"] {
