@@ -13,7 +13,6 @@ body {
   font-weight: 400;
   font-size: 1rem !important;
   color: #35231b;
-
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
   background-image: url("/pictures/autumn-forest9999.png");
   /* background-size: cover;
@@ -56,7 +55,7 @@ img {
 
 .title-container {
   display: flex;
-  flex-direction: row; /* default for large screens */
+  flex-direction: row; 
   align-items: center;
   justify-content: center;
   gap: 20px;
@@ -76,7 +75,7 @@ img {
 /* navbar elements: */
 
 .navbar-section {
-  position: -webkit-sticky; /* for browser compatibility */
+  position: -webkit-sticky; /* browser compatibility */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -102,8 +101,8 @@ img {
 
 .navbar-toggler {
   border: none; /* no border around hamburger icon */
-  padding: 0.25rem 0.75rem; /* enlarging the clickable area */
-  outline: none; /* removing the focus outline */
+  padding: 0.25rem 0.75rem; /* enlarges the clickable area */
+  outline: none; /* removes focus outline */
 }
 
 /* this already applies by default in Bootstrap: */
@@ -136,7 +135,7 @@ img {
 
 .custom-nav .custom-item {
   flex-shrink: 0; /* to avoid items get smaller than their content */
-  width: auto; /* enables that width adjusts to the content on larger screens */
+  width: auto; /* width adjusts to the content on larger screens */
   font-family: "Italiana", sans-serif;
   font-weight: bolder;
   font-size: larger;
@@ -174,7 +173,6 @@ img {
 }
 
 /* animation: */
-
 .mountain-background {
   align-items: center;
   background-image: url("/pictures/anime-style-fading.png");
@@ -400,10 +398,6 @@ h4 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* h2 {
-  font-size: 1.5rem;
-} */
-
 a:hover {
   color: #754b0d !important;
   color: #072c16 !important;
@@ -413,18 +407,9 @@ a:link,
 a:visited {
   color: #1c650f;
   font-family: "Italiana", sans-serif;
-  /* font-weight: bolder !important; */
   font-weight: 900;
-  /* font-size: smaller !important; */
 }
 
-/* a:visited {
-  color: #1c650f;
-  font-family: "Italiana", sans-serif;
-  font-weight: bolder !important;
-  font-weight: 900;
-  
-} */
 
 #voting-results ul {
   list-style-type: none;
@@ -477,7 +462,6 @@ a:visited {
 .footer-link {
   font-family: "Italiana", sans-serif;
   font-weight: bolder;
-  /* font-size: larger !important; */
   font-size: 1rem;
   letter-spacing: 1.7px;
 }
@@ -498,11 +482,6 @@ a:visited {
   margin-top: 3%;
   padding: 20px;
 }
-
-/* .sand {
-  background: radial-gradient(at 50% 37%, #e1f3e3, #e0e5ba);
-  background: radial-gradient(at 50% 37%, #e1f3e3, #f2f5dd);
-} */
 
 .one-ring {
   width: 50%;
@@ -595,7 +574,6 @@ btn-standard {
 #voting-form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   text-align: center;
   align-items: center;
   width: 100%;
@@ -616,8 +594,6 @@ btn-standard {
 
 .options {
   margin-left: 30%;
-  /* margin-right: auto;
-  text-align: justify; */
   width: 100%;
   text-align: justify;
   padding-left: 1rem;
@@ -646,7 +622,7 @@ btn-standard {
   flex-wrap: wrap;
   height: 50%; /* doesn't work, cards are uneven and have too much space on the right */
 }
-/* check Flexbox to adjust bookcards */
+
 
 .bookDetails {
   background: radial-gradient(at 30% 50%, #b3deba, #6b9574);
@@ -674,9 +650,6 @@ btn-standard {
   margin-bottom: 5%; /* vertical gap between card rows */
   border-radius: 5px;
   overflow: hidden;
-  /* box-shadow:
-  0 4px 10px rgba(0, 0, 0, 0.3),
-  0 8px 30px rgba(0, 0, 0, 0.5); */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -685,11 +658,10 @@ btn-standard {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  /* centering all elements (specially pictures) in the middle of the card (vertically and horizontally): */
+  /* all elements (specially pictures) centered in the middle of the card (vert. and horiz.): */
   /* align-items: center;  - not needed, only problem for summary-2 and summary-3 */
   justify-content: center;
   width: 100%;
-  /* width: 48%; */
   backdrop-filter: blur(14px);
   text-align: center;
 }
@@ -698,23 +670,21 @@ btn-standard {
   font-size: 1.3rem !important;
   text-shadow: none;
   background: radial-gradient(at 50% 37%, #e1f3e3, #b1cfb8);
-  /* color: #704505; */
+  background: radial-gradient(at 50% 37%, #e1f3e3, #d3e8d8);
   color: #0e4405;
 }
 
 .book-cover {
-  /* text-align: center; */
   margin: auto;
-  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); */
   background: none;
   border: none;
-  width: auto; /* content will be automatically adjusted */
-  height: auto; /* content will be automatically adjusted */
+  width: auto; 
+  height: auto; 
   margin-top: 5%;
 }
 
 .book-cover img {
-  width: 70%; /* picture taking this percentage og the container */
+  width: 70%; 
   height: auto; /* img ratio kept the same */
   object-fit: cover; /* picture covers it's container proportionally */
   display: block; /* removes any gap under the picture */
@@ -733,19 +703,17 @@ btn-standard {
 }
 
 .card-footer {
-  /* background: none; */
   border: none;
   width: 100%;
   height: auto;
-  /* background: transparent; */
   background: radial-gradient(at 50% 37%, #e1f3e3, #b1cfb8);
+  background: radial-gradient(at 50% 37%, #e1f3e3, #d3e8d8);
   box-shadow: none;
   /* if card-footer style should be unvisible, then use this: */
   /* background-color: transparent !important; 
   border-top: none !important; 
   box-shadow: none !important;  */
   padding: 0 0 5%;
-  /* margin: 0 !important; */
 }
 
 .card-footer a {
@@ -759,7 +727,6 @@ btn-standard {
 
 .showButton {
   margin: 25px;
-  /* width: 200px; */
   width: 10em;
   text-align: center !important;
   font-size: smaller !important;
@@ -798,7 +765,7 @@ btn-standard {
 
 #lifespan .card table {
   width: 100%; /* table uses whole page width */
-  border-collapse: collapse; /* gives control over gaps between cells */
+  border-collapse: collapse; /* control over gaps between cells */
 }
 
 #lifespan .card tr:not(:last-child) {
@@ -1115,10 +1082,6 @@ form textarea {
     width: 60%;
   }
 
-  /* #voteChart {
-    width: 100% !important;
-    height: auto !important;
-  } */
 }
 
 @media (max-width: 480px) {
@@ -1156,7 +1119,6 @@ form textarea {
   }
   #recaptcha-container iframe {
     transform: scale(0.8);
-    /* transform-origin: 0 0; */
     transform-origin: center center;
   }
   .animated-movie {
