@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const form = document.getElementById("email-form");
 
 if (form) {
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const token = grecaptcha.getResponse();
@@ -329,7 +329,27 @@ if (form) {
       return;
     }
 
-    // new:
+    // backend Recaptcha token verification:
+     try {
+      const verifyResponse = await fetch("/.netlify/functions/verifyCaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+
+      const verifyData = await verifyResponse.json();
+
+      if (!verifyResponse.ok || !verifyData.verified) {
+        alert("CAPTCHA verification failed. Please try again.");
+        return;
+      }
+    } catch (error) {
+      console.error("Verification error:", error);
+      alert("Unable to verify CAPTCHA. Please try again later.");
+      return;
+    }
+
+    // EmailJS keys:
     if (!emailKeys.serviceId || !emailKeys.templateId) {
       alert("Email service not initialized yet.");
       return;
