@@ -839,28 +839,6 @@ form textarea {
 
 
 
-.carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.img-wrapper {
-  height: 618px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000; /* ili neka neutralna boja da popuni praznine */
-}
-
-.img-wrapper img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-
 /* .d-col-2 {
   flex-basis: 16.66%;
 }
