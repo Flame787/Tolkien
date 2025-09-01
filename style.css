@@ -245,6 +245,9 @@ td h1 {
   text-shadow: 1px 1px 1px #09c341;
 }
 
+
+
+
 .picture-td {
   width: 40%;
 }
@@ -258,8 +261,13 @@ td h1 {
   padding: 1% 2% 1% 1%;
   font-weight: 400;
   color: #040404;
-  text-align: right !important;
+  /* text-align: right !important; */
+  text-align: left;  
   color: #1c650f;
+}
+
+.first-part {
+  white-space: nowrap;   
 }
 
 .facts-td {
@@ -672,6 +680,8 @@ btn-standard {
   background: radial-gradient(at 50% 37%, #e1f3e3, #b1cfb8);
   background: radial-gradient(at 50% 37%, #e1f3e3, #d3e8d8);
   color: #0e4405;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .book-cover {
@@ -816,7 +826,7 @@ form textarea {
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.84);
 }
 
 .year-lato {
