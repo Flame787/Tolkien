@@ -334,29 +334,25 @@
         <br />
         <form class="border-b" id="email-form">
           <p>
-            <label>Your name:</label><br />
-            <input type="text" name="from_name" />
+            <label for="from_name">Your name:</label><br />
+            <input type="text" name="from_name" id="from_name"/>
           </p>
 
           <p>
-            <label>Your email-address:</label><br />
-            <input type="email" name="from_email" required />
+            <label for="from_email">Your email-address:</label><br />
+            <input type="email" name="from_email" id="from_email" required />
           </p>
           <p>
-            <label>Your message:</label><br />
+            <label for="message">Your message:</label><br />
             <textarea
               name="message"
+              id="message"
               rows="8"
               cols="50"
               style="max-width: 80%; font-size: smaller"
               required
             ></textarea>
           </p>
-
-          <!-- <div class="align-center">
-            <label>Do you want to sign up for an email list? </label>
-          </div>
-          <p><input type="checkbox" name="newsletter" value="yes" /> Yes</p> -->
 
           <div id="recaptcha-container"></div>
 
