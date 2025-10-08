@@ -154,7 +154,7 @@ function displayLastUpdateTime() {
   const updateInfo = `<br><div class='footer-info'>Data provided by <strong>Open Library API</strong>, last update on: <strong>${formattedTime}</strong></div><br>`;
 
   // Adding info about last update into HTML-rendered content:
-  document.getElementById("bookDataContainer").innerHTML += updateInfo;
+  document.getElementById("bookDetails-title").innerHTML += updateInfo;
 }
 
 // Calculate how many stars to display based on rating value:
